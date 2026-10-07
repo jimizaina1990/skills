@@ -126,3 +126,17 @@ O texto próprio da sebenta, isto é, tudo o que não está entre aspas, tem de 
 - **leitura-academica.** A leitura própria segue o mesmo critério: secção "Texto próprio" no protocolo e verificação de integridade obrigatória na amostragem final.
 - **rever-integridade-academica 1.3** (fora do repositório). O teste do acrescento entra como regra do utilizador e não do guia: um parágrafo que só repete a citação ao lado assinala-se como "texto sem acrescento", e não como plágio. A revisão é obrigatória nestas skills.
 - **Verificador.** Não mudou. Um protótipo que procurava frases de texto próprio a repetir a citação do mesmo parágrafo não encontrou nada na sebenta real. A falta de acrescento não se mede lexicalmente e fica a cargo da revisão.
+
+## SKILL.md da sinteses-historia encurtado, sem mudar regras
+
+Para seguir a orientação da Anthropic sobre skills (corpo do SKILL.md curto e o essencial no topo, porque depois da compactação pode sobrar só o princípio), o SKILL.md passou de 6263 para 2662 palavras.
+
+- **No topo.** Abre com dezasseis regras que não admitem exceção.
+- **O fluxo.** Segue o fluxo em cinco etapas, escrito em diretivas, com os três comandos do verificador e, no quadro, o anexo a carregar em cada etapa.
+- **Anexos novos.** O pormenor passou, sem alterações de conteúdo, para três anexos:
+  - G, com todas as regras de citação e referência APA 7;
+  - H, com o uso do dossiê, a leitura por objetivo e o plano de síntese;
+  - I, com o verificador, a lista de revisão, a revisão de integridade, a entrega, o documento final e a sebenta da unidade curricular.
+- **Anexos existentes.** A formatação, as regras dos quadros, a caixa "Fora das fontes", a secção de revisão e a versão curta passaram para o anexo A. Os traços "raciocínio desenvolvido" e "sem vazio nem opinião" passaram para o anexo D.
+- **Regras repostas.** Voltaram à lista de revisão duas verificações da versão anterior que se tinham perdido na reescrita: os termos historicamente situados e os rótulos das setas do esquema. Voltou também ao plano a ordem cronológica ou causal das fontes.
+- **Auditoria.** 83 regras da versão anterior conferidas uma a uma: todas presentes no SKILL.md ou num anexo.

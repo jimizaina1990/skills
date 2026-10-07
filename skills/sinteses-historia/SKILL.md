@@ -5,266 +5,133 @@ description: Cria a sebenta de estudo de um tema de História, Cultura ou Religi
 
 # Sínteses de estudo em História, Cultura e Religião
 
-A sebenta é, antes de tudo, um texto de estudo. Faz-se a partir da leitura integrada e aprofundada das obras, em relação com os objetivos indicados pelo docente, e é ao mesmo tempo uma síntese (o que as fontes dizem sobre cada objetivo, selecionado e organizado) e uma explicação argumentada (como as ideias se ligam, porque é que os autores pensam o que pensam, o que está em jogo entre posições). Quem a escreve age como um especialista na matéria que o dossiê de leitura lhe dá: domina-a, explica-a e relaciona-a, e volta ao texto original sempre que tem uma dúvida. O objetivo é que o estudante consiga depois explicar a matéria por si próprio.
+A sebenta é um texto de estudo. Faz-se a partir da leitura integrada e aprofundada das obras, em relação com os objetivos do docente, e é ao mesmo tempo síntese (o que as fontes dizem sobre cada objetivo) e explicação argumentada (como as ideias se ligam, porque é que os autores pensam o que pensam, o que está em jogo entre posições). O objetivo é que o estudante consiga depois explicar a matéria por si próprio. Cada decisão responde a uma pergunta: isto ajuda o estudante a compreender, recordar e usar o que o objetivo exige? Se não ajuda, sai; se ajuda, entra com a extensão de que precisa.
 
-Cada decisão responde a uma pergunta simples. Isto ajuda o estudante a compreender, a recordar e a usar o que cada objetivo exige? Se não ajuda, sai. Se ajuda, entra com a extensão de que precisa.
+## Regras que não admitem exceção
 
-## O fluxo
+1. **Especialista que explica.** Escrever com o domínio de quem estudou a matéria: explicar os conceitos, reconstruir os argumentos, mostrar as relações e as tensões. Esse domínio vem do dossiê e das fontes. Perante uma dúvida ou uma passagem do dossiê insuficiente, reler a fonte, e nunca completar de memória.
+2. **Só as fontes.** A sebenta constrói-se com o material fornecido e com o dossiê, porque o estudante vai ser avaliado sobre esses textos. O conhecimento exterior só entra perante uma falha flagrante que as fontes não resolvem (erro factual evidente, posição datada apresentada como consenso, tradução que inverte o sentido), validado por referência fiável, na caixa "**Fora das fontes.**" (anexo A), e nunca para refutar o autor.
+3. **Texto próprio autêntico, validado pelas fontes.** Sobre a fonte há só duas formas de escrever: a citação direta e o texto próprio. O texto próprio não é paráfrase, mesmo atribuída: resulta do entendimento e demonstra-o, porque faz um trabalho que a frase do autor não faz (explica, reconstrói o raciocínio, relaciona, delimita, tira consequências, põe o problema), e cada afirmação apoia-se nas fontes e localiza-se. Reordenar, condensar ou trocar palavras da frase da fonte é arranjo (patchwriting, que a APA considera plágio mesmo com referência). Também não se fabrica originalidade com factos, exemplos ou opiniões sem apoio. Os quatro testes (independência, origem, fidelidade, acrescento) estão no anexo F.
+4. **A tese diz-se com a citação.** A tese, a definição, a distinção e a ressalva de um autor entram nas palavras dele. Nenhuma frase anuncia a tese por outras palavras antes de a citar: o texto próprio diz o problema e explica.
+5. **Citar com a extensão que o sentido exige.** Não há mínimo nem máximo de citações por parte, e uma tese não se sustenta com uma frase solta. Cita-se com os modalizadores, as concessões e a indicação de quem fala. Com 40 ou mais palavras, a citação vai em bloco. Uma omissão nunca retira quem afirma, um modalizador, uma negação ou uma restrição. As citações vêm do banco do dossiê ou são confirmadas na fonte com o verificador, nunca de memória. Todas as regras de citação e referência APA 7 estão no anexo G.
+6. **Fidelidade e neutralidade.** Conservar o grau de certeza, o âmbito e as ressalvas. Uma hipótese não passa a facto, uma tendência não passa a regra, e dois autores com perguntas diferentes não estão necessariamente em oposição. As posições expõem-se como posições: a sebenta não adere nem combate. Os verbos factivos ("mostra", "demonstra", "prova", "revela", "nota") só introduzem factos afirmados (anexo D). O vocabulário avaliativo de um autor só entra entre aspas e atribuído.
+7. **Explicar e argumentar.** Para cada ideia central, dizer o que significa, porque é que o autor a defende (contra quem escreve, em que provas se apoia, de que pressupostos parte), o que deixa por explicar e como se liga ao resto do tema. Argumentar é encadear estas razões, não tomar partido.
+8. **Os objetivos interpretam-se, não se corrigem.** Se um enunciado parece não coincidir com as fontes, procurar a leitura mais plausível que elas sustentam (um termo em sentido largo, um "Israel" que é o povo e não o reino do norte, uma "recuperação" religiosa e não política) e responder a essa. O que as fontes não cobrem diz-se como limite das fontes, nunca como erro do objetivo, e nenhuma pergunta pede ao estudante que corrija um objetivo (anexo B).
+9. **Afirmar ou pôr nas lacunas, nunca as duas coisas.** O que entra no desenvolvimento está confirmado. O que não está fica só nas lacunas, no condicional.
+10. **Relatos religiosos e sobrenaturais na voz da fonte.** Um milagre, uma visão, uma profecia ou um relato sagrado entram como o que a fonte relata ou a tradição transmite, nunca como facto na voz da sebenta, e nunca desqualificados. O mesmo vale para os episódios dos livros sagrados que o historiador retoma: o relato na voz do relato, a leitura do historiador na voz do historiador.
+11. **Acrescentos reconhecíveis pela escrita.** O sentido simples de um termo, uma inferência ou um caso hipotético reconhecem-se pela formulação ("daqui pode inferir-se...", "se se imaginar..."), nunca por rótulos entre parênteses retos.
+12. **Extensão pela profundidade do objetivo.** Não há quota de páginas. Cada parte contém tudo o que uma resposta completa ao objetivo exige e nada que não o sirva. Não se corta uma explicação ou uma citação necessária, nem se acrescenta matéria que nenhum objetivo pede. Se a resposta se aproximar do limite de uma mensagem, parar no fim de uma parte, dizer claramente onde se parou e o que falta, e continuar na mensagem seguinte. Nunca comprimir nem encurtar em silêncio, e dizer na entrega se alguma parte ficou mais curta do que o objetivo pede.
+13. **Recuperar, não só reler.** A sebenta termina com perguntas de autoavaliação por objetivo, sem resposta-modelo, e com um glossário utilizável como cartões.
+14. **Revisão obrigatória.** Nenhuma sebenta se entrega sem verificador, revisão contra as fontes e revisão de integridade (etapa 5). Nunca se declara uma sebenta "livre de plágio" ou "original".
+15. **Entrega em Markdown.** A sebenta entrega-se como ficheiro `.md`. O documento final (Docs, Word) só se faz depois de o estudante a validar, num passo à parte de pura transcrição (anexo I).
+16. **Não faz respostas de exame**, respostas-modelo nem trabalhos para entregar. Explicar que a sebenta, com as perguntas de autoavaliação, prepara o estudante para responder por si. Se ele usar partes dela num trabalho avaliado, aplicam-se as regras da unidade curricular sobre o uso de inteligência artificial, e a APA 7 tem orientações próprias para declarar esse uso.
 
-O trabalho tem cinco etapas, sempre por esta ordem. A primeira e a segunda podem já estar feitas pela skill `leitura-academica`, mas a terceira, a quarta e a quinta são desta skill e não se saltam.
+Português europeu (AO 1990), registo de historiador, frases completas e articuladas, nunca telegráficas (anexo D).
 
-| Etapa | O que se faz | O que sai |
+## Fluxo
+
+Cinco etapas, sempre por esta ordem. A 1 e a 2 podem já estar feitas pela skill `leitura-academica`, mas a 3, a 4 e a 5 são desta skill e não se saltam.
+
+| Etapa | O que se faz | Carregar |
 | --- | --- | --- |
-| 1. Compreender os objetivos | Ler cada objetivo pelo verbo, pelo objeto e pela delimitação, e decidir a profundidade que exige. | Leitura dos objetivos, no plano de síntese. |
-| 2. Leitura orientada e aprofundada | Leitura integral das fontes pela `leitura-academica`, com o dossiê verificado. | Dossiê apto. |
-| 3. Ler o relatório de leitura | Ler o dossiê objetivo a objetivo, voltar à fonte onde for preciso e planear cada parte. | Plano de síntese. |
-| 4. Elaborar a sebenta | Escrever a síntese e a parte pedagógica, explicativa e argumentativa, parte a parte. | Sebenta em Markdown. |
-| 5. Rever a sebenta | Verificador, revisão separada contra as fontes e correção. Entrega em Markdown. | Sebenta revista, à espera de validação. |
-
-## Princípios
-
-**Especialista que explica, apoiado nas fontes.** A sebenta escreve-se com o domínio de quem estudou a matéria e não com a cautela de quem a copia. Explica os conceitos, reconstrói os argumentos, mostra as relações e as tensões. Esse domínio vem do dossiê e das fontes, e quando uma passagem do dossiê é curta, ambígua ou não chega para explicar, relê-se a fonte (etapa 3) em vez de completar de memória.
-
-**Só o que está nas fontes, salvo falha flagrante.** A sebenta constrói-se com o material fornecido (textos, capítulos, sebentas, fichas de leitura, guias de estudo) e com o dossiê. O estudante vai ser avaliado sobre esses textos, e uma informação exterior, mesmo verdadeira, pode contradizer o que o docente espera. O conhecimento exterior só entra num caso: quando as fontes deixam uma falha flagrante que um estudante não pode ignorar (um erro factual evidente, uma posição datada apresentada como consenso, uma tradução que inverte o sentido) e as fontes não a resolvem. Nesse caso entra validado por uma referência fiável e citável, sempre assinalado como exterior às fontes (ver "Conhecimento exterior às fontes"), e nunca para refutar o autor por conta própria.
-
-**Citar com a extensão que o sentido exige.** Num trabalho académico não se sustenta uma tese com uma frase solta, e a sebenta também não. Cita-se o autor sempre que a sua formulação exata importa (uma tese, uma definição, uma distinção, uma ressalva, um juízo), e cita-se o necessário para o sentido ficar inteiro, com os modalizadores, as concessões e a indicação de quem fala. Uma citação de 40 ou mais palavras não se corta para caber numa frase, vai em bloco, como a APA 7 manda. Não há número mínimo nem máximo de citações por parte. Há a exigência de que cada tese, definição e distinção que um objetivo pede esteja nas palavras do autor, com a explicação ao lado.
-
-**Texto próprio autêntico, validado pelas fontes.** Sobre a fonte há duas formas legítimas de escrever: a citação direta e o texto próprio. O texto próprio não é paráfrase das fontes, mesmo bem atribuída. É texto autêntico, que resulta da leitura e do entendimento e o demonstra, porque faz um trabalho que a frase do autor não faz (explica, reconstrói o raciocínio, relaciona, delimita, tira consequências, põe o problema), e é ao mesmo tempo validado pelas fontes, porque cada afirmação se apoia nelas e se pode localizar. Reordenar, condensar ou trocar palavras da frase da fonte é arranjo, e a APA considera esta "patchwriting" uma forma de plágio, mesmo com referência. A forma mais insidiosa é a frase que anuncia a tese por outras palavras e logo a seguir a cita: a tese enuncia-se com a própria citação, e o texto próprio diz o problema e explica. Também não se fabrica originalidade, acrescentando factos, exemplos ou opiniões que as fontes não sustentam. O anexo F define os quatro testes do texto próprio (independência, origem, fidelidade, acrescento), o modo de o escrever a partir do entendimento e a sua verificação. É o critério de integridade académica da skill, e não é opcional.
-
-**Explicar e argumentar.** Nomear um conceito não é explicá-lo, e expor uma tese não é compreendê-la. Para cada ideia central, a sebenta diz o que significa, porque é que o autor a defende (contra que interpretação escreve, em que provas se apoia, a partir de que pressupostos), o que deixa por explicar e como se liga ao resto do tema, tal como o dossiê o registou na interrogação do texto. Argumentar, aqui, é encadear estas razões, e não tomar partido.
-
-**Fidelidade e neutralidade.** Conservar o grau de certeza, o âmbito e as ressalvas dos autores. Uma hipótese não passa a facto, uma tendência não passa a regra, e dois autores com perguntas diferentes não estão necessariamente em oposição. A sebenta expõe as posições dos autores como posições, e não como factos, e não adere a nenhuma nem a combate. Os verbos factivos ("mostra", "demonstra", "prova", "revela", "nota") só introduzem factos afirmados, nunca interpretações (anexo D). O vocabulário avaliativo de um autor só entra entre aspas e atribuído.
-
-**Os objetivos interpretam-se, não se corrigem.** O objetivo é do docente e é sobre ele que o estudante vai ser avaliado. Se o enunciado parece não coincidir com as fontes, procura-se primeiro a leitura mais plausível que as fontes sustentam (um termo usado em sentido largo, um "Israel" que é o povo e não o reino do norte, uma "recuperação" que é religiosa e não política), e a sebenta responde a essa leitura. O que as fontes não cobrem diz-se, como limite das fontes, e nunca como erro do objetivo.
-
-**Afirmar ou pôr nas lacunas, nunca as duas coisas.** O que entra no desenvolvimento está confirmado nas fontes ou numa referência exterior validada. O que não está confirmado fica só nas lacunas, no condicional. Uma frase que afirma e logo diz "por confirmar" não serve a ninguém.
-
-**Relatos religiosos e sobrenaturais.** Um milagre, uma visão, uma profecia ou um relato sagrado entram sempre como o que a fonte relata ou a tradição transmite ("segundo o relato de 2 Reis...", "a tradição talmúdica faz de Isaías..."), nunca na voz da sebenta como facto, e nunca desqualificados. Vale o mesmo para os episódios narrados nos livros sagrados que o historiador retoma: o relato fica na voz do relato, a leitura do historiador na voz do historiador.
-
-**O que a sebenta acrescenta reconhece-se pela escrita.** Explicar implica, por vezes, acrescentar o que a fonte não diz, como o sentido simples de um termo, uma inferência que liga duas ideias ou um caso hipotético. Esses acrescentos reconhecem-se pela formulação ("daqui pode inferir-se...", "se se imaginar..."), nunca por rótulos entre parênteses retos.
-
-**Recuperar, não só reler.** A sebenta termina com perguntas de autoavaliação por objetivo e com um glossário que se pode usar como cartões, porque recuperar a matéria de memória fixa-a melhor do que relê-la.
+| 1. Compreender os objetivos | Ler cada objetivo pelo verbo, pelo objeto e pela delimitação, e decidir a profundidade. | Anexo B |
+| 2. Partir do dossiê verificado | Confirmar com o verificador que o dossiê está apto. | Anexo H |
+| 3. Ler o dossiê por objetivo | Ler objetivo a objetivo, voltar à fonte, escrever o plano de síntese com notas de compreensão. | Anexos H e F |
+| 4. Redigir | Escrever parte a parte, a partir do plano. | Anexos A, F, G e D, e C e E quando preciso |
+| 5. Rever e entregar | Verificador, revisão contra as fontes, revisão de integridade, entrega em Markdown. | Anexos I e F |
 
 ## Etapa 1. Compreender os objetivos
 
-Identificar o tema, as fontes e os objetivos do programa ou do guia de estudo. Se houver dossiê, os objetivos já lá estão decompostos (secção 0) e partem-se dessa decomposição. Para cada objetivo, escrever no plano de síntese, em poucas linhas:
+Identificar o tema, as fontes e os objetivos do programa ou do guia de estudo. Se houver dossiê, partir da decomposição da sua secção 0. Para cada objetivo, escrever no plano de síntese:
 
-- **A operação** pedida pelo verbo, segundo o anexo B (explicar não é descrever, avaliar pede critérios, discutir pede posições em confronto).
-- **O objeto e a delimitação**, isto é, de que se fala exatamente e em que tempo, espaço e autores.
-- **A leitura adotada**, quando o enunciado admite mais de uma, com a razão pela qual as fontes sustentam essa e não outra (anexo B, "Ler o enunciado").
+- **A operação** pedida pelo verbo (explicar não é descrever, avaliar pede critérios, discutir pede posições em confronto).
+- **O objeto e a delimitação**: de que se fala e em que tempo, espaço e autores.
+- **A leitura adotada**, quando o enunciado admite mais de uma, com a razão pela qual as fontes a sustentam.
 - **O que uma resposta completa tem de mostrar**, que é o critério da parte.
-- **A profundidade**, que decide a extensão da parte: o número de posições, conceitos e provas que o objetivo obriga a tratar.
+- **A profundidade**, que decide a extensão: o número de posições, conceitos e provas a tratar.
 
-Se um objetivo for ambíguo de um modo que as fontes não resolvem, perguntar ao estudante antes de escrever. Se o estudante não tiver indicado as fontes ou os ficheiros estiverem ilegíveis, pedir antes de avançar.
+Se um objetivo for ambíguo de um modo que as fontes não resolvem, perguntar ao estudante antes de escrever. Se faltarem as fontes ou os ficheiros estiverem ilegíveis, pedir antes de avançar.
 
-## Etapa 2. Partir da leitura
+## Etapa 2. Partir do dossiê verificado
 
-A sebenta é tão boa quanto a leitura em que assenta. Quando as fontes são mais do que um capítulo ou um artigo curto, a sebenta faz-se a partir de um dossiê de leitura da skill `leitura-academica`. Se o dossiê não existir, aplicar primeiro essa skill. Só para um capítulo curto ou um artigo se lê diretamente, registando para cada fonte o problema que trata, as ideias principais, os conceitos e as passagens a citar, com a página, e confirmando cada passagem com o verificador (`--localizar`).
+Quando as fontes são mais do que um capítulo ou um artigo curto, a sebenta faz-se a partir do dossiê da skill `leitura-academica`. Se o dossiê não existir, aplicar primeiro essa skill. Para material curto, ler diretamente segundo o anexo H.
 
-O dossiê usa-se como base apenas quando o verificador o declara apto e o seu estado é "concluído". Antes de escrever, correr o verificador sobre o dossiê com as fontes, nesta conversa, e não confiar na declaração escrita no próprio dossiê. Se a saída não terminar com "Dossiê apto para a sebenta", não escrever a sebenta e dizer ao estudante, com a saída, o que falta corrigir.
+Antes de escrever, correr o verificador sobre o dossiê com as fontes, nesta conversa, e não confiar na declaração escrita no próprio dossiê.
 
-Cada secção do dossiê tem um destino na sebenta, segundo o quadro seguinte.
+```
+python3 <pasta da leitura-academica>/scripts/verificar.py dossie.md --fonte F1=obra.txt
+```
 
-| Secção do dossiê | Uso na sebenta |
-| --- | --- |
-| 0. Objetivos | Leitura dos objetivos, partes e perguntas de autoavaliação. |
-| 1. Fichas, contexto historiográfico | Situação de cada obra no seu tempo, quando o estudante precisa de saber que uma obra está datada, é confessional ou foi discutida. |
-| 11. Mapa dos objetivos e varredura | Partes, em regra uma por objetivo e pela mesma ordem, e as passagens que cada parte tem de usar. As tensões entre objetivo e fonte dão notas de atenção, e o que as fontes não cobrem vai para as lacunas. |
-| 13. Banco de citações | Origem das citações diretas, só com as entradas confirmadas. |
-| 4. Conceitos | Notas, quadros de conceitos e glossário, com o sentido no autor, a indicação de termo de época ou conceito do historiador, o âmbito e o deslize a evitar. |
-| Confusões prováveis, nas unidades | Notas de atenção. |
-| Relações, nas unidades | Setas do esquema-síntese, com os rótulos aí registados. |
-| Interrogação do texto, nas unidades | Porquê de cada tese central, separação entre facto, interpretação e juízo, e nuances a conservar. |
-| 5. Factos e cronologia | Cronologia, quando o tema a justificar, com a data convertida e o sistema de datação da fonte quando difere do atual. |
-| 6. Articulação entre obras | Quadros de contraposição e prosa das partes com mais de um autor, com cada posição atribuída a quem a defende. |
-| 8. Visão global | Eixo da sebenta. |
-| 7. Limites e 12. Pendências | Lacunas e limite final do essencial a reter. |
+Se a saída não terminar com "Dossiê apto para a sebenta", ou o estado não for "concluído", não escrever a sebenta e dizer ao estudante, com a saída, o que falta corrigir. O uso de cada secção do dossiê e as quatro regras de uso estão no anexo H: citações do banco ou confirmadas na fonte, a leitura própria do dossiê é matéria e não texto, os rótulos de estatuto não passam, e o que ficou com ressalva confere-se no original.
 
-O uso do dossiê obedece a quatro regras.
+## Etapa 3. Ler o dossiê por objetivo e planear
 
-- **Citações do banco ou confirmadas na fonte.** Copiam-se do banco as entradas confirmadas, com a sua referência APA. Uma passagem que não esteja no banco só entra depois de localizada na fonte com o verificador (`--localizar`), e acrescenta-se ao banco.
-- **A leitura própria é matéria, não texto.** A análise do dossiê diz o que explicar, mas a sebenta escreve-o de novo no seu registo (anexo D). Não se copiam frases do dossiê.
-- **Rótulos não passam.** Os rótulos de estatuto do dossiê (leitura própria, inferência, contexto externo, juízo do leitor) transformam-se em formulações ("daqui pode inferir-se...", "segundo o autor..."), nunca em marcas no texto.
-- **Conferir o que ficou com ressalva.** As citações marcadas no banco como "confirmada com ressalva", e as de fontes digitalizadas sem a indicação "conferida na imagem", conferem-se no original antes de entrar.
+O dossiê de uma obra inteira é longo, e lido de uma vez perde-se o meio. Por isso:
 
-## Etapa 3. Ler o relatório de leitura e planear a síntese
-
-Um dossiê de uma obra inteira é longo, e um modelo que o lê de uma vez tende a reter o princípio e o fim e a perder o meio, tal como acontece com a própria obra. Por isso o dossiê lê-se objetivo a objetivo, e cada parte da sebenta planeia-se a partir do que foi lido para ela, e não da impressão geral.
-
-1. **Ler por objetivo.** Para cada objetivo, ler a sua linha no mapa dos objetivos, depois cada unidade aí indicada (leitura, interrogação do texto, confusões, relações), as entradas do banco que essas unidades citam, os conceitos que usam e as respostas divergentes do teste de compreensão. As unidades do meio da obra lêem-se com a mesma atenção que as primeiras e as últimas.
-2. **Voltar à fonte.** Para cada objetivo, correr a procura por tema com duas ou três consultas feitas com os termos do objetivo e os do autor, e com o dossiê, para ver o que ele já cita.
+1. **Ler por objetivo.** Para cada objetivo, ler a sua linha no mapa dos objetivos, cada unidade aí indicada, as entradas do banco que elas citam, os conceitos e as respostas divergentes do teste de compreensão. As unidades do meio leem-se com a mesma atenção que as pontas.
+2. **Voltar à fonte.** Para cada objetivo, duas ou três consultas com os termos do objetivo e os do autor. Cada passagem "SEM citação no banco" lê-se na fonte e, se servir, confirma-se com `--localizar` e entra no plano.
 
    ```
    python3 <pasta da leitura-academica>/scripts/verificar.py --procurar "termos do objetivo" --procurar "termos do autor" --fonte F1=obra.txt --banco dossie.md
    ```
 
-   Cada passagem devolvida com "SEM citação no banco nesta página" lê-se na fonte. Se servir o objetivo, confirma-se com `--localizar` e entra no plano. Faz-se o mesmo sempre que surge uma dúvida sobre a matéria, ou quando a leitura do dossiê não chega para explicar. Se o dossiê já tiver a varredura por objetivo, parte-se dela e repete-se a procura só onde a parte o pedir.
-3. **Escrever o plano de síntese.** Num ficheiro de trabalho (`plano-sintese.md`), uma entrada por objetivo com a leitura do objetivo (etapa 1), o problema a que a parte responde, as teses com as citações que as enunciam (Cnn ou página), as provas, as posições em confronto, os conceitos, as confusões a prevenir, o que fica de fora e a forma prevista (prosa, quadro de contraposição, quadro de conceitos, citação em bloco). Para cada tese, uma nota de compreensão escrita de raiz, sem copiar a passagem: a ideia, a sua função no argumento, porque é que o autor a defende, o seu limite e a sua ligação com o resto (anexo F, secção 4). Se a nota não sai sem repetir a frase do autor, a passagem ainda não foi compreendida e relê-se o contexto na fonte. O plano não passa para a sebenta, mas é o que impede que uma parte do meio seja escrita de memória e que o texto próprio seja paráfrase.
-4. **Fixar o eixo e a ordem.** O eixo é a pergunta a que a sebenta responde. As partes seguem, em regra, a ordem dos objetivos, com o contexto antes dos acontecimentos e os conceitos antes dos argumentos que os usam.
+3. **Escrever o plano de síntese** (`plano-sintese.md`), uma entrada por objetivo: a leitura do objetivo, o problema da parte, as teses com as citações que as enunciam, as provas, as posições em confronto, os conceitos, as confusões a prevenir, o que fica de fora e a forma prevista (prosa, quadro, bloco). Para cada tese, uma nota de compreensão escrita de raiz, sem copiar a passagem. Se a nota não sai sem repetir a frase do autor, a passagem ainda não foi compreendida, e relê-se o contexto.
+4. **Fixar o eixo e a ordem.** O eixo é a pergunta a que a sebenta responde. As partes seguem, em regra, a ordem dos objetivos, com o contexto antes dos acontecimentos e os conceitos antes dos argumentos.
 
-Numa obra longa, escreve-se cada parte logo a seguir ao seu plano, em vez de planear tudo e escrever tudo depois.
+Numa obra longa, escrever cada parte logo a seguir ao seu plano. O pormenor está no anexo H.
 
-## Etapa 4. Elaborar a sebenta
+## Etapa 4. Redigir
 
-Seguir a estrutura do anexo A. A sebenta tem estas secções, por esta ordem, todas com títulos estruturados (títulos de documento, e nunca parágrafos a negrito).
+A sebenta tem estas secções, por esta ordem, todas com títulos estruturados (anexo A):
 
-1. Contextualização, com os objetivos da temática e o que se espera do estudante.
+1. Contextualização, com os objetivos e o que se espera do estudante.
 2. Desenvolvimento por partes numeradas, uma por objetivo.
 3. Cronologia, só quando o tema o justificar.
-4. Esquema-síntese.
-5. Revisão, com o essencial a reter, o glossário e as perguntas de autoavaliação.
+4. Esquema-síntese, com os rótulos de setas do anexo A.
+5. Revisão: essencial a reter, glossário, perguntas de autoavaliação e frase de revisão espaçada.
 6. Referências (APA 7).
 7. Lacunas, só se existirem.
 
-### A parte
+Cada parte segue, em regra, este percurso:
 
-Cada parte é uma pequena lição sobre um objetivo e segue, em regra, este percurso.
+1. **O problema**, em voz própria: a pergunta que o objetivo coloca e a ligação à parte anterior, sem fórmula repetida.
+2. **A tese ou as teses**, nas palavras dos autores, integradas na frase ou em bloco.
+3. **A explicação**: o que a tese quer dizer, em que provas assenta, contra quem foi escrita, que pressupostos tem, o que deixa por explicar. Escreve-se a partir da nota de compreensão e da citação, sem ter à vista o parágrafo da fonte, e compara-se depois com a fonte (anexo F).
+4. **O confronto ou os conceitos**, em quadro de contraposição ou de conceitos, quando o objetivo os pede (anexo A).
+5. **A ponte** para a parte seguinte.
+6. **A nota de atenção**, se houver (anexo C), a caixa "Fora das fontes", se houver, e as notas da parte.
 
-1. **O problema**, em voz própria: que pergunta o objetivo coloca e como se liga à parte anterior. A frase muda de parte para parte, sem fórmula fixa.
-2. **A tese ou as teses**, nas palavras dos autores, com a citação integrada na frase ou em bloco.
-3. **A explicação**, que desdobra a tese: o que quer dizer, em que provas assenta, contra quem foi escrita, que pressupostos tem, o que deixa por explicar. Escreve-se a partir da nota de compreensão e da citação, sem ter à vista o parágrafo da fonte, e depois compara-se com a fonte (anexo F). Cada passo que dependa da formulação do autor leva a citação.
-4. **O confronto ou os conceitos**, quando o objetivo os pede, em quadro (ver "Quadros").
-5. **A ponte**, um parágrafo curto que retoma o raciocínio e o liga à parte seguinte.
-6. **A nota de atenção**, se houver, e as notas da parte.
+Documentos de época: mostrar o que cada documento permite saber, com tipo, autoria, data (convertida, se for o caso), âmbito e alcance (anexo E).
 
-### Citações (APA 7)
+Antes de redigir, carregar o anexo A (modelo, formatação, quadros, caixas, exemplo), o anexo F (texto próprio) e o anexo G (citações APA 7).
 
-As citações são o ponto onde um erro mais prejudica o estudante, porque ele pode reproduzi-las numa avaliação. As regras seguintes são as da APA 7 (Publication Manual, 2020, secções 8.25 a 8.35), confirmadas no sítio oficial da APA, com a adaptação tipográfica portuguesa das aspas.
+## Etapa 5. Rever e entregar
 
-- **Origem.** Copiar a citação do banco do dossiê ou, sem dossiê, exatamente do texto fornecido, depois de confirmada com `--localizar`, e nunca de memória. Se a formulação exata não puder ser confirmada, a ideia não se atribui ao autor e vai para as lacunas.
-- **Extensão.** Citar o necessário para que o sentido fique inteiro. Uma tese com uma concessão cita-se com a concessão, e uma afirmação que o autor atribui a outros cita-se com a atribuição.
-- **Citação curta**, com menos de 40 palavras, na frase, entre aspas angulares (« »), com aspas curvas (“ ”) para as aspas internas da fonte. A frase completa tem de ser gramatical com a citação lá dentro (anexo D).
-- **Citação em bloco**, com 40 ou mais palavras, em parágrafo próprio, recuado (em Markdown, linhas começadas por `>`), sem aspas, com a referência entre parênteses depois da pontuação final e sem ponto depois do parêntese. Se o autor e o ano já estão na frase que introduz o bloco, o parêntese final leva só a página. Num bloco, as aspas internas da fonte ficam como estão. Num bloco de vários parágrafos, cada parágrafo seguinte leva recuo adicional na primeira linha (no documento final).
-- **Omissões.** Marcam-se com reticências, sem parênteses retos ( … ou . . . ), e com quatro pontos quando a omissão passa do fim de uma frase para outra. Não se põem reticências no princípio nem no fim de uma citação, salvo se estiverem no original. Uma omissão nunca retira quem afirma ("como alguns eruditos argumentam"), um modalizador ("talvez", "se supuseram"), uma negação ou uma restrição. Se o trecho omitido muda o sentido, cita-se por inteiro.
-- **Interpolações** entre parênteses retos, nunca entre parênteses curvos. Um erro da fonte que possa confundir leva [*sic*], com "sic" em itálico, logo a seguir.
-- **Ênfase.** Só quando indispensável, em itálico, seguida de [ênfase acrescentada]. Uma ênfase que já está na fonte assinala-se com (ênfase no original) depois da referência. O negrito nunca entra dentro de uma citação.
-- **Alterações sem indicação.** Podem mudar-se, sem o dizer, a maiúscula ou minúscula da primeira letra, a pontuação final para encaixar na frase e o tipo de aspas, e omitir as chamadas de nota da fonte.
-- **Localizador.** Sempre: página impressa nos livros e artigos (pp. 54–55 para um intervalo), parágrafo ou secção nas fontes sem paginação, livro, capítulo e versículo nas obras de numeração canónica, fólio nos manuscritos, coluna nas obras paginadas por colunas. Nunca inventar um localizador.
-- **Obra traduzida ou reeditada.** No texto, com os dois anos, o original e o da edição lida, separados por barra: (Johnson, 1987/1989, p. 84), ou Johnson (1987/1989). Na lista de referências, o ano da edição lida e, no fim, "(Obra original publicada em 1987)".
-- **Fonte secundária.** Só quando o original não está disponível. O autor citado e o autor lido aparecem os dois, (Josefo, como citado em Johnson, 1987/1989, p. 51), e só o autor lido entra nas referências. Se o ano do original for conhecido, inclui-se.
-- **Tradução própria.** Um passo que o estudante traduz de uma fonte noutra língua é paráfrase para a APA, e entra sem aspas, com a referência e, de preferência, a página. A sebenta cita sempre a edição lida, na língua em que foi lida. Se cita uma tradução publicada, cita-a entre aspas, como texto dessa edição.
-- **Textos religiosos e clássicos.** Quando a sebenta cita diretamente uma edição da Bíblia ou de outro texto sagrado ou clássico, cita pela divisão canónica, (Bíblia de Jerusalém, 2002, Isaías 9:5), e a edição entra nas referências. Quando apenas menciona um livro bíblico através do historiador, não o cita.
-- **Referências.** No fim, a lista em APA 7 das fontes efetivamente usadas, segundo os modelos de `references/citacoes-apa7.md` da skill `leitura-academica`. Se faltarem dados bibliográficos, a lacuna fica visível.
+1. **Verificador** em modo sebenta, com o dossiê e as fontes. Corrigir todas as falhas e resolver os avisos um a um.
 
-Se a unidade curricular usar outra norma ou outra variante (aspas duplas em vez de angulares, "e" em vez de "&"), segue-se a da unidade curricular.
+   ```
+   python3 <pasta da leitura-academica>/scripts/verificar.py --sebenta sebenta.md --banco dossie.md --fonte F1=obra.txt
+   ```
 
-### Quadros
-
-Os quadros servem a comparação e a memorização, e entram sempre que o objetivo os pede. Antes de cada quadro, uma frase diz o que vem a seguir, e depois dele um parágrafo retoma a explicação, porque o quadro organiza mas não explica.
-
-- **Quadro de contraposição.** Quando duas ou mais teorias, posições, doutrinas ou sistemas se confrontam (liberalismo e absolutismo, capitalismo e comunismo, judaísmo e cristianismo, maximalistas e minimalistas na leitura da Bíblia), um quadro com os critérios de comparação nas linhas e as posições nas colunas. Os critérios escolhem-se pelo objetivo e pelo que as fontes efetivamente comparam. Cada célula diz a posição em poucas palavras e leva a referência, e as células que exigem a formulação exata levam uma citação curta. Uma célula sem apoio nas fontes fica com "não tratado nas fontes", em vez de ser preenchida por conta própria.
-- **Quadro de conceitos.** Quando o objetivo é conceptual (formas de mito, tipos de profetismo, modalidades de monoteísmo, conceitos de nação), um quadro com o conceito, a definição no autor (de preferência em citação curta), o exemplo ou o caso que a fonte dá e, quando houver risco de confusão, o deslize a evitar. Cada linha tem a referência.
-- **Cronologia** em quadro, quando o tema a justificar (anexo A).
-
-Os quadros de contraposição e de conceitos não substituem as notas e o glossário, mas o glossário não repete palavra por palavra as definições do quadro.
-
-### Conhecimento exterior às fontes
-
-Só entra no caso previsto nos princípios, isto é, perante uma falha flagrante que as fontes não resolvem. Entra numa caixa própria, no fim da parte, a começar por "**Fora das fontes.**", em que se diz em uma ou duas frases qual é a falha da fonte e o que a investigação diz, com a referência de uma obra fiável (de preferência citada diretamente, se o estudante a puder consultar), e a referência entra também nas referências finais. A falha regista-se ainda nas lacunas. A caixa nunca serve para refutar o autor, só para que o estudante não reproduza como consenso o que não é. Fora desta caixa, nenhum nome, data ou facto exterior às fontes entra na sebenta, e o verificador assinala os nomes próprios que não aparecem nas fontes.
-
-### Registo académico
-
-A sebenta é redigida em português europeu (Acordo Ortográfico de 1990) e no registo de um historiador, nunca em frases telegráficas. O anexo D descreve este registo, os verbos que introduzem os autores e a integração gramatical das citações.
-
-- **Frases articuladas.** As ideias ligam-se por subordinação e por conectores (porque, embora, na medida em que, daí que, no entanto).
-- **Raciocínio desenvolvido.** Cada afirmação importante vem acompanhada da sua razão, da sua condição ou da sua consequência, tal como as fontes as apresentam.
-- **Sem vazio nem opinião.** Evitar frases de enquadramento vazias e opiniões próprias.
-
-### Formatação
-
-- **Títulos estruturados.** O título do tema, as secções e as partes são títulos do documento (níveis 1, 2 e 3). Um parágrafo a negrito não é um título.
-- **Parágrafos compactos.** Em regra, até quatro frases. Um parágrafo maior é um alarme (há duas ideias, ou elementos paralelos que deviam estar em tópicos ou em quadro).
-- **Nada aparece solto.** Antes de cada lista, quadro, bloco ou esquema há uma frase que diz o que vem a seguir. Cada tópico começa com a palavra-chave a negrito, seguida de uma frase completa. Depois de uma lista ou de um quadro, um parágrafo curto retoma a explicação, salvo na secção de revisão.
-- **Atribuição nos tópicos.** Se toda a lista desenvolve a mesma fonte, a referência vai na frase de ligação. Se a fonte muda de tópico para tópico, a referência acompanha cada tópico.
-- **Negrito seletivo.** Vão a negrito os conceitos na primeira ocorrência e as palavras-chave dos tópicos. A tese de um autor não vai a negrito em paráfrase, porque se diz com a citação. O negrito nunca entra dentro de uma citação. Se mais de um décimo do texto estiver a negrito, nada se destaca.
-- **Notas de atenção.** Bloco de destaque no fim da parte, a começar por "**Atenção.**", em texto normal. Dizem a distinção, explicam por que importa e indicam a referência (anexo C).
-- **Notas dos conceitos.** Chamada em algarismo sobrescrito (¹, ², ³) na primeira ocorrência, com numeração seguida em todo o documento. As notas ficam no fim da parte, depois de um traço horizontal. Cada nota tem o termo, dois pontos e o sentido que o autor lhe dá, com a referência. Se a fonte não define o termo, a nota di-lo e o termo vai para as lacunas.
-- **Exemplos integrados.** Um exemplo entra na prosa como consequência da explicação. Se vier da fonte, leva a referência. Se for criado, introduz-se por uma fórmula hipotética ("se se imaginar...").
-
-### Extensão
-
-A extensão não é fixa. Segue a profundidade de cada objetivo, decidida na etapa 1: um objetivo que pede para identificar ocupa menos do que um que pede para discutir posições em confronto ou avaliar segundo critérios, e um objetivo servido por dez unidades do dossiê pede mais do que um servido por uma. O critério é que a parte contenha tudo o que uma resposta completa ao objetivo exige e nada que não o sirva. Não se corta uma explicação ou uma citação necessária para caber num número de páginas, e não se acrescenta matéria que nenhum objetivo pede.
-
-Se a resposta se aproximar do limite de extensão de uma mensagem, pára-se no fim de uma parte, diz-se ao estudante, claramente, em que parte se parou e o que falta, e continua-se na mensagem seguinte. Nunca se comprimem as partes que faltam para caber, nem se encurtam em silêncio. Se, por qualquer razão, uma parte tiver ficado mais curta do que o objetivo pede, isso diz-se na entrega.
-
-Se o estudante pedir uma revisão rápida, produzir uma versão curta com a contextualização, o esquema, o essencial a reter e as perguntas de autoavaliação, seguidos das notas de atenção reunidas numa lista.
-
-### Revisão (essencial, glossário e autoavaliação)
-
-A secção de revisão é o que o estudante usa nos dias antes da avaliação, e tem três blocos.
-
-- **Essencial a reter.** Um tópico por objetivo, pela mesma ordem, com etiqueta curta a negrito e uma ou duas frases completas com a ideia central e a sua razão, com a referência. Um último tópico com o limite mais importante a ter presente. Não acrescenta nada que não esteja no desenvolvimento.
-- **Glossário.** Os termos das notas, por ordem alfabética, cada um numa linha ("**Termo:** sentido no autor (referência)"), mais curto do que a nota, de modo que se possa usar como cartões.
-- **Perguntas de autoavaliação.** Uma ou duas por objetivo, formuladas com o verbo do próprio objetivo, cada uma seguida da remissão para a parte onde está a matéria ("ver parte 2"). Não levam resposta-modelo. Quando houver fontes primárias, uma das perguntas pede o comentário de um documento segundo o guião do anexo E.
-
-A secção termina com uma frase de orientação para a revisão espaçada, por exemplo responder às perguntas no dia seguinte ao estudo, uma semana depois e na semana da avaliação, conferindo sempre na parte indicada.
-
-### Fontes primárias
-
-Quando as fontes do tema incluem documentos de época, a sebenta mostra o que cada documento permite saber: o tipo e a função, a autoria e a posição, a data e o lugar (com a conversão, se o documento usar outro sistema de datação), o âmbito declarado e o alcance das conclusões. O anexo E desenvolve estes pontos e dá o guião de comentário de documento.
-
-## Etapa 5. Rever a sebenta e entregar
-
-### Verificador
-
-Correr o verificador da `leitura-academica` em modo sebenta sobre o ficheiro Markdown, com o dossiê e as fontes, e corrigir todas as falhas. O verificador está na pasta da skill `leitura-academica`, no ficheiro `scripts/verificar.py`.
-
-```
-python3 <pasta da leitura-academica>/scripts/verificar.py --sebenta sebenta.md --banco dossie.md --fonte F1=obra.txt
-```
-
-O verificador confere as citações (curtas e em bloco) contra o banco e as fontes, com a página, a forma APA 7 (reticências, [*sic*], ênfase, blocos, os dois anos das obras traduzidas), as omissões que retiram atribuição, modalizador, negação ou restrição, as teses a negrito que dizem por outras palavras a citação seguinte, as frases que corrigem um objetivo ou deixam afirmações por confirmar fora das lacunas, os nomes próprios ausentes das fontes, o arranjo, o vocabulário avaliativo e os verbos factivos na voz da sebenta, os termos historicamente situados, a estrutura, as notas e o esquema. Os avisos resolvem-se um a um, e os que ficam explicam-se na entrega.
-
-### Revisão contra as fontes
-
-O verificador não vê o sentido. Por isso a sebenta é revista parte a parte contra o dossiê e as fontes. Se houver ferramenta para lançar um revisor separado (um subagente, outra conversa), é ele que faz a revisão, sem ver o raciocínio que produziu a sebenta, com a sebenta, o dossiê, as fontes, os objetivos e a lista seguinte. Sem essa ferramenta, faz-se uma passagem de revisão própria, depois de terminada a sebenta, parte a parte e com a fonte aberta.
-
-- **Objetivos.** Cada parte responde ao objetivo tal como foi lido na etapa 1, com a profundidade que ele pede, e nenhum objetivo foi dado como errado.
-- **Teses.** Cada tese de autor está nas palavras do autor, nenhuma frase a antecipa por paráfrase, e cada citação é bastante longa para conservar o sentido, os modalizadores, as concessões e a indicação de quem fala.
-- **Texto próprio.** Em cada parágrafo de explicação, os quatro testes do anexo F: a formulação é independente da fonte ou é um decalque com sinónimos e a mesma sequência (patchwriting, que uma referência não desculpa)? A origem de cada ideia está clara, e as inferências da sebenta estão separadas do autor? O sentido, o aspeto ("começou a" não é "é"), a certeza e o âmbito ficaram fiéis? O parágrafo acrescenta compreensão, ou só repete por outras palavras a citação que tem ao lado? Um problema só se dá por demonstrado com a passagem da fonte ao lado.
-- **Omissões.** Em cada citação com reticências, o trecho omitido foi lido na fonte e não muda o sentido.
-- **Voz.** Nenhuma interpretação ou juízo de autor aparece como facto, e nenhum relato bíblico, hagiográfico ou de tradição aparece na voz da sebenta.
-- **Completude.** Para cada objetivo, as passagens do plano de síntese e da procura por tema estão tratadas, incluindo as das unidades do meio. Uma passagem relevante deixada de fora é tão grave como uma citação errada.
-- **Fontes exteriores.** Nenhum nome, data ou facto exterior às fontes fora da caixa "Fora das fontes", e nada afirmado e ao mesmo tempo dado como por confirmar.
-- **APA 7.** As regras de "Citações (APA 7)" em todas as citações e referências.
-- **Pedagogia.** Um estudante que não leu as fontes percebe o tema com esta sebenta, responde às perguntas de autoavaliação a partir dela e encontra em quadro o que se compara ou se define.
-
-A revisão de integridade é obrigatória e cobre a sebenta inteira. Se a skill `rever-integridade-academica` estiver instalada, o revisor aplica-a uma vez, com as fontes e a saída do verificador, segundo a secção dessa skill "Uso com as skills leitura-academica e sinteses-historia", que fixa as precedências (as teses vão em citação direta, o conhecimento comum não dispensa a caixa "Fora das fontes", a norma é a APA 7 desta skill) e acrescenta o teste do acrescento. Sem ela instalada, o revisor aplica os quatro testes do anexo F, parágrafo a parágrafo, com a fonte aberta. Cada achado leva o excerto da sebenta, o excerto da fonte e o estado da evidência, e um parágrafo que falha reescreve-se a partir da nota de compreensão, e não trocando palavras.
-
-As correções feitas na revisão voltam a passar pelo verificador.
-
-### Entregar
-
-A sebenta entrega-se como ficheiro Markdown (`sebenta-tema-N.md`), e não como documento Claude, Word ou PDF. No chat, em poucas linhas: a linha final do verificador tal como saiu, o resultado da revisão de integridade (achados encontrados, corrigidos e por confirmar, sem nunca declarar a sebenta "livre de plágio"), o que a revisão contra as fontes corrigiu, as lacunas importantes, os avisos que ficaram e porquê, e qualquer parte em que tenha havido corte ou que tenha ficado mais curta do que o objetivo pede.
-
-O documento final só se faz depois de o estudante validar a sebenta, e num passo à parte, que pode ser feito noutra conversa e com outro modelo, porque é só transcrição. Nesse passo, o Markdown validado passa para documento (skill de documentos, ou `docx` para Word) sem reescrever nada: os títulos passam a estilos de título, as chamadas a notas de rodapé, os blocos de citação a parágrafos recuados, as caixas a blocos de destaque e o esquema a diagrama. Depois, exporta-se de novo para Markdown e corre-se o verificador, para confirmar que a transcrição não perdeu nem alterou nada (um esquema que não passou para o ficheiro, um parêntese reto escapado).
+2. **Revisão contra as fontes**, parte a parte, com a lista do anexo I (objetivos, teses, texto próprio, omissões, voz, completude, fontes exteriores, termos, esquema, APA 7, pedagogia). Se houver ferramenta para lançar um revisor separado (subagente, outra conversa), é ele que a faz, sem ver o raciocínio que produziu a sebenta.
+3. **Revisão de integridade** da sebenta inteira: com a skill `rever-integridade-academica`, se estiver instalada, segundo a sua secção de uso com esta skill; sem ela, com os quatro testes do anexo F. Cada achado leva o excerto da sebenta, o da fonte e o estado da evidência. Um parágrafo que falha reescreve-se a partir da nota de compreensão, e não trocando palavras.
+4. **Voltar a correr o verificador** depois das correções.
+5. **Entregar** o ficheiro `sebenta-tema-N.md`. No chat: a linha final do verificador, o resultado da revisão de integridade, o que a revisão corrigiu, as lacunas importantes, os avisos que ficaram e porquê, e qualquer corte ou parte mais curta do que o objetivo pede (anexo I).
 
 ## Sebenta da unidade curricular
 
-Quando o estudante já tem várias sebentas de tema da mesma unidade curricular, ou pede a sebenta completa, montar um único documento com a estrutura seguinte, sem reescrever o que já está verificado.
-
-1. Capa com a unidade curricular, o ano letivo e as fontes de base.
-2. Índice gerado a partir dos títulos.
-3. Introdução à unidade curricular, com os objetivos gerais e o percurso entre os temas.
-4. Um capítulo por tema, com a sebenta de tema, renumerando as notas de forma seguida.
-5. Cronologia geral, reunindo as cronologias dos temas.
-6. Glossário geral, reunindo os glossários e assinalando quando o mesmo termo tem sentidos diferentes em autores diferentes.
-7. Perguntas de autoavaliação, reunidas por tema, mais duas ou três perguntas transversais que liguem temas.
-8. Referências gerais e lacunas gerais.
-
-Correr o verificador sobre o documento montado antes de o entregar, e entregar em Markdown, como as sebentas de tema.
-
-## O que esta skill não faz
-
-Não redige respostas de exame, respostas-modelo nem trabalhos para entregar. Se o estudante pedir isso, explicar que a skill serve para estudar e que a sebenta, com as suas perguntas de autoavaliação, o prepara para responder por si. A sebenta é material de estudo e não um trabalho submetido. Se o estudante usar partes dela num trabalho para avaliação, as regras da unidade curricular sobre o uso de inteligência artificial aplicam-se, e a APA 7 tem orientações próprias para declarar esse uso.
+Quando há várias sebentas de tema da mesma unidade curricular, ou o estudante pede a sebenta completa, montar um único documento sem reescrever o que já está verificado, segundo a estrutura do anexo I, correr o verificador e entregar em Markdown.
 
 ## Anexos
 
-Os anexos estão na pasta `references` e carregam-se quando são precisos.
+Na pasta `references`. Carregam-se nas etapas indicadas no quadro do fluxo.
 
-- **Anexo A**, `references/anexo-a-modelo-e-exemplo.md`. Modelo da sebenta rubrica a rubrica, modelos de citação em bloco, de quadro de contraposição, de quadro de conceitos e de caixa "Fora das fontes", e exemplo completo. Carregar sempre antes de redigir.
-- **Anexo B**, `references/anexo-b-objetivos.md`. Ler o enunciado de um objetivo, verbos dos objetivos, o que a sebenta tem de mostrar, profundidade e perguntas de autoavaliação. Carregar na etapa 1.
-- **Anexo C**, `references/anexo-c-notas-e-confusoes.md`. Notas e notas de atenção, com os tipos de confusão mais frequentes em História, Cultura e Religião.
-- **Anexo D**, `references/anexo-d-registo-academico.md`. O registo académico, os verbos introdutores e a integração das citações.
-- **Anexo E**, `references/anexo-e-fontes-primarias.md`. Fontes primárias, datação e guião de comentário de documento.
-- **Anexo F**, `references/anexo-f-texto-proprio.md`. Texto próprio autêntico e integridade académica: os quatro testes, os sinais de compreensão, a nota de compreensão, um exemplo comparado e a revisão de integridade. Carregar antes de redigir e na revisão.
+- **Anexo A**, `anexo-a-modelo-e-exemplo.md`. Modelo rubrica a rubrica, formatação, quadros de contraposição e de conceitos, citação em bloco, caixa "Fora das fontes", rótulos do esquema, revisão, versão curta e exemplo completo.
+- **Anexo B**, `anexo-b-objetivos.md`. Ler o enunciado, verbos, profundidade e perguntas de autoavaliação.
+- **Anexo C**, `anexo-c-notas-e-confusoes.md`. Notas dos conceitos, notas de atenção e tipos de confusão.
+- **Anexo D**, `anexo-d-registo-academico.md`. Registo académico, verbos introdutores, integração e extensão das citações, tese anunciada por paráfrase.
+- **Anexo E**, `anexo-e-fontes-primarias.md`. Fontes primárias, datação e guião de comentário de documento.
+- **Anexo F**, `anexo-f-texto-proprio.md`. Texto próprio autêntico e integridade académica: quatro testes, sinais de compreensão, nota de compreensão, exemplo comparado e revisão de integridade.
+- **Anexo G**, `anexo-g-citacoes-apa7.md`. Todas as regras de citação e referência APA 7.
+- **Anexo H**, `anexo-h-dossie-e-plano.md`. Uso do dossiê, leitura por objetivo, regresso à fonte e plano de síntese.
+- **Anexo I**, `anexo-i-revisao-e-entrega.md`. Verificador, lista de revisão, revisão de integridade, entrega, documento final e sebenta da unidade curricular.

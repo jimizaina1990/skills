@@ -4,13 +4,15 @@ Este anexo descreve o registo em que a sebenta é escrita, os verbos com que os 
 
 ## Traços a reproduzir
 
-A prosa académica distingue-se da escrita telegráfica por cinco traços.
+A prosa académica distingue-se da escrita telegráfica por sete traços.
 
 - **Encadeamento.** As frases ligam-se por conectores e por subordinação, de modo que a relação entre as ideias (causa, concessão, contraste, consequência) fica escrita e não tem de ser adivinhada.
 - **Estruturas de equilíbrio.** Construções como "se há..., há também...", "não só..., como também..." ou "embora..., ..." permitem mostrar continuidades e ruturas na mesma frase.
 - **Vozes dos autores.** Os historiadores entram no texto com um verbo que diz o que fazem ("Na formulação de X", "Y sustenta que", "Z contesta que"), o que permite atribuir e, ao mesmo tempo, relacionar as posições, sem que a sebenta adira a nenhuma.
 - **Precisão concreta.** Quando a fonte os dá, os nomes, os lugares e as datas entram na frase para ancorar a ideia.
 - **Explicação do conceito.** O termo técnico é usado e explicado no mesmo movimento, sem frases de definição isoladas.
+- **Raciocínio desenvolvido.** Cada afirmação importante vem acompanhada da sua razão, da sua condição ou da sua consequência, tal como as fontes as apresentam.
+- **Sem vazio nem opinião.** Evitar frases de enquadramento vazias ("é importante referir que...") e opiniões próprias.
 
 ## Verbos introdutores
 

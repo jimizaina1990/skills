@@ -34,7 +34,9 @@ Se o autor e o ano já estiverem na frase que introduz o bloco ("Como escreve Jo
 
 ### Quadro de contraposição
 
-Quando duas ou mais posições se confrontam, um quadro com os critérios nas linhas e as posições nas colunas. A frase anterior diz que posições se comparam e segundo que critérios, e o parágrafo seguinte explica o que o confronto ensina.
+Os quadros servem a comparação e a memorização, e entram sempre que o objetivo os pede. Antes de cada quadro, uma frase diz o que vem a seguir, e depois dele um parágrafo retoma a explicação, porque o quadro organiza mas não explica. Os quadros de contraposição e de conceitos não substituem as notas e o glossário, mas o glossário não repete palavra por palavra as definições do quadro.
+
+Quando duas ou mais teorias, posições, doutrinas ou sistemas se confrontam (liberalismo e absolutismo, capitalismo e comunismo, judaísmo e cristianismo, maximalistas e minimalistas na leitura da Bíblia), um quadro com os critérios de comparação nas linhas e as posições nas colunas. Os critérios escolhem-se pelo objetivo e pelo que as fontes efetivamente comparam. Cada célula diz a posição em poucas palavras e leva a referência, e as células que exigem a formulação exata levam uma citação curta. Uma célula sem apoio nas fontes fica com "não tratado nas fontes", em vez de ser preenchida por conta própria. A frase anterior diz que posições se comparam e segundo que critérios, e o parágrafo seguinte explica o que o confronto ensina.
 
 ```markdown
 O quadro seguinte compara as duas posições segundo os critérios que as fontes efetivamente discutem.
@@ -49,7 +51,7 @@ O quadro seguinte compara as duas posições segundo os critérios que as fontes
 
 ### Quadro de conceitos
 
-Quando o objetivo é conceptual, um quadro com o conceito, a definição no autor, o exemplo que a fonte dá e o deslize a evitar.
+Quando o objetivo é conceptual (formas de mito, tipos de profetismo, modalidades de monoteísmo, conceitos de nação), um quadro com o conceito, a definição no autor (de preferência em citação curta), o exemplo ou o caso que a fonte dá e, quando houver risco de confusão, o deslize a evitar. Cada linha tem a referência.
 
 ```markdown
 O quadro seguinte reúne as formas de [conceito] que o autor distingue.
@@ -62,7 +64,7 @@ O quadro seguinte reúne as formas de [conceito] que o autor distingue.
 
 ### Caixa "Fora das fontes"
 
-Só para uma falha flagrante que as fontes não resolvem (princípios da skill). Uma ou duas frases sobre a falha e o que a investigação diz, com a referência, que entra também nas referências finais e nas lacunas.
+Só para uma falha flagrante que as fontes não resolvem (um erro factual evidente, uma posição datada apresentada como consenso, uma tradução que inverte o sentido). Entra no fim da parte, a começar por "**Fora das fontes.**", e diz em uma ou duas frases qual é a falha da fonte e o que a investigação diz, com a referência de uma obra fiável (de preferência citada diretamente, se o estudante a puder consultar). A referência entra também nas referências finais, e a falha regista-se nas lacunas. A caixa nunca serve para refutar o autor, só para que o estudante não reproduza como consenso o que não é. Fora desta caixa, nenhum nome, data ou facto exterior às fontes entra na sebenta, e o verificador assinala os nomes próprios que não aparecem nas fontes.
 
 ```markdown
 > **Fora das fontes.** [A falha da fonte, dita sem refutar o autor.] [O que a investigação diz, de preferência em citação curta] (Autor, ano, p. x). [Porque é que o estudante precisa de o saber.]
@@ -101,7 +103,17 @@ O esquema não acrescenta nada que não esteja no desenvolvimento.
 
 ### Revisão
 
-Três blocos com títulos de nível 3. O **essencial a reter**, um tópico por objetivo, com etiqueta curta a negrito, uma ou duas frases completas e a referência, mais um tópico com o limite mais importante. O **glossário**, com os termos das notas por ordem alfabética, cada um numa linha. As **perguntas de autoavaliação**, uma ou duas por objetivo, com o verbo do objetivo e a remissão para a parte, sem resposta. Uma frase final orienta a revisão espaçada.
+A secção de revisão é o que o estudante usa nos dias antes da avaliação, e tem três blocos com títulos de nível 3.
+
+- **Essencial a reter.** Um tópico por objetivo, pela mesma ordem, com etiqueta curta a negrito e uma ou duas frases completas com a ideia central e a sua razão, com a referência. Um último tópico com o limite mais importante a ter presente. Não acrescenta nada que não esteja no desenvolvimento.
+- **Glossário.** Os termos das notas, por ordem alfabética, cada um numa linha ("**Termo:** sentido no autor (referência)"), mais curto do que a nota, de modo que se possa usar como cartões.
+- **Perguntas de autoavaliação.** Uma ou duas por objetivo, formuladas com o verbo do próprio objetivo (anexo B), cada uma seguida da remissão para a parte onde está a matéria ("ver parte 2"). Não levam resposta-modelo, porque o objetivo é o estudante recuperar a matéria por si. Quando houver fontes primárias, uma das perguntas pede o comentário de um documento segundo o guião do anexo E.
+
+A secção termina com uma frase de orientação para a revisão espaçada, por exemplo responder às perguntas no dia seguinte ao estudo, uma semana depois e na semana da avaliação, conferindo sempre na parte indicada.
+
+### Versão curta
+
+Se o estudante pedir uma revisão rápida, produzir uma versão curta com a contextualização, o esquema, o essencial a reter e as perguntas de autoavaliação, seguidos das notas de atenção reunidas numa lista.
 
 ### Referências
 
@@ -109,7 +121,20 @@ Lista em APA 7 das fontes efetivamente usadas, segundo os modelos de `citacoes-a
 
 ### Lacunas
 
-Só se existirem. O que não foi possível confirmar nas fontes (página em falta, conceito pressuposto mas não definido, tese sem citação confirmada, objetivo sem cobertura, data ausente, texto ilegível).
+Só se existirem. O que não foi possível confirmar nas fontes (página em falta, conceito pressuposto mas não definido, tese sem citação confirmada, objetivo sem cobertura, data ausente, texto ilegível), escrito no condicional.
+
+### Formatação
+
+A forma é o que permite rever depressa e navegar no documento.
+
+- **Títulos estruturados.** O título do tema, as secções e as partes são títulos do documento (níveis 1, 2 e 3). Um parágrafo a negrito não é um título.
+- **Parágrafos compactos.** Em regra, até quatro frases. Um parágrafo maior é um alarme (há duas ideias, ou elementos paralelos que deviam estar em tópicos ou em quadro).
+- **Nada aparece solto.** Antes de cada lista, quadro, bloco ou esquema há uma frase que diz o que vem a seguir. Cada tópico começa com a palavra-chave a negrito, seguida de uma frase completa. Depois de uma lista ou de um quadro, um parágrafo curto retoma a explicação, salvo na secção de revisão.
+- **Atribuição nos tópicos.** Se toda a lista desenvolve a mesma fonte, a referência vai na frase de ligação. Se a fonte muda de tópico para tópico, a referência acompanha cada tópico.
+- **Negrito seletivo.** Vão a negrito os conceitos na primeira ocorrência e as palavras-chave dos tópicos. A tese de um autor não vai a negrito em paráfrase, porque se diz com a citação. O negrito nunca entra dentro de uma citação. Se mais de um décimo do texto estiver a negrito, nada se destaca.
+- **Notas de atenção.** Bloco de destaque no fim da parte, a começar por "**Atenção.**", em texto normal. Dizem a distinção, explicam por que importa e indicam a referência (anexo C).
+- **Notas dos conceitos.** Chamada em algarismo sobrescrito (¹, ², ³) na primeira ocorrência, com numeração seguida em todo o documento. As notas ficam no fim da parte, depois de um traço horizontal. Cada nota tem o termo, dois pontos e o sentido que o autor lhe dá, com a referência. Se a fonte não define o termo, a nota di-lo e o termo vai para as lacunas. Num documento Word, as chamadas passam a notas de rodapé verdadeiras.
+- **Exemplos integrados.** Um exemplo entra na prosa como consequência da explicação. Se vier da fonte, leva a referência. Se for criado, introduz-se por uma fórmula hipotética ("se se imaginar...").
 
 ## 2. Exemplo completo
 
