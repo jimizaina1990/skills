@@ -221,12 +221,15 @@ O verificador não vê o sentido. Por isso a sebenta é revista parte a parte co
 
 - **Objetivos.** Cada parte responde ao objetivo tal como foi lido na etapa 1, com a profundidade que ele pede, e nenhum objetivo foi dado como errado.
 - **Teses.** Cada tese de autor está nas palavras do autor, nenhuma frase a antecipa por paráfrase, e cada citação é bastante longa para conservar o sentido, os modalizadores, as concessões e a indicação de quem fala.
+- **Formulação, atribuição e fidelidade da prosa própria.** Em cada parágrafo de explicação, três perguntas separadas: a formulação é independente da fonte ou é um decalque com sinónimos e a mesma sequência (patchwriting, que uma referência não desculpa)? A origem de cada ideia está clara? O sentido, o aspeto ("começou a" não é "é"), a certeza e o âmbito ficaram fiéis? Um problema só se dá por demonstrado com a passagem da fonte ao lado.
 - **Omissões.** Em cada citação com reticências, o trecho omitido foi lido na fonte e não muda o sentido.
 - **Voz.** Nenhuma interpretação ou juízo de autor aparece como facto, e nenhum relato bíblico, hagiográfico ou de tradição aparece na voz da sebenta.
 - **Completude.** Para cada objetivo, as passagens do plano de síntese e da procura por tema estão tratadas, incluindo as das unidades do meio. Uma passagem relevante deixada de fora é tão grave como uma citação errada.
 - **Fontes exteriores.** Nenhum nome, data ou facto exterior às fontes fora da caixa "Fora das fontes", e nada afirmado e ao mesmo tempo dado como por confirmar.
 - **APA 7.** As regras de "Citações (APA 7)" em todas as citações e referências.
 - **Pedagogia.** Um estudante que não leu as fontes percebe o tema com esta sebenta, responde às perguntas de autoavaliação a partir dela e encontra em quadro o que se compara ou se define.
+
+Se a skill `rever-integridade-academica` estiver instalada, o revisor aplica-a uma vez à sebenta inteira, com as fontes e a saída do verificador, para a formulação, a atribuição e a fidelidade da prosa fora das aspas. A secção dessa skill "Uso com as skills leitura-academica e sinteses-historia" fixa as precedências: as teses vão em citação direta, o conhecimento comum não dispensa a caixa "Fora das fontes", e a norma é a APA 7 desta skill. Sem ela instalada, a pergunta tripla da lista acima faz o mesmo papel, com menos casos de referência.
 
 As correções feitas na revisão voltam a passar pelo verificador.
 

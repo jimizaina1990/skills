@@ -96,3 +96,13 @@ A sebenta passou no verificador com 0 falhas, mas tinha erros graves que ele nã
   - Dossiê: 1 falha (o ano duplo nas 231 citações) e o aviso da varredura em falta.
 
 Limites que ficam: a deteção da tese parafraseada e dos nomes exteriores é lexical; a primeira não apanha paráfrases com sinónimos e a segunda assinala também grafias portuguesas de nomes da fonte. A procura por tema não é semântica. A revisão separada contra as fontes continua a ser indispensável.
+
+## Integração com a skill rever-integridade-academica
+
+A skill de integridade académica do utilizador (baseada no guia *Avoiding Plagiarism* do Harvard Guide to Using Sources) entra como revisão opcional, e não é guardada neste repositório porque contém o guia de Harvard. A `sinteses-historia` aplica-a uma vez à sebenta inteira na etapa 5, e a `leitura-academica` só à amostra final da leitura própria. Sem ela instalada, a revisão da sebenta faz a pergunta tripla (formulação, atribuição, fidelidade) que passou para a lista da etapa 5. Na versão 1.2 da skill de integridade foram feitas três mudanças:
+- a descrição foi restringida, para não ser invocada a cada frase redigida com fontes;
+- ficou esclarecido que uma aplicação corresponde a uma revisão completa;
+- foi acrescentada uma secção de precedências para estas duas skills.
+
+As regras do guia, os exemplos e as notas críticas não mudaram.
+
