@@ -1,169 +1,175 @@
-# Anexo A. Modelo da síntese e exemplo completo
+# Anexo A. Modelo da sebenta e exemplo completo
 
-### 1. Modelo, rubrica a rubrica
+## 1. Modelo, rubrica a rubrica
 
-#### Título
+Todas as rubricas são títulos estruturados do documento. O título do tema é de nível 1, as rubricas (Contextualização, partes, Cronologia, Esquema-síntese, Revisão, Referências, Lacunas) são de nível 2 e as subdivisões da revisão são de nível 3.
 
-O nome do tema, tal como aparece no programa, se existir. Logo abaixo, numa linha, as fontes em que a síntese se baseia (apelido, ano).
+### Título
 
-#### Contextualização
+O nome do tema, tal como aparece no programa, se existir. Logo abaixo, numa linha, as fontes em que a sebenta se baseia (apelido, ano).
 
-É a abertura do tema e tem dois momentos. Primeiro, um parágrafo de duas a quatro frases que enquadra o tema historicamente (tempo, espaço e problema que o atravessa), com as palavras-chave a negrito. Pode seguir-se uma frase que diga o que o estudo do tema permite compreender, fazendo a ponte para os objetivos. Depois, a frase "Nesta temática, pretende-se atingir os seguintes objetivos." seguida dos objetivos em tópicos, cada um a começar pelo verbo a negrito ("**Distinguir** ...", "**Explicar** ..."). Se o estudante fornecer os objetivos do programa ou do guia de estudo, usam-se esses. Se não, formulam-se dois a quatro objetivos a partir das fontes e dos núcleos da síntese, com os verbos do anexo B.
+### Contextualização
 
-#### Desenvolvimento por partes
+Um parágrafo de duas a quatro frases que enquadra o tema (tempo, espaço e problema que o atravessa) apenas com o que as fontes dizem, com as palavras-chave a negrito. Segue-se a frase "Nesta temática, pretende-se atingir os seguintes objetivos." e os objetivos em tópicos, cada um a começar pelo verbo a negrito. Se o estudante fornecer os objetivos do programa ou do guia, usam-se esses. Se não, formulam-se dois a quatro a partir das fontes, com os verbos do anexo B. Um objetivo que as fontes não cobrem continua na lista, com a indicação "(sem parte própria, ver Lacunas)".
 
-Uma parte por núcleo, com um título numerado e curto que diga a ideia. Cada parte abre com a frase de orientação ("Nesta primeira parte, importa esclarecer que...") e a ideia principal a negrito, segue-se o parágrafo que a explica e onde entra a citação, depois uma frase de ligação com tópicos e um parágrafo que retoma o raciocínio e faz a ponte para a parte seguinte. Fecha com a nota de atenção, se houver, e com as notas de rodapé da parte, depois de um traço horizontal.
+### Desenvolvimento por partes
 
-#### Notas de rodapé
+Uma parte por objetivo, com um título numerado e curto que diga a ideia. Cada parte abre com uma frase de orientação própria (que diz a operação e a ligação à parte anterior, sem fórmula fixa) e a ideia principal a negrito. Segue-se o parágrafo que explica e acolhe pelo menos uma citação direta confirmada, depois, se houver elementos paralelos, uma frase de ligação com tópicos, e um parágrafo que retoma o raciocínio. Fecha com a nota de atenção, se houver, e com as notas da parte, depois de um traço horizontal.
 
-Uma nota por conceito-chave ou termo pouco usual, na primeira ocorrência. A definição é a do autor estudado, não uma definição de dicionário, porque o mesmo termo pode ter sentidos diferentes conforme o autor e a época, e leva a referência quando vem da fonte. Quando a fonte não define o termo, a nota dá uma explicação curta e simples, sem a atribuir ao autor.
+### Notas
 
-#### Notas de atenção
+Uma nota por conceito-chave ou termo pouco usual, na primeira ocorrência, com chamada em algarismo sobrescrito (¹, ², ³). A nota dá o sentido que o autor estudado dá ao termo, com a referência. Quando a fonte não define o termo, a nota di-lo e indica o uso ("Termo não definido na fonte. Homem usa-o para designar...", com a referência do uso), e o termo entra nas lacunas. Nunca se escreve uma definição sem fonte.
 
-Uma nota em itálico, a começar por "Atenção:", no fim da parte onde a confusão pode surgir. Ver o anexo C para os tipos de confusão mais frequentes em História.
+### Notas de atenção
 
-#### Cronologia
+Um bloco de destaque, a começar por "**Atenção.**", em texto normal, no fim da parte onde a confusão pode surgir. Ver o anexo C.
 
-Rubrica opcional, incluída apenas quando o tema a justificar (ver secção 4). Quando entra, é um quadro com duas colunas (data e acontecimento), apenas com datas que estejam nas fontes e que sejam necessárias para compreender o tema. Num tema historiográfico em que a evolução do debate seja essencial, pode situar autores e obras. Na dúvida, perguntar se o estudante perderia alguma compreensão sem o quadro. Se não perderia, o quadro sai.
+### Cronologia
 
-#### Esquema-síntese
+Rubrica opcional, incluída apenas quando o tema a justificar. É um quadro com as datas que estão nas fontes e são necessárias para compreender o tema. Quando a fonte usa outro sistema de datação (Era de César, Hégira, calendário juliano), o quadro tem uma coluna com a data da fonte e outra com a data convertida, e a conversão vem do dossiê.
 
-Um diagrama hierárquico e relacional. No topo o tema, abaixo os núcleos, e depois os aspetos de cada núcleo. As setas têm rótulos que dizem a relação (causa, condição, consequência, contraste, exemplo de, conduz a, opõe-se a). Uma seta sem rótulo ou com um rótulo que o texto não sustenta induz o estudante em erro. O esquema não acrescenta nada que não esteja no desenvolvimento.
+### Esquema-síntese
 
-#### Essencial a reter
+Um diagrama hierárquico e relacional, com o tema no topo, as partes abaixo e os aspetos de cada parte. As setas levam um destes rótulos, e só estes, porque são os do protocolo de leitura e cada um tem uma verificação própria no dossiê.
 
-É a síntese da síntese e fecha o tema. Abre com uma frase de ligação e segue-se uma lista estruturada, em regra um tópico por objetivo ou por núcleo, pela mesma ordem, a que se pode juntar um último tópico com o limite mais importante a ter presente. Cada tópico começa por uma etiqueta curta a negrito e condensa numa ou duas frases completas a ideia central e a sua razão, com a referência quando a ideia vier de uma fonte determinada. Não acrescenta nada que não esteja no desenvolvimento e não é telegráfico, porque é a parte que o estudante relê imediatamente antes da avaliação.
+| Rótulo | Quando se usa |
+| --- | --- |
+| compreende | Ligação hierárquica entre o tema e as partes, sem relação lógica. |
+| causa de, consequência de | Causalidade afirmada pela fonte. |
+| condição de | Condição necessária, suficiente ou favorável, como a fonte a apresenta. |
+| precede, conduz a | Sucessão temporal sem causalidade afirmada. |
+| responde a | Problema e resposta. |
+| manifesta-se em | Um processo ou princípio e a prova ou o sinal em que a fonte o reconhece. |
+| exemplo de | Caso e conjunto. |
+| define, serve para | Conceito e função. |
+| contrasta com, opõe-se a | Contraste ou oposição no mesmo âmbito. |
+| complementa | Dimensões compatíveis do mesmo objeto. |
 
-#### Referências
+O esquema não acrescenta nada que não esteja no desenvolvimento.
 
-Lista em APA 7 das fontes efetivamente usadas.
+### Revisão
 
-#### Lacunas (só se existirem)
+Três blocos com títulos de nível 3. O **essencial a reter**, um tópico por objetivo, com etiqueta curta a negrito, uma ou duas frases completas e a referência, mais um tópico com o limite mais importante. O **glossário**, com os termos das notas por ordem alfabética, cada um numa linha. As **perguntas de autoavaliação**, uma ou duas por objetivo, com o verbo do objetivo e a remissão para a parte, sem resposta. Uma frase final orienta a revisão espaçada.
 
-Breve nota com o que não foi possível confirmar nas fontes (página em falta, conceito pressuposto mas não explicado, data ausente, texto ilegível).
+### Referências
 
-### 2. Exemplo completo (demonstração final)
+Lista em APA 7 das fontes efetivamente usadas, segundo os modelos de `citacoes-apa7.md` da skill `leitura-academica`.
 
-O exemplo seguinte é uma síntese completa feita com esta skill e serve de modelo de forma, de extensão e de registo. Foi construída a partir de uma única fonte, Homem (s.d.), cujas citações foram conferidas no texto. O seu conteúdo vale apenas como modelo e nunca deve ser reutilizado como fonte de outra síntese, que se constrói sempre com o material fornecido pelo estudante.
+### Lacunas
+
+Só se existirem. O que não foi possível confirmar nas fontes (página em falta, conceito pressuposto mas não definido, tese sem citação confirmada, objetivo sem cobertura, data ausente, texto ilegível).
+
+## 2. Exemplo completo
+
+O exemplo seguinte serve de modelo de forma, de registo e de honestidade perante o que falta. Foi construído a partir de uma única fonte, Homem (s.d.), e usa apenas as duas passagens dessa fonte cujas citações foram conferidas no texto. Por isso, o terceiro objetivo fica sem parte própria e vai para as lacunas, em vez de ser tratado por citação indireta. O conteúdo vale apenas como modelo e nunca deve ser reutilizado como fonte de outra sebenta.
 
 Antes de o ler, convém ter presentes os pontos que o exemplo demonstra.
 
-- **Contextualização.** Enquadramento histórico que termina numa frase de ponte, seguido dos objetivos com o verbo a negrito.
-- **Partes alinhadas com os objetivos.** Uma parte por objetivo, cada uma aberta por "Nesta primeira parte, importa esclarecer que...", com a ideia principal a negrito logo a seguir.
-- **Prosa e tópicos.** Cada parte alterna parágrafos e uma lista anunciada por frase de ligação, e a lista é sempre seguida de prosa que retoma o raciocínio.
-- **Acrescentos reconhecíveis pela escrita.** O caso hipotético da parte 2 ("se se imaginar...") e a inferência da parte 3 ("Daqui pode inferir-se...") não têm rótulos, reconhecem-se pela formulação.
-- **Fonte primária condensada.** A intervenção do deputado é tratada numa só frase, porque há apenas um documento de época.
-- **Notas de atenção e notas de rodapé.** As confusões aparecem em itálico no fim da parte onde surgem, e os conceitos-chave têm nota no fim da respetiva parte.
-- **Sem cronologia.** O tema é conceptual e a ordem das datas nada explicaria.
+- **Títulos estruturados.** Todas as rubricas são títulos, e não parágrafos a negrito.
+- **Uma citação confirmada por parte**, integrada numa frase gramatical, com verbo introdutor neutro, e cortada em dois segmentos exatos quando a sintaxe da fonte não cabe na frase da sebenta.
+- **O ato de fala conservado.** A fala do deputado relata o que "se acordou", e a sebenta não a transforma numa defesa pessoal.
+- **Acrescentos reconhecíveis pela escrita**, como o caso hipotético da parte 2 e a inferência da parte 1.
+- **Notas só com fonte.** Cada nota diz o sentido que a fonte dá ao termo e onde.
+- **Esquema com os rótulos da lista**, incluindo "manifesta-se em" para a prova, que não se confunde com uma consequência.
+- **Revisão completa**, com essencial, glossário e perguntas sem resposta.
+- **Objetivo sem cobertura assumido**, e não preenchido.
 
 ---
 
-**Soberania e divisão de poderes na Constituição de 1822**
+````markdown
+# Soberania e divisão de poderes na Constituição de 1822
 
 Fonte: Homem (s.d.)
 
-**Contextualização**
+## Contextualização
 
-Quando as Cortes Constituintes[1] começam a trabalhar, em **1821**, a questão decisiva não é apenas a de redigir um texto, mas a de saber **onde reside o poder supremo** e de que modo pode ser impedido de voltar a concentrar-se. A **Constituição de 1822** responde a essa pergunta deslocando a **soberania do rei para a Nação**, o que obriga a repensar, ao mesmo tempo, a organização dos poderes e a natureza da representação política. O estudo do tema permite, assim, compreender que estas três mudanças não são independentes, mas decorrem umas das outras.
+Entre os debates parlamentares de **1821** e a **Constituição de 1822**, a questão decisiva não foi apenas redigir um texto, mas decidir **a quem cabia a última palavra sobre a lei fundamental** e **como impedir que o poder voltasse a concentrar-se**. Homem documenta as duas respostas, uma no próprio texto constitucional e outra numa intervenção parlamentar de 1821, e é a ligação entre elas que este tema permite compreender.
 
 Nesta temática, pretende-se atingir os seguintes objetivos.
 
-- **Explicar** a passagem da soberania régia para a soberania da Nação e as tensões que a acompanharam.
+- **Explicar** por que razão a vigência da Constituição não dependia do rei.
 - **Relacionar** a divisão de poderes com a recusa do despotismo.
-- **Distinguir** a representação política da procuração de direito privado.
+- **Distinguir** a representação política da procuração de direito privado (sem parte própria, ver Lacunas).
+
+## 1. A lei fundamental não depende do rei
+
+Para perceber o que mudou, convém começar pela regra que retira ao monarca o poder de travar a Constituição. **A Constituição de 1822 entra em vigor sem precisar da aprovação do rei.** Homem escreve que «a vigência da Constituição não dependia da sanção real»¹, o que equivale, nas suas palavras, a dizer que «não se admitia o veto (art. 112.º, I)» (Homem, s.d., p. 58).
+
+A regra tem um alcance que ultrapassa o procedimento. Se o rei não pode recusar a lei fundamental, a última palavra sobre ela não é sua, e daqui pode inferir-se que o poder supremo deixou de residir no monarca. A passagem citada não diz, porém, onde passou a residir, e essa resposta fica por confirmar na fonte (ver Lacunas). A parte seguinte trata do problema que esta mudança deixava em aberto, o de impedir que o poder voltasse a concentrar-se noutras mãos.
+
+> **Atenção.** A regra diz respeito à vigência da Constituição. Não permite concluir, por si só, qual era o papel do rei nas leis ordinárias (Homem, s.d., p. 58).
 
 ---
 
-[1] Cortes Constituintes: assembleia eleita com a função de elaborar a Constituição, que inicia os seus trabalhos em 1821.
+¹ Sanção real: na passagem de Homem, a aprovação régia de que a vigência da Constituição deixou de depender, o que o autor equipara à inadmissibilidade do veto (Homem, s.d., p. 58).
 
-**1. A soberania passa para a Nação**
+## 2. Dividir os poderes para evitar o despotismo
 
-Nesta primeira parte, importa esclarecer que a soberania[2] muda de lugar em relação à situação anterior, em que residia exclusivamente no rei, no quadro da monarquia absoluta. **A mudança essencial da Constituição de 1822 está, por isso, na resposta à pergunta sobre quem detém o poder supremo**, e é dessa resposta que passa a depender toda a ordem política.
+Retirar a última palavra ao rei não bastava, e a intervenção de um deputado em 1821 explica porquê. **O perigo não estava na pessoa do monarca, mas na concentração do poder.** Bento Pereira do Carmo, citado por Homem, relata que se «acordou em dividir e equilibrar os três poderes, para evitar o despotismo, que resulta da sua acumulação»² (Carmo, 1821, como citado em Homem, s.d., p. 45).
 
-Homem mostra que esta deslocação se manifesta em dois planos, que documenta em passagens distintas.
+A frase contém um raciocínio completo, que se decompõe em dois elementos.
 
-- **No debate de 1821.** O discurso régio lido nas Cortes foi considerado por alguns parlamentares demasiado interventivo e revela já, segundo o autor, a clivagem futura entre a **soberania real** e a **soberania parlamentar**[3] (Homem, s.d., p. 56).
-- **No texto constitucional.** Como nota o autor, "**a vigência da Constituição não dependia da sanção real**, isto é, que não se admitia o veto (art. 112.º, I)" (Homem, s.d., p. 58)[4], o que significa que o rei não podia recusar a lei fundamental.
+- **A causa do mal.** Segundo o deputado, o despotismo «resulta da sua acumulação», isto é, da reunião dos poderes nas mesmas mãos.
+- **O remédio acordado.** Os poderes são divididos e também equilibrados, porque dividir sem equilibrar deixaria um deles livre de dominar os outros.
 
-Lidos em conjunto, os dois planos mostram que a soberania da Nação resultou de um confronto, cujo ponto de chegada se mede pela incapacidade do rei de travar a própria lei fundamental. Retirado o poder ao rei, ficava por resolver como impedir que voltasse a concentrar-se noutras mãos.
+O alcance da ideia torna-se mais claro se se imaginar um mesmo órgão que fizesse as leis, as executasse e julgasse quem as viola, porque nenhuma outra instância poderia travar um abuso seu, e é essa situação de poder sem contrapeso que o deputado designa como despotismo. Convém ter presente a natureza desta fonte. É uma intervenção parlamentar conhecida através de Homem e relata o que os constituintes acordaram, não o modo como os poderes vieram a funcionar. A regra da parte 1 e esta divisão respondem, assim, ao mesmo receio, o de um poder sem limite.
 
-*Atenção: a passagem sobre a sanção real diz respeito à vigência da Constituição. Não permite concluir, por si só, qual era o papel do rei nas leis ordinárias (Homem, s.d., p. 58).*
-
----
-
-[2] Soberania: poder supremo, que não depende de nenhum outro e do qual derivam os restantes.
-
-[3] Soberania real e soberania parlamentar: duas respostas opostas à pergunta sobre quem detém o poder supremo, o monarca ou as Cortes que representam a Nação, cuja clivagem o autor deteta já nos debates de 1821 (Homem, s.d., p. 56).
-
-[4] Sanção real e veto: a sanção é a aprovação dada pelo rei a um texto, e o veto é a recusa dessa aprovação, que impede a sua entrada em vigor.
-
-**2. Dividir os poderes para evitar o despotismo**
-
-Nesta segunda parte, importa perceber por que razão não bastava retirar a soberania ao rei. **O perigo não estava na pessoa do monarca, mas na concentração do poder**, e foi esse o argumento do deputado Bento Pereira do Carmo, que, nas palavras citadas por Homem, sustentava que se "acordou em **dividir e equilibrar os três poderes, para evitar o despotismo, que resulta da sua acumulação**" (Carmo, 1821, como citado em Homem, s.d., p. 45).
-
-A frase contém o raciocínio completo da divisão de poderes[5], que se decompõe em dois elementos.
-
-- **A causa do mal.** O despotismo nasce da acumulação dos poderes nas mesmas mãos.
-- **O remédio.** A divisão dos poderes, acompanhada do seu equilíbrio, porque dividir sem equilibrar deixaria um deles livre de dominar os outros.
-
-O alcance desta ideia torna-se mais claro se se imaginar um mesmo órgão que fizesse as leis, as executasse e julgasse quem as viola, porque nesse caso nenhuma outra instância poderia travar um abuso seu, e é precisamente esta situação, a de um poder sem contrapeso, que o deputado designa como **despotismo**. Convém, no entanto, ter presente a natureza desta fonte, porque se trata de uma intervenção parlamentar, registada no Diário das Cortes[6] e conhecida aqui através de Homem, que exprime a intenção dos constituintes e não o modo como os poderes vieram a funcionar. Resolvida a questão de como limitar o poder, restava saber em nome de quem os eleitos o exerceriam.
-
-*Atenção: a frase sobre a divisão de poderes pertence a Bento Pereira do Carmo e não a Homem, que a cita como testemunho (Homem, s.d., p. 45). Além disso, mostra o que os constituintes pretendiam e não o modo como os poderes funcionaram na prática.*
+> **Atenção.** As palavras são de Bento Pereira do Carmo e não de Homem, que as cita como testemunho (Homem, s.d., p. 45). O deputado relata um acordo, e o que mostra é a intenção dos constituintes, não o funcionamento efetivo dos poderes.
 
 ---
 
-[5] Divisão de poderes: separação e equilíbrio dos três poderes, justificados nos debates de 1821 pelo facto de a sua acumulação gerar despotismo (Carmo, 1821, como citado em Homem, s.d., p. 45).
+² Despotismo: na formulação do deputado, o que «resulta da» acumulação dos três poderes (Carmo, 1821, como citado em Homem, s.d., p. 45).
 
-[6] Diário das Cortes: publicação onde ficaram registados os debates das Cortes, e que constitui, por isso, uma fonte primária para o estudo do processo constituinte.
+## Esquema-síntese
 
-**3. Deputados e não procuradores**
-
-Nesta terceira parte, importa mostrar que a nova localização da soberania alterou também o sentido de representar. **Segundo Homem, o vocabulário dos procuradores cede lugar ao dos deputados**, porque a representação política[7] deixa de poder ser entendida como uma procuração de direito privado[8] (Homem, s.d., pp. 42-43). A mudança de palavra traduz, portanto, uma mudança de conceção, e não uma simples atualização de vocabulário.
-
-A diferença entre as duas figuras pode fixar-se do seguinte modo, sendo a primeira caracterização deduzida por contraste com a formulação do autor.
-
-- **Procurador.** Age segundo a lógica de uma procuração de direito privado, isto é, por conta de quem lhe confia o mandato e nos limites desse mandato.
-- **Deputado.** Representa a Nação, e a sua representação já não se confunde com essa procuração (Homem, s.d., pp. 42-43).
-
-Daqui pode inferir-se a coerência entre as três partes. Se a soberania pertence à Nação, quem a exerce não pode representar apenas os seus eleitores, mas o conjunto da Nação, o que liga a nova conceção de representação à deslocação da soberania estudada na primeira parte.
-
-*Atenção: procurador e deputado não são sinónimos. A substituição de um termo pelo outro assinala a passagem de uma representação por mandato privado para uma representação da Nação (Homem, s.d., pp. 42-43).*
-
----
-
-[7] Representação política: relação pela qual o deputado representa a Nação, distinta de uma procuração de direito privado (Homem, s.d., pp. 42-43).
-
-[8] Procuração de direito privado: ato pelo qual alguém autoriza outra pessoa a agir em seu nome e por sua conta, nos limites do mandato conferido.
-
-**Esquema-síntese**
-
-O esquema mostra como a passagem da **soberania régia** para a **soberania da Nação** arrasta consigo as consequências estudadas nas três partes.
+O esquema mostra como as duas respostas estudadas se ligam ao mesmo problema, o de limitar o poder.
 
 ```mermaid
 flowchart TD
-    R["Soberania régia<br/>o poder supremo reside no monarca"] -->|"cede perante, clivagem desde 1821 (p. 56)"| N["Soberania da Nação<br/>representada nas Cortes"]
-    N -->|implica| P["Poderes divididos<br/>para evitar o despotismo (p. 45)"]
-    N -->|implica| D["Deputado, não procurador<br/>representa a Nação (pp. 42-43)"]
-    N -->|implica| S["Sem sanção real<br/>a vigência da Constituição não depende do rei (p. 58)"]
+    T["Constituição de 1822<br/>limitar o poder"] -->|compreende| R["A lei fundamental não depende do rei"]
+    T -->|compreende| D["Divisão e equilíbrio dos poderes"]
+    R -->|manifesta-se em| S["Sem sanção real nem veto<br/>sobre a vigência (Homem, p. 58)"]
+    A["Acumulação dos poderes"] -->|causa de| X["Despotismo<br/>(Carmo, citado por Homem, p. 45)"]
+    D -->|responde a| X
 ```
 
-**Essencial a reter**
+## Revisão
 
-A síntese condensa-se nos pontos seguintes, que retomam os objetivos pela ordem em que foram enunciados.
+### Essencial a reter
 
-- **Soberania da Nação.** Com a Constituição de 1822, o poder supremo deixa de residir no rei e passa para a Nação, uma deslocação que gerou tensão desde os debates de 1821 e que culmina na regra de que a vigência da Constituição não dependia da sanção real (Homem, s.d., pp. 56, 58).
-- **Divisão de poderes.** Os poderes são divididos e equilibrados porque a sua acumulação gera despotismo, argumento formulado por Bento Pereira do Carmo e documentado, não defendido, por Homem (Carmo, 1821, como citado em Homem, s.d., p. 45).
-- **Representação política.** O deputado representa a Nação e não é um procurador de direito privado, mudança que decorre da própria deslocação da soberania (Homem, s.d., pp. 42-43).
-- **Limite a ter presente.** As fontes mostram o que se quis e o que se estabeleceu em 1821 e 1822, mas não como os poderes funcionaram na prática nem qual era o papel do rei nas leis ordinárias.
+Os pontos seguintes retomam os objetivos pela ordem em que foram enunciados.
 
-**Referências**
+- **Vigência sem o rei.** Na Constituição de 1822, «a vigência da Constituição não dependia da sanção real», o que equivale a não se admitir o veto, e daí se infere que a última palavra sobre a lei fundamental deixou de ser do monarca (Homem, s.d., p. 58).
+- **Divisão de poderes.** Segundo o relato do deputado Bento Pereira do Carmo, a separação e o contrapeso entre os poderes foram o remédio acordado em 1821 contra o despotismo, que, nas suas palavras, «resulta da sua acumulação» (Carmo, 1821, como citado em Homem, s.d., p. 45).
+- **Limite a ter presente.** As passagens mostram o que se estabeleceu e o que se acordou em 1821 e 1822, mas não como os poderes funcionaram na prática nem qual era o papel do rei nas leis ordinárias.
 
-Homem, A. P. B. (s.d.). A Constituição de 1822. Imprensa Nacional. https://imprensanacional.pt/wp-content/uploads/2024/11/O-Essencial-sobre-a-Constituicao-1822_IN.pdf
+### Glossário
 
-**Lacunas**
+Os termos seguintes podem usar-se como cartões, tapando a explicação e tentando dá-la de memória.
 
-Ficaram por confirmar três pontos, que convém verificar no original.
+- **Despotismo:** na formulação de Bento Pereira do Carmo, o que resulta da acumulação dos três poderes (Carmo, 1821, como citado em Homem, s.d., p. 45).
+- **Sanção real:** aprovação régia de que a vigência da Constituição deixou de depender, equiparada pelo autor à inadmissibilidade do veto (Homem, s.d., p. 58).
+
+### Perguntas de autoavaliação
+
+As perguntas seguintes não têm resposta escrita. Responda de memória e confira depois na parte indicada.
+
+1. Explique por que razão a vigência da Constituição de 1822 não dependia do rei e o que essa regra permite e não permite concluir sobre o papel do monarca (ver parte 1).
+2. Relacione a divisão e o equilíbrio dos poderes com a recusa do despotismo, distinguindo o que os constituintes acordaram do funcionamento efetivo dos poderes (ver parte 2).
+3. Comente a intervenção de Bento Pereira do Carmo segundo o guião de comentário de documento, indicando o tipo de fonte, a voz, o que o documento permite saber e o que não chega a provar (ver parte 2).
+
+Para fixar a matéria, responda a estas perguntas no dia seguinte ao estudo, uma semana depois e na semana da avaliação.
+
+## Referências
+
+Homem, A. P. B. (s.d.). *A Constituição de 1822*. Imprensa Nacional. https://imprensanacional.pt/wp-content/uploads/2024/11/O-Essencial-sobre-a-Constituicao-1822_IN.pdf
+
+## Lacunas
+
+Ficaram por confirmar os pontos seguintes, que convém verificar no original.
 
 - **Ano de edição.** O PDF não o indica, pelo que a referência usa s.d.
-- **Página incerta.** A passagem sobre a representação política situa-se entre as pp. 42 e 43, sem confirmação da página exata.
-- **Fonte indireta.** As palavras de Bento Pereira do Carmo foram lidas apenas através de Homem, sem consulta do Diário das Cortes.
+- **Onde passa a residir a soberania.** Da passagem citada infere-se que a última palavra sobre a Constituição deixou de ser do rei, mas a formulação do autor sobre a soberania da Nação não está no banco de citações.
+- **Terceiro objetivo.** A distinção entre representação política e procuração de direito privado é tratada por Homem entre as pp. 42 e 43, mas a passagem não foi confirmada. Só entrará na sebenta depois de localizada com o verificador.
+- **Fonte indireta.** As palavras de Bento Pereira do Carmo foram lidas apenas através de Homem.
+````

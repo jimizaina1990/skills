@@ -1,6 +1,6 @@
 # Exemplos resolvidos
 
-Índice. E1 mecanismo e não mera identificação. E2 condições e certeza. E3 vozes numa resenha. E4 comparação sem fusão. E5 arranjo, leitura e citação. E6 manual escolar e consenso. E7 material incompleto. E8 entrada do banco e resposta do verificador. E9 objetivo em tensão com a fonte. E10 articular duas obras por objetivo. E11 prova de leitura em falta. E12 neutralidade perante um juízo do autor. E13 interrogar uma tese. E14 nuances que mudam o sentido.
+Índice. E1 mecanismo e não mera identificação. E2 condições e certeza. E3 vozes numa resenha. E4 comparação sem fusão. E5 arranjo, leitura e citação. E6 manual escolar e consenso. E7 material incompleto. E8 entrada do banco e resposta do verificador. E9 objetivo em tensão com a fonte. E10 articular duas obras por objetivo. E11 prova de leitura em falta. E12 neutralidade perante um juízo do autor. E13 interrogar uma tese. E14 nuances que mudam o sentido. E15 data noutro sistema. E16 relato sobrenatural numa vida de santo. E17 arranjo por tradução. E18 contexto historiográfico sem refutar.
 
 Todos os autores, obras, excertos e localizadores são simulados para ensino. Não são citações reais nem prova de coisa alguma sobre história, antropologia ou teologia.
 
@@ -143,4 +143,38 @@ O diagnóstico é o do vício que a skill combate. A unidade do meio foi resumid
 **Infiel.** M mostra que a igualdade perante a lei não teve efeito.
 
 **Leitura.** M (p. 120) separa a norma da prática e restringe o âmbito da restrição. A concessão "embora" reconhece a igualdade jurídica como real. A expressão "é certo que" introduz o que M considera indiscutível. "Nas aldeias do interior" limita o lugar, "durante décadas" limita o tempo e "de facto" opõe a autoridade efetiva à autoridade legal. Daqui não se pode concluir que a lei não teve efeito em parte nenhuma, nem que os antigos senhores mantiveram direitos legais, mas apenas que, num espaço determinado, a prática social demorou a acompanhar a norma. A frase entra no banco, porque as suas restrições são o seu conteúdo.
+
+## E15. Data noutro sistema
+
+**Documento N, fl. 3.** "Feita a carta em Santarém, a doze dias de março, Era de mil e quatrocentos e vinte e dois anos."
+
+**Errado.** Na cronologia, "12 de março de 1422, carta passada em Santarém".
+
+**Leitura.** O documento data pela Era de César, e a data registada sem conversão desloca o ato trinta e oito anos. Na secção de factos, a linha fica com a data tal como está ("12 de março, Era de 1422"), o sistema ("Era de César"), a data convertida ("12 de março de 1384") e a origem da conversão ("subtração de 38, critica-de-fontes.md, secção 3"). Se o documento estivesse também sujeito a um estilo de início do ano que pudesse mudar o ano em março, a conversão ficaria como ponto a confirmar.
+
+## E16. Relato sobrenatural numa vida de santo
+
+**Fonte O, p. 18.** "Tocando o manto do santo, a mulher ficou logo sã, e muitos que o viram louvaram a Deus."
+
+**Absorvido.** O santo curou uma mulher, o que aumentou a sua fama.
+
+**Também errado.** O autor da vida inventa uma cura para promover o culto.
+
+**Leitura.** O é uma vida de santo, e a passagem é um relato de milagre. Regista-se que O (p. 18) relata uma cura atribuída ao contacto com o manto do santo e a reação de louvor das testemunhas. O dossiê não afirma nem nega a cura. Se o historiador carregado comenta o episódio (como modelo de milagre, como prova da difusão do culto, como tópico do género), essa leitura regista-se atribuída a ele. A passagem é testemunho do que a comunidade que escreveu e leu a vida considerava sinal de santidade, e é como tal que serve os objetivos.
+
+## E17. Arranjo por tradução
+
+**Fonte P, p. 33 (em francês).** "La confrérie n'était pas seulement un lieu de dévotion, elle était aussi un espace de sociabilité et d'entraide."
+
+**Arranjo, a rejeitar.** A confraria não era somente um lugar de devoção, era também um espaço de sociabilidade e de entreajuda.
+
+**Leitura.** A frase rejeitada é a tradução quase literal da fonte, apresentada como leitura própria, e o verificador não a deteta porque compara textos na mesma língua. Se a formulação importa, cita-se no original, "La confrérie n'était pas seulement un lieu de dévotion" (P, p. 33), com uma tradução própria assinalada se for útil. Se não importa, a leitura explica o que a frase acrescenta, isto é, que P recusa reduzir a confraria à sua função religiosa e lhe junta duas funções sociais, o convívio e a ajuda mútua, que o resto do capítulo terá de documentar.
+
+## E18. Contexto historiográfico sem refutar
+
+**Material.** Uma história eclesiástica publicada em 1915, reeditada em 1970 sem atualização, e o guia de estudo da unidade curricular, que a apresenta como "obra clássica de história eclesiástica, de perspetiva confessional".
+
+**Errado.** Na ficha, "Obra ultrapassada e apologética, cujas teses não merecem confiança".
+
+**Leitura.** A ficha regista a data de redação (1915) e a da edição lida (1970, sem atualização), o lugar de enunciação que o próprio texto revela (destinatário, finalidade declarada na introdução, fontes privilegiadas) e, no contexto historiográfico, a caracterização do guia, citada e com a sua origem. Nada disto refuta uma tese. Diz ao estudante de quando e de onde fala o autor, e é na interrogação do texto que se pergunta, tese a tese, com que provas a obra as sustenta.
 

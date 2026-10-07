@@ -2,6 +2,8 @@
 
 Data da análise. 2026-10-07. Objeto. As versões entregues em `leitura-academica_2.zip` e `sinteses-historia_2.zip`. Finalidade declarada pelo utilizador. Uma ferramenta do tipo Gemini Notebook (antigo NotebookLM) para Ciências Sociais, sobretudo História, Cultura e Religião, destinada a estudantes do ensino superior português.
 
+Estado. As correções foram aplicadas às skills em `skills/`, e a correspondência entre cada ponto desta análise e a alteração feita está em `skills/CHANGELOG.md`.
+
 ## 0. Método, convenções e limites
 
 Li integralmente os catorze ficheiros das duas skills, incluindo o verificador (`scripts/verificar.py`, 1200 linhas), e corri o verificador sobre casos sintéticos construídos para História, Religião e Cultura. Os casos e o guião de reprodução estão em `analise/testes-verificador/`.

@@ -1,18 +1,19 @@
 # Protocolo de leitura
 
-Índice. 1 Resultado. 2 Ficha documental e reconhecimento. 3 Plano de unidades e prova de leitura. 4 Unidades e passagens difíceis. 5 Conceitos, relações e vozes. 6 Ler com distância e interrogar o texto. 7 Factos e cronologia. 8 Quadros, gráficos e mapas. 9 Articulação entre obras. 10 Limites do documento. 11 Visão global, verificação e retoma.
+Índice. 1 Resultado. 2 Ficha documental, contexto historiográfico e reconhecimento. 3 Mapa argumentativo, plano de unidades e prova de leitura. 4 Unidades e passagens difíceis. 5 Conceitos, relações, vozes e traduções. 6 Ler com distância e interrogar o texto. 7 Factos e cronologia. 8 Quadros, gráficos, mapas e imagens. 9 Articulação entre obras. 10 Limites do documento. 11 Visão global, teste de compreensão, verificação e retoma.
 
 ## 1. Resultado
 
 O resultado é compreensão fiel e reutilizável. Compreender o que o texto afirma, como constrói o argumento e como os conceitos se ligam, e deixar isso registado de forma que a sebenta o aproveite sem regressar à fonte por dúvida. Não substituir a fonte por uma apresentação geral do tema tirada de conhecimento prévio. Rigor significa fidelidade, origem identificável e limites explícitos, e não frases longas nem vocabulário raro.
 
-## 2. Ficha documental e reconhecimento
+## 2. Ficha documental, contexto historiográfico e reconhecimento
 
 A ficha de cada fonte preenche-se antes de ler por unidades, com os elementos do quadro seguinte.
 
 | Elemento | Tratamento |
 | --- | --- |
-| Identidade | Autor, título, edição e ano disponíveis. Assinalar o que falta. A referência APA 7 só com dados efetivos, sem inventar DOI, edição ou página. |
+| Identidade | Autor, título, edição e ano disponíveis. Num capítulo de obra coletiva, o autor do capítulo e o diretor da obra. Assinalar o que falta. A referência APA 7 só com dados efetivos, sem inventar DOI, edição ou página. |
+| Data de redação | Data da primeira edição ou da redação, se diferente da edição lida, e o que a edição lida diz sobre revisão ou atualização. Uma obra reeditada sem atualização mantém a data em que foi escrita. |
 | Género e função | Que tipo de documento é e para que serve (investigação, síntese, divulgação, ensino, documento de época). |
 | Destinatário e mediação | Quem o lê. Se é original ou deriva de outro (sebenta, manual, resenha, tradução, antologia). Quem fala por quem. |
 | Âmbito | O fornecido, com o intervalo de páginas PDF e impressas (o verificador lê-o na linha "Âmbito fornecido"), e o analisado. Fornecer não é analisar. |
@@ -20,9 +21,13 @@ A ficha de cada fonte preenche-se antes de ler por unidades, com os elementos do
 | Legibilidade | Camada de texto, OCR conferido, lacunas, quadros e mapas. |
 | Declarações do documento | Objetivo, tese ou propósito, método, corpus, destinatário, plano e vocabulário-chave, tal como o texto os apresenta no prefácio, na introdução e na conclusão. |
 
+**Contexto historiográfico.** A ficha tem ainda um campo que situa a obra no seu tempo, com a corrente ou escola em que se inscreve, o lugar de enunciação (académico, confessional, oficial, militante, de divulgação) e, quando os materiais da unidade curricular ou obras de referência carregadas o dizem, a receção da obra (clássica, superada num ponto, discutida). Este campo é contexto externo e por isso cada afirmação leva a sua origem. Se não houver nada carregado que o permita, escreve-se "sem informação nas fontes carregadas" e regista-se apenas o que o próprio texto revela (data, bibliografia citada e ausente, vocabulário, destinatário). O campo serve para o estudante saber de quando e de onde fala o autor, e nunca para refutar uma tese, porque saber de onde alguém fala explica porque pergunta o que pergunta, mas não decide se tem razão.
+
 O que o documento declara sobre si regista-se primeiro e confirma-se depois, durante a leitura. Uma discrepância entre o prometido e o entregue é um ponto a confirmar, apurado dentro do texto e sem juízo externo. Em material incompleto, analisar o acessível e localizar as lacunas, sem reconstruir partes em falta pela reputação do autor.
 
-## 3. Plano de unidades e prova de leitura
+## 3. Mapa argumentativo, plano de unidades e prova de leitura
+
+**Mapa argumentativo.** Antes do plano, escrever em poucas linhas a função de cada capítulo ou parte da obra, a partir do índice, da introdução, da conclusão e dos títulos. Que partes formulam a pergunta e a tese, que partes apresentam a prova (e de que tipo, documental, quantitativa, de caso), que partes são síntese, digressão ou aparato. O mapa é uma hipótese, que se corrige durante a leitura, e decide a profundidade com que cada unidade se trata, nunca se ela é lida.
 
 O plano divide todo o âmbito fornecido em unidades antes de ler o corpo, segundo as regras seguintes.
 
@@ -57,7 +62,7 @@ Adaptar ao género. Ensaio, exposição conceptual, estudo empírico, comentári
 
 **Confusões prováveis.** Quando a unidade se presta a uma confusão típica (contexto e causa, sucessão e causalidade, termo de época e conceito do historiador, norma e prática, caso e generalização, fonte primária e historiografia, autores que respondem a perguntas diferentes), registá-la na entrada da unidade, com a base textual. A sebenta transforma-a numa nota de atenção.
 
-## 5. Conceitos, relações e vozes
+## 5. Conceitos, relações, vozes e traduções
 
 **Conceitos.** Os termos historicamente situados leem-se com as quatro perguntas de `references/terminologia.md`. Cada conceito regista-se com cinco elementos, que são os que a sebenta precisa para a nota de rodapé. O sentido que o autor lhe dá neste texto, se é termo de época ou conceito do historiador, o âmbito de tempo e lugar a que se aplica, o deslize a evitar (o sentido de outra época com que se confunde) e a citação que o define ou o localizador do uso. A definição de dicionário pode divergir do uso do autor. Assinalar mudanças de sentido ao longo da fonte e, entre autores, justificar aproximações sem afirmar equivalência total. Se o autor pressupõe um conceito sem o definir, registar o uso e a ausência de definição.
 
@@ -66,6 +71,7 @@ Adaptar ao género. Ensaio, exposição conceptual, estudo empírico, comentári
 | Relação | Verificação | Rótulo para o esquema |
 | --- | --- | --- |
 | Causa e consequência | Há causalidade afirmada ou só associação ou sucessão? | causa de, consequência de |
+| Prova ou manifestação | O elemento é o sinal em que se reconhece o processo, ou resulta dele? | manifesta-se em |
 | Condição | Necessária, suficiente ou favorável? | condição de |
 | Sucessão | Temporal, sem causalidade afirmada? | precede, conduz a |
 | Problema e resposta | A resposta aborda a questão identificada? | responde a |
@@ -75,6 +81,8 @@ Adaptar ao género. Ensaio, exposição conceptual, estudo empírico, comentári
 | Complementaridade | Dimensões compatíveis, sem pressupor acordo completo? | complementa |
 
 **Vozes e estatuto.** Distinguir autor, autor citado, interlocutor, hipótese, objeção e posição criticada. Reconhecer os verbos e as transições que mudam a voz e atribuir cada tese a quem a defende. Preservar possibilidade e certeza, população e âmbito, intensidade e condições. Distinguir os limites reconhecidos pelo autor dos limites identificados pelo leitor. Uma inferência legítima não preenche lacunas, e quando algo está implícito indica-se a base textual e o grau de segurança.
+
+**Traduções.** Numa obra traduzida, ler e citar na língua da edição lida. Quando um termo-chave depende da escolha do tradutor (mentalités, longue durée, Entzauberung der Welt, Beruf), registar o termo original se a edição o der, e assinalar que o sentido passa por uma tradução. Numa fonte em língua estrangeira, a leitura própria explica o sentido com palavras suas e nunca traduz quase à letra uma frase da fonte para a apresentar como leitura, porque isso é arranjo entre línguas e o verificador não o deteta. Quando a formulação importa, cita-se no original e, se necessário, acrescenta-se uma tradução própria assinalada como tal.
 
 ## 6. Ler com distância e interrogar o texto
 
@@ -116,11 +124,11 @@ A resposta regista-se na entrada da unidade, no campo "Interrogação do texto",
 
 ## 7. Factos e cronologia
 
-Quando o documento trata acontecimentos, processos, instituições ou casos, registar o que o texto afirma sobre datas e períodos, atores, lugares, instituições, números, termos de época e periodização do autor, cada item com localizador. Distinguir facto afirmado, interpretação do autor e estimativa. Não completar datas nem nomes de memória e conservar as discrepâncias internas como pontos a confirmar. A cronologia é matéria-prima da sebenta, por isso não se perdem as datas e as sequências que o texto fornece.
+Quando o documento trata acontecimentos, processos, instituições ou casos, registar o que o texto afirma sobre datas e períodos, atores, lugares, instituições, números, termos de época e periodização do autor, cada item com localizador. Distinguir facto afirmado, interpretação do autor e estimativa. Não completar datas nem nomes de memória e conservar as discrepâncias internas como pontos a confirmar. Uma data noutro sistema de datação (Era de César, estilo da Encarnação, calendário juliano, Hégira) regista-se como está na fonte, com o sistema, a data convertida e a origem da conversão (`critica-de-fontes.md`, secção 3). Uma conversão que não venha da fonte, da edição ou de uma tabela carregada fica como ponto a confirmar. A cronologia é matéria-prima da sebenta, por isso não se perdem as datas e as sequências que o texto fornece.
 
-## 8. Quadros, gráficos e mapas
+## 8. Quadros, gráficos, mapas e imagens
 
-Um quadro, um gráfico ou um mapa é muitas vezes o centro do argumento, sobretudo em geografia, demografia e história económica, e lê-se como uma passagem. Para cada um, registar o seguinte.
+Um quadro, um gráfico ou um mapa é muitas vezes o centro do argumento, sobretudo em geografia, demografia e história económica, e lê-se como uma passagem. As imagens e os objetos (pinturas, gravuras, iconografia, fotografias, edifícios, objetos litúrgicos) leem-se pelo protocolo de `critica-de-fontes.md`, secção 5, que separa descrição, tema e interpretação. Para cada quadro, gráfico ou mapa, registar o seguinte.
 
 - **Identificação.** Título, número, fonte dos dados indicada pelo autor e localizador.
 - **O que mede.** As variáveis, as unidades, a data ou o período, a escala espacial e as categorias usadas.
@@ -152,11 +160,13 @@ A seguir ao quadro, um parágrafo por objetivo explica a articulação em prosa,
 
 Juízo do leitor, rotulado como tal e baseado só no que o texto mostra. Procurar conclusões que excedem as provas apresentadas, generalização a partir de um caso, termos usados com sentidos diferentes, contradições internas, ressalvas feitas e depois esquecidas, perguntas anunciadas e não tratadas, e diferenças entre o que a introdução promete e o que o desenvolvimento entrega. Ser breve e escrever só o que ajuda a sebenta a saber o que pode afirmar com segurança. Não confrontar com literatura que não foi carregada.
 
-## 11. Visão global, verificação e retoma
+## 11. Visão global, teste de compreensão, verificação e retoma
 
 **Visão global.** Depois de lido todo o disponível, apresentar em prosa o problema, os núcleos, o percurso, os conceitos, as relações, os contributos, as passagens centrais e os pontos que não podem ser simplificados. Chamar-lhe "visão global do capítulo" ou "do excerto" quando não houver obra completa.
 
 **Compreensão global em linguagem acessível.** Prosa conectada que explique o que o estudante deve compreender, sem colar as sínteses locais.
+
+**Teste de compreensão.** A prova de leitura mostra que se passou por cada página, mas não que se compreendeu o argumento. Para cada objetivo, formular três perguntas a partir do texto das fontes, de preferência sobre as unidades do meio e sobre as ressalvas, responder-lhes usando só o dossiê e conferir cada resposta na página indicada. A secção "Teste de compreensão" do dossiê regista, numa linha por pergunta, o objetivo, a pergunta, a unidade, o resultado ("conferida" ou "divergente") e, se divergente, a correção feita. Uma resposta divergente obriga a reler a unidade e a corrigir a entrada, e não só a resposta. Se houver ferramenta para lançar um revisor separado, é ele que formula as perguntas e confere as respostas.
 
 **Verificação.** Antes de entregar, conferir o seguinte, além do que o verificador já controla.
 

@@ -17,26 +17,43 @@ O que verifica no dossiê
   1. Citações. Cada citação do banco existe no texto da fonte. Tolera hifenização,
      espaçamento, tipo de aspas, chamadas de nota coladas à palavra e a passagem
      de uma página para a seguinte.
-  2. Páginas. A página PDF declarada e a página impressa da referência APA
-     coincidem com as do texto. A página impressa lê-se nos números de página do
-     próprio PDF ou numa tabela dada com --paginas.
+  2. Páginas e localizadores. A página PDF declarada e a página impressa da
+     referência APA (árabe ou romana) coincidem com as do texto. Aceita também
+     localizadores canónicos (Mateus 5:3, Mt 5, 3, 10.27), fólios e colunas.
   3. Cobertura. Todas as páginas do âmbito pertencem a uma unidade do dossiê.
   4. Prova de leitura. Cada unidade tem pelo menos uma citação confirmada nas suas
      páginas e nenhum troço longo do texto fica sem citação.
-  5. Arranjo. Frases da leitura, fora de aspas, que copiam a fonte ou lhe repetem o
-     molde com outras palavras.
-  6. Objetivos e articulação. Cada objetivo tem linha no mapa dos objetivos, com
+  5. Arranjo. Frases e orações da leitura, fora de aspas, que copiam a fonte ou lhe
+     repetem o molde com outras palavras.
+  6. Neutralidade e terminologia. Vocabulário avaliativo do autor na voz do
+     dossiê, e termos de alerta sem entrada no quadro de conceitos ou ausentes das
+     fontes. As listas vêm de references/terminologia.md, secções 3 e 6.
+  7. Teste de compreensão, fichas e datação. Perguntas por objetivo com
+     resultado, campos "Data de redação" e "Contexto historiográfico" nas fichas,
+     e datas da Era de César não registadas.
+  8. Objetivos e articulação. Cada objetivo tem linha no mapa dos objetivos, com
      citações ou com a indicação de que as fontes não o cobrem. Com duas ou mais
      fontes, existe articulação entre obras com citações de mais de uma.
-  7. Estado. O dossiê não se declara concluído com falhas ou páginas por ler.
+  9. Estado. O dossiê não se declara concluído com falhas ou páginas por ler.
+
+O que verifica na sebenta
+
+  Citações em aspas retas, angulares e curvas e em bloco, contra o banco e as
+  fontes, com a página. Negrito dentro de citações e itálico sem [ênfase
+  acrescentada]. Títulos estruturados, secções obrigatórias, uma citação por
+  parte, chamadas de nota e notas com referência, excesso de negrito. Verbos
+  factivos e de adesão, vocabulário avaliativo, arranjo e termos de alerta sem
+  nota ou ausentes das fontes (estes dois últimos só com --fonte).
 
 O que não verifica
 
-  A fidelidade do sentido, a qualidade da explicação e a correção do OCR.
+  A fidelidade do sentido, a qualidade da explicação, a correção do OCR, a
+  paráfrase profunda e o arranjo por tradução de uma fonte noutra língua.
 
 Formato da tabela de páginas (--paginas)
 
   F1=9-40:1,43-200:33      pdf 9 é a p. 1 e pdf 43 é a p. 33 (estampas entre elas)
+  F1=5-12:i,13-300:1       pdf 5 a 12 são as pp. i a viii, pdf 13 é a p. 1
   F1=5-90:1x2              digitalização com duas páginas por imagem, pdf 5 = pp. 1-2
 """
 
@@ -217,33 +234,77 @@ def mapa_detetado(cands, raio=8):
     return mapa
 
 
+ROMANOS = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
+
+
+def romano_para_int(r):
+    total, maior = 0, 0
+    for ch in reversed(r.lower()):
+        v = ROMANOS[ch]
+        if v < maior:
+            total -= v
+        else:
+            total += v
+            maior = v
+    return total
+
+
+def int_para_romano(n):
+    out = ""
+    for v, r in ((1000, "m"), (900, "cm"), (500, "d"), (400, "cd"), (100, "c"), (90, "xc"),
+                 (50, "l"), (40, "xl"), (10, "x"), (9, "ix"), (5, "v"), (4, "iv"), (1, "i")):
+        while n >= v:
+            out, n = out + r, n - v
+    return out
+
+
+def ordenar(paginas):
+    """Páginas romanas (texto) antes das árabes (inteiros)."""
+    return sorted(paginas, key=lambda p: (0, romano_para_int(p)) if isinstance(p, str) else (1, p))
+
+
+def texto_paginas(paginas):
+    return "-".join(map(str, ordenar(paginas)))
+
+
+PAG = r"(\d+|[ivxlcdm]+)"
+
+
 def tabela_paginas(espec):
-    """'9-40:1,43-200:33x2' -> {pdf: ({impressas}, 'tabela')}"""
+    """'5-12:i,13-40:1,43-200:33x2' -> {pdf: ({impressas}, 'tabela')}. Páginas romanas em minúsculas."""
     tab = {}
     for parte in espec.split(","):
-        m = re.fullmatch(r"\s*(\d+)\s*-\s*(\d+)\s*:\s*(\d+)\s*(x2)?\s*", parte)
+        m = re.fullmatch(rf"\s*(\d+)\s*-\s*(\d+)\s*:\s*{PAG}\s*(x2)?\s*", parte)
         if not m:
-            raise SystemExit(f"--paginas mal formado: {parte!r} (ex. 9-40:1 ou 5-90:1x2)")
-        a, b, p, dupla = int(m.group(1)), int(m.group(2)), int(m.group(3)), bool(m.group(4))
+            raise SystemExit(f"--paginas mal formado: {parte!r} (ex. 9-40:1, 5-12:i ou 5-90:1x2)")
+        a, b, dupla = int(m.group(1)), int(m.group(2)), bool(m.group(4))
+        romana = not m.group(3).isdigit()
+        p = romano_para_int(m.group(3)) if romana else int(m.group(3))
+        conv = int_para_romano if romana else (lambda x: x)
         for i in range(a, b + 1):
             if dupla:
                 k = p + 2 * (i - a)
-                tab[i] = ({k, k + 1}, "tabela")
+                tab[i] = ({conv(k), conv(k + 1)}, "tabela")
             else:
-                tab[i] = ({p + i - a}, "tabela")
+                tab[i] = ({conv(p + i - a)}, "tabela")
     return tab
 
 
-APA_PAG = re.compile(r"\bpp?\.\s*(\d+)(?:\s*[-–]\s*(\d+))?")
+APA_PAG = re.compile(rf"\bpp?\.\s*{PAG}\b(?:\s*[-–]\s*{PAG}\b)?")
 
 
 def paginas_apa(apa):
     m = APA_PAG.search(apa or "")
     if not m:
         return set()
-    a = int(m.group(1))
-    b = int(m.group(2)) if m.group(2) else a
-    return set(range(a, b + 1)) if b >= a else {a}
+    a, b = m.group(1), m.group(2) or m.group(1)
+    if a.isdigit() and b.isdigit():
+        a, b = int(a), int(b)
+        return set(range(a, b + 1)) if b >= a else {a}
+    if not a.isdigit() and not b.isdigit():
+        x, y = romano_para_int(a), romano_para_int(b)
+        return {int_para_romano(k) for k in range(x, y + 1)} if y >= x else {a}
+    return {int(a) if a.isdigit() else a}
 
 
 # ---------------------------------------------------------------- procurar citações
@@ -327,7 +388,11 @@ def diagnostico(seg, idx):
 CAB = re.compile(r"^\[C(\d+)\]\s*\|")
 REF = re.compile(r"\[C(\d+)\]")
 PDF_CAMPO = re.compile(r"pdf\s*(\d+)(?:\s*[-–]\s*(\d+))?", re.I)
-LOCALIZADOR_APA = re.compile(r"\b(?:pp?\.|para\.|par\.|cap\.|sec\.|secç?ão)")
+LOCALIZADOR_APA = re.compile(
+    r"\b(?:pp?\.|para\.|par\.|cap\.|sec\.|secç?ão|f\.|fl\.|fls\.|fól\.|fols?\.|col\.|cols\.|"
+    r"liv\.|n\.º|q\.|art\.|cân\.)|§"
+    r"|(?<![\d/])\d{1,3}\s*[:.]\s*\d{1,3}\b"                      # canónico, Mateus 5:3, 10.27
+    r"|\b[A-ZÀ-Ý][a-zà-ÿ]{0,10}\.?\s+\d{1,3}\s*,\s*\d{1,3}\b")      # Mt 5, 3 ou Gn 1,1
 UNID = re.compile(r"^###\s+U(\d+)\b")
 OBJ = re.compile(r"^###\s+O(\d+)\b")
 FICHA = re.compile(r"^###\s+(F\d+)\b")
@@ -566,9 +631,29 @@ def prosa_para_arranjo(vis, excluir):
     return out
 
 
+ORACAO = re.compile(r",\s+(?:e|mas|porque|pois|embora|enquanto|que)\s+|;\s*|:\s+")
+
+
+def com_oracoes(frases):
+    """Cada frase e, se for composta, as suas orações com pelo menos dez palavras, para apanhar
+    o arranjo de uma só oração dentro de uma frase mais longa."""
+    out = []
+    for ln, frase, toks in frases:
+        out.append((ln, frase, toks, False))
+        partes = ORACAO.split(frase)
+        if len(partes) > 1:
+            for p in partes:
+                t = tokens(p)
+                if len(t) >= 10:
+                    out.append((ln, p.strip(), t, True))
+    return out
+
+
 def verificar_arranjo(frases_dossie, fontes):
-    avisos = []
-    for ln, frase, toks in frases_dossie:
+    avisos, assinaladas = [], set()
+    for ln, frase, toks, oracao in com_oracoes(frases_dossie):
+        if ln in assinaladas:
+            continue
         achado = None
         for fid, fonte in fontes.items():
             ng = ngramas_da_fonte(fonte)
@@ -579,7 +664,7 @@ def verificar_arranjo(frases_dossie, fontes):
                     break
             if achado:
                 break
-            if len(toks) < 12:
+            if len(toks) < (10 if oracao else 12):
                 continue
             frases, indice = frases_da_fonte(fonte)
             raizes = {raiz(t) for t in conteudo(toks)}
@@ -589,7 +674,7 @@ def verificar_arranjo(frases_dossie, fontes):
                     cont[k] += 1
             sk = molde(toks)
             for k, comuns in cont.most_common(25):
-                if comuns < 2:
+                if comuns < (3 if oracao else 2):
                     break
                 p, fr, ftoks = frases[k]
                 if not 0.7 <= len(toks) / len(ftoks) <= 1.4:
@@ -608,18 +693,118 @@ def verificar_arranjo(frases_dossie, fontes):
             if achado:
                 break
         if achado:
+            assinaladas.add(ln)
             avisos.append((ln, frase, achado))
     return avisos
 
 
+# ---------------------------------------------------------------- listas de references/terminologia.md
+
+REF_DIR = Path(__file__).resolve().parent.parent / "references"
+
+# usadas só se references/terminologia.md não existir
+AVALIATIVOS_RESERVA = ["obscurantis*", "glorios*", "fanatic*", "decadent*", "retrograd*",
+                       "reacionari*", "nefast*", "funest*", "infam*", "abominave*", "vergonhos*",
+                       "pernicios*", "deplorave*", "lamentave*", "traidor*"]
+
+
+def norm_termo(s):
+    """Sem acentos, com hífenes de prefixo tratados como na grafia do AO 1990
+    (Contra-Reforma = Contrarreforma), restantes hífenes como espaços. Mantém a caixa."""
+    s = sem_acentos(unicodedata.normalize("NFKC", s)).translate(TRAVESSOES)
+    s = re.sub(r"(?<=\w)-(?=[rsRS])", "", s)
+    s = s.replace("-", " ")
+    s = re.sub(r"rr", "r", s)
+    s = re.sub(r"ss", "s", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def padrao_palavra(w):
+    w = re.escape(w)
+    if w.endswith("ao"):
+        return w[:-2] + "(?:ao|oes|aos|aes)"
+    if w.endswith("l"):
+        return w[:-1] + "(?:l|is)"
+    if w.endswith("m"):
+        return w[:-1] + "(?:m|ns)"
+    if w.endswith("s"):
+        return w
+    if w.endswith(("r", "z")):
+        return w + "(?:es)?"
+    return w + "s?"
+
+
+def padrao_termo(termo, caixa=None):
+    corpo = r"\s+".join(padrao_palavra(p) for p in norm_termo(termo).lower().split())
+    prefixo = "(?=[A-Z])" if caixa == "maius" else "(?=[a-z])" if caixa == "minus" else ""
+    return re.compile(rf"(?<!\w){prefixo}(?i:{corpo})(?!\w)")
+
+
+def ler_listas():
+    p = REF_DIR / "terminologia.md"
+    if not p.exists():
+        return None
+    txt = p.read_text(encoding="utf-8")
+
+    def lista(titulo):
+        m = re.search(r"^### " + re.escape(titulo) + r"[^\n]*\n+(.+?)(?=\n#|\Z)", txt, re.S | re.M)
+        if not m:
+            return []
+        return [x.strip() for x in m.group(1).replace("\n", " ").split(",") if x.strip()]
+
+    maius = {norm_termo(t).lower() for t in lista("Termos reconhecidos só com maiúscula inicial")}
+    minus = {norm_termo(t).lower() for t in lista("Termos reconhecidos só com minúscula inicial")}
+    excl = {norm_termo(t).lower() for t in lista("Termos excluídos da verificação automática")}
+    grupos = []
+    sec3 = re.search(r"^## 3\..*?(?=^## 4\.)", txt, re.S | re.M)
+    for m in re.finditer(r"^- \*\*(.+?)\.\*\*", sec3.group(0) if sec3 else "", re.M):
+        grupo = []
+        for t in re.split(r",\s*|\s+e\s+", m.group(1)):
+            t = t.strip().strip("*")
+            chave = norm_termo(t).lower()
+            if not t or chave in excl:
+                continue
+            caixa = "maius" if chave in maius else "minus" if chave in minus else None
+            grupo.append((t, padrao_termo(t, caixa)))
+        if grupo:
+            grupos.append(grupo)
+    aval = [sem_acentos(w.lower()) for w in lista("Vocabulário avaliativo")] or AVALIATIVOS_RESERVA
+    exc = [norm_termo(e).lower() for e in lista("Exceções ao vocabulário avaliativo")]
+    return {"grupos": grupos, "aval": aval, "exc": exc}
+
+
+LISTAS = ler_listas()
+
+
+def termos_no_texto(texto):
+    """[(termo, índice do grupo)] dos termos de alerta presentes num texto."""
+    if not LISTAS:
+        return []
+    t = norm_termo(texto)
+    achados, vistos = [], set()
+    for g, grupo in enumerate(LISTAS["grupos"]):
+        for nome, pad in grupo:
+            chave = norm_termo(nome).lower()
+            if chave not in vistos and pad.search(t):
+                vistos.add(chave)
+                achados.append((nome, g))
+    return achados
+
+
 # ---------------------------------------------------------------- neutralidade
 
-AVALIATIVOS = ("obscurant", "glorios", "heroic", "heroi", "fanat", "decaden", "retrograd",
-               "reacionar", "nefast", "funest", "infam", "barbar", "tiran", "abomin", "vergonhos",
-               "admirave", "grandios", "mesquinh", "ignobi", "sinistr", "genial", "lamentave",
-               "deplorave", "pernicios", "iluminad", "esclarecid", "atrasad", "decrepit",
-               "corrupt", "virtuos", "patriotic", "traica", "traidor", "martir", "redentor",
-               "messianic", "catastrof", "desastros", "fatidic", "obscur")
+def avaliativos_em(frase):
+    lista = LISTAS["aval"] if LISTAS else AVALIATIVOS_RESERVA
+    t = norm_termo(frase).lower()
+    for e in (LISTAS["exc"] if LISTAS else []):
+        t = t.replace(e, " ")
+    achados = []
+    for w in re.findall(r"[^\W\d_]+", t):
+        for item in lista:
+            if (item.endswith("*") and w.startswith(item[:-1])) or w == item:
+                achados.append((w, item))
+                break
+    return achados
 
 
 def vocabulario_do_autor(fontes):
@@ -627,66 +812,37 @@ def vocabulario_do_autor(fontes):
     for fid, fonte in fontes.items():
         toks = set()
         for txt in corpo_das_paginas(fonte):
-            toks |= set(tokens(txt))
+            toks |= set(re.findall(r"[^\W\d_]+", norm_termo(txt).lower()))
         out[fid] = toks
     return out
 
 
-def verificar_neutralidade(frases_dossie, fontes):
-    voc = vocabulario_do_autor(fontes)
+def verificar_neutralidade(frases, fontes, exigir_autor=True):
+    """Com exigir_autor, só assinala o vocabulário avaliativo que o autor também usa (dossiê).
+    Sem ele, assinala todo o vocabulário avaliativo fora de aspas (sebenta)."""
+    voc = vocabulario_do_autor(fontes) if exigir_autor else {}
     avisos = []
-    for ln, frase, toks in frases_dossie:
-        for w in toks:
-            raiz_av = next((r for r in AVALIATIVOS if w.startswith(r)), None)
-            if not raiz_av:
-                continue
-            donos = [fid for fid, v in voc.items() if any(x.startswith(raiz_av) for x in v)]
-            if donos:
-                avisos.append((ln, frase, w, donos))
-                break
+    for ln, frase, _ in frases:
+        palavras, donos = [], set()
+        for w, item in avaliativos_em(frase):
+            if exigir_autor:
+                d = [fid for fid, v in voc.items()
+                     if any((x.startswith(item[:-1]) if item.endswith("*") else x == item) for x in v)]
+                if not d:
+                    continue
+                donos |= set(d)
+            palavras.append(w)
+        if palavras:
+            avisos.append((ln, frase, palavras, sorted(donos)))
     return avisos
 
 
 # ---------------------------------------------------------------- terminologia
 
-# raiz sem acentos -> nome do termo, para os termos de references/terminologia.md
-TERMOS = {
-    "foral": "foral", "forais": "foral", "concelh": "concelho", "senhori": "senhorio",
-    "reguengo": "reguengo", "behetri": "behetria", "couto": "couto", "feudal": "feudalismo",
-    "vassal": "vassalagem", "reconquist": "Reconquista", "vilao": "vilão", "viloes": "vilão",
-    "homens bons": "homens bons", "cortes": "Cortes", "antigo regime": "Antigo Regime",
-    "absolutis": "absolutismo", "monarquia absoluta": "monarquia absoluta",
-    "mercantilis": "mercantilismo", "cristao novo": "cristão-novo", "cristaos novos": "cristão-novo",
-    "marran": "marrano", "burgues": "burguesia", "ultramar": "ultramar", "colonia": "colónia",
-    "colonial": "colonialismo", "imperio": "império", "descobriment": "Descobrimentos",
-    "liberal": "liberalismo", "carta constitucional": "Carta Constitucional",
-    "cidadan": "cidadania", "cidadao": "cidadão", "soberania": "soberania",
-    "democrac": "democracia", "republican": "republicanismo", "setembris": "setembrismo",
-    "cartis": "cartismo", "cabralis": "cabralismo", "regeneracao": "Regeneração",
-    "rotativis": "rotativismo", "socialis": "socialismo", "anarquis": "anarquismo",
-    "comunis": "comunismo", "fascis": "fascismo", "totalitar": "totalitarismo",
-    "corporativ": "corporativismo", "estado novo": "Estado Novo", "autoritar": "autoritarismo",
-    "conjuntura": "conjuntura", "longa duracao": "longa duração", "mentalidade": "mentalidades",
-}
-
-
-def termos_em(texto_tokens):
-    """Termos de alerta presentes numa lista de tokens (aceita expressões de duas palavras)."""
-    junto = " " + " ".join(texto_tokens) + " "
-    achados = set()
-    for raiz_t, nome in TERMOS.items():
-        if " " in raiz_t:
-            if f" {raiz_t} " in junto:
-                achados.add(nome)
-        elif re.search(rf" {raiz_t}", junto):
-            achados.add(nome)
-    return achados
-
-
-def verificar_terminologia(vis, secs, frases_dossie, fontes, falhas_lista):
+def verificar_terminologia(vis, secs, frases, fontes, falhas_lista):
     conc = seccao(secs, "Conceitos")
     linhas_conc = vis[conc[0]:conc[1]] if conc else []
-    registados = set()
+    grupos_registados = set()
     for l in linhas_conc:
         s = l.strip()
         if not s.startswith("|") or re.fullmatch(r"[|\-\s:]+", s):
@@ -694,23 +850,42 @@ def verificar_terminologia(vis, secs, frases_dossie, fontes, falhas_lista):
         cel = [c.strip() for c in s.strip("|").split("|")]
         if cel and cel[0].lower() == "termo":
             continue
-        registados |= termos_em(tokens(cel[0])) | {cel[0].lower()}
+        grupos_registados |= {g for _, g in termos_no_texto(cel[0])}
         vazias = [k for k, c in enumerate(cel[1:], 2) if not c or c.startswith("[")]
         if len(cel) < 6 or vazias:
             falhas_lista.append(f"conceito \"{cel[0]}\" com colunas por preencher no quadro "
                                 "(escrever \"não indicado no texto\" se for o caso)")
-    voc = set()
+    nas_fontes = set()
     for fonte in fontes.values():
-        for txt in corpo_das_paginas(fonte):
-            voc |= termos_em(tokens(txt))
-    usados = defaultdict(int)
-    for ln, frase, toks in frases_dossie:
-        for nome in termos_em(toks):
-            if (conc is None or not (conc[0] <= ln - 1 < conc[1])):
-                usados[nome] = usados[nome] or ln
-    em_falta = sorted(n for n in usados if n in voc and n.lower() not in {r.lower() for r in registados})
-    alheios = sorted(n for n in usados if n not in voc)
+        texto = " ".join(corpo_das_paginas(fonte))
+        nas_fontes |= {n for n, _ in termos_no_texto(texto)}
+    usados, grupo_de = {}, {}
+    for ln, frase, _ in frases:
+        for nome, g in termos_no_texto(frase):
+            usados.setdefault(nome, ln)
+            grupo_de[nome] = g
+    em_falta = sorted(n for n in usados if n in nas_fontes and grupo_de[n] not in grupos_registados)
+    alheios = sorted(n for n in usados if n not in nas_fontes)
     return em_falta, alheios, usados
+
+
+# ---------------------------------------------------------------- outros controlos
+
+ERA = re.compile(r"\b[Ee]ra\s+(?:de\s+)?(?:C[ée]sar\s+|hisp[âa]nica\s+)?(?:de\s+)?(?:\d{3,4}\b|mil\b)")
+FACTIVOS = re.compile(
+    r"\b(?:mostra|mostram|demonstra|demonstram|prova|provam|revela|revelam|evidencia|evidenciam|"
+    r"constata|constatam)\s+(?:já\s+|bem\s+)?que\b|\bcomo\s+(?:bem\s+)?(?:nota|notam|mostra|mostram|"
+    r"demonstra|demonstram|revela|revelam|prova|provam)\b|\bcomo\s+bem\b|\bcom\s+razão\b",
+    re.I)
+
+
+def eras_na_fonte(fonte):
+    out = []
+    for p, txt in enumerate(fonte.brutas, 1):
+        m = ERA.search(txt.replace("\n", " "))
+        if m:
+            out.append((p, m.group(0)))
+    return out
 
 
 # ---------------------------------------------------------------- modo dossiê
@@ -831,8 +1006,8 @@ def modo_dossie(args, fontes_arg):
                     origens.add(orig)
             if apa and impressas:
                 if not apa <= impressas:
-                    msg = (f"página impressa declarada {sorted(apa)}, o texto está na "
-                           f"p. {'-'.join(map(str, sorted(impressas)))} ({', '.join(sorted(origens))})")
+                    msg = (f"página impressa declarada {ordenar(apa)}, o texto está na "
+                           f"p. {texto_paginas(impressas)} ({', '.join(sorted(origens))})")
                     extras.append(msg)
                     if origens <= {"lida no PDF", "tabela"}:
                         grave = True
@@ -949,9 +1124,10 @@ def modo_dossie(args, fontes_arg):
 
     print("\nNEUTRALIDADE")
     neu = verificar_neutralidade(prosa_para_arranjo(vis, excluir), fontes_obj)
-    for ln, frase, w, donos in neu:
+    for ln, frase, ws, donos in neu:
         print(f"AVISO     linha {ln}: vocabulário avaliativo do autor ({', '.join(donos)}) na voz do "
-              f"dossiê, \"{w}\". Pôr entre aspas e atribuir, ou descrever sem o juízo")
+              f"dossiê, {', '.join(chr(34) + w + chr(34) for w in ws)}. Pôr entre aspas e atribuir, "
+              "ou descrever sem o juízo")
         print(f"          \"{frase[:110]}{'...' if len(frase) > 110 else ''}\"")
     avisos_n += len(neu)
     if not neu:
@@ -959,6 +1135,8 @@ def modo_dossie(args, fontes_arg):
 
     # 6. objetivos e articulação
     print("\nTERMINOLOGIA")
+    if not LISTAS:
+        print(f"INFO      {REF_DIR / 'terminologia.md'} não encontrado. Termos de alerta não verificados")
     falhas_term = []
     excl_conc = excluir + ([seccao(secs, "Conceitos")[:2]] if seccao(secs, "Conceitos") else [])
     em_falta, alheios, usados = verificar_terminologia(vis, secs, prosa_para_arranjo(vis, excl_conc),
@@ -1025,6 +1203,62 @@ def modo_dossie(args, fontes_arg):
                 print(f"AVISO     {f} não entra na articulação. Dizer porquê")
                 avisos_n += 1
 
+    print("\nTESTE DE COMPREENSÃO")
+    if objetivos:
+        teste = seccao(secs, "Teste de compreensão")
+        if not teste:
+            print("FALHA     falta a secção \"Teste de compreensão\" (perguntas feitas a partir do "
+                  "texto e respondidas só com o dossiê, protocolo, secção 11)")
+            falhas += 1
+        else:
+            linhas_teste = [l.strip() for l in vis[teste[0]:teste[1]] if l.strip().startswith("|")]
+            for o in objetivos:
+                rows = [l for l in linhas_teste if re.match(rf"^\|\s*{o}\b", l)]
+                if not rows:
+                    print(f"FALHA     {o} sem perguntas no teste de compreensão")
+                    falhas += 1
+                    continue
+                if not any(re.search(r"conferida|divergente", r, re.I) for r in rows):
+                    print(f"FALHA     {o}: o teste de compreensão não indica o resultado "
+                          "(\"conferida\" ou \"divergente\")")
+                    falhas += 1
+                for r in rows:
+                    cel = [c.strip() for c in r.strip("|").split("|")]
+                    if re.search(r"divergente", r, re.I) and (len(cel) < 5 or cel[-1] in {"", "-"}):
+                        print(f"AVISO     {o}: resposta divergente sem a correção feita na unidade")
+                        avisos_n += 1
+                if len(rows) < 3:
+                    print(f"AVISO     {o}: {len(rows)} pergunta(s) no teste de compreensão, o "
+                          "protocolo pede três")
+                    avisos_n += 1
+            print("OK        teste de compreensão presente")
+
+    print("\nFICHAS E DATAÇÃO")
+    fichas_txt, atual = defaultdict(list), None
+    for l in vis:
+        m = FICHA.match(l)
+        if m:
+            atual = m.group(1).upper()
+            continue
+        if l.startswith(("## ", "### ")):
+            atual = None
+        if atual:
+            fichas_txt[atual].append(l)
+    for f in sorted(fichas_txt):
+        corpo = "\n".join(fichas_txt[f])
+        for campo in ("Data de redação", "Contexto historiográfico"):
+            if not re.search(rf"{campo}\.\s*\S", corpo):
+                print(f"AVISO     {f}: falta o campo \"{campo}.\" na ficha")
+                avisos_n += 1
+    dossie_txt = "\n".join(vis)
+    for fid, fonte in fontes_obj.items():
+        eras = eras_na_fonte(fonte)
+        if eras and not re.search(r"Era de C[ée]sar|Era hisp[âa]nica", dossie_txt, re.I):
+            p, txt = eras[0]
+            print(f"AVISO     {fid} pdf {p}: a fonte data pela era (\"{txt}\") e o dossiê não "
+                  "regista a Era de César. Registar a data da fonte, o sistema e a data convertida")
+            avisos_n += 1
+
     for msg in erros:
         print(f"ERRO      {msg}")
 
@@ -1053,14 +1287,46 @@ def modo_dossie(args, fontes_arg):
 
 # ---------------------------------------------------------------- modo sebenta
 
-CIT_SEB = re.compile(r'"([^"\n]+)"')
-PAREN_LOC = re.compile(r"\(([^()]*?\b(?:pp?\.|para\.|par\.)[^()]*)\)")
+# citações em aspas retas (4 ou mais palavras, porque as retas também marcam termos),
+# angulares e curvas (3 ou mais palavras)
+CIT_SEB = [(re.compile(r'"([^"\n]+)"'), 4), (re.compile(r"«([^»\n]+)»"), 3),
+           (re.compile(r"“([^”\n]+)”"), 3)]
+PAREN_LOC = re.compile(r"\(([^()]*?(?:\b(?:pp?\.|para\.|par\.|f\.|fl\.|fls\.|col\.|n\.º|secç?ão)|"
+                       r"\d{1,3}\s*[:.,]\s*\d{1,3})[^()]*)\)")
+SOBRESCRITOS = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+NOTA_LINHA = re.compile(rf"^\s*[{SOBRESCRITOS}]+\s")
+ENFASE = re.compile(r"\[ênfase acrescentada\]|\(ênfase no original\)", re.I)
+SECCOES_SEBENTA = ("Esquema", "Essencial a reter", "Glossário", "Perguntas de autoavaliação",
+                   "Referências")
+
+
+def blocos_de_codigo(texto):
+    return re.sub(r"```.*?```", lambda m: "\n" * m.group(0).count("\n"), texto, flags=re.S)
+
+
+def citacoes_da_sebenta(bruto):
+    """[(citação sem marcas, início, fim, texto em bruto)] no texto e nos blocos de citação."""
+    out = []
+    for rx, minimo in CIT_SEB:
+        for m in rx.finditer(bruto):
+            limpo = re.sub(r"\*\*|__|(?<!\w)[*_]|[*_](?!\w)", "", m.group(1))
+            limpo = re.sub(rf"[{SOBRESCRITOS}]+", "", limpo)
+            if len(limpo.split()) >= minimo:
+                out.append((limpo, m.start(), m.end(), m.group(1)))
+    for m in re.finditer(r"(?:^>.*\n?)+", bruto, flags=re.M):
+        bloco = re.sub(r"^>\s?", "", m.group(0), flags=re.M).strip()
+        if re.match(r"\**Atenção", bloco):
+            continue
+        locs = list(PAREN_LOC.finditer(bloco))
+        if locs and locs[-1].end() >= len(bloco) - 3 and len(bloco.split()) >= 40:
+            corpo = bloco[:locs[-1].start()].strip()
+            out.append((re.sub(r"\*\*|__", "", corpo), m.start(), m.end(), corpo))
+    return sorted(out, key=lambda c: c[1])
 
 
 def modo_sebenta(args, fontes_arg):
-    texto = Path(args.sebenta).read_text(encoding="utf-8")
-    texto = re.sub(r"```.*?```", lambda m: "\n" * m.group(0).count("\n"), texto, flags=re.S)
-    texto = re.sub(r"\*\*|__", "", texto)
+    bruto = blocos_de_codigo(Path(args.sebenta).read_text(encoding="utf-8"))
+    linhas = bruto.split("\n")
     entradas = []
     if args.banco:
         entradas, _ = ler_banco(Path(args.banco).read_text(encoding="utf-8").split("\n"))
@@ -1069,27 +1335,29 @@ def modo_sebenta(args, fontes_arg):
         raise SystemExit("o modo sebenta precisa de --banco dossie.md, de --fonte, ou de ambos")
     falhas, avisos = 0, 0
 
-    citacoes = []
-    for m in CIT_SEB.finditer(texto):
-        if len(m.group(1).split()) >= 4:
-            citacoes.append((m.group(1), m.start(), m.end()))
-    for m in re.finditer(r"(?:^>.*\n?)+", texto, flags=re.M):
-        bloco = re.sub(r"^>\s?", "", m.group(0), flags=re.M).strip()
-        locs = list(PAREN_LOC.finditer(bloco))
-        if locs and locs[-1].end() >= len(bloco) - 3 and len(bloco.split()) >= 40:
-            citacoes.append((bloco[:locs[-1].start()].strip(), m.start(), m.end()))
+    def linha_de(pos):
+        return bruto.count("\n", 0, pos) + 1
 
-    for cit, ini, fim in citacoes:
-        linha = texto.count("\n", 0, ini) + 1
+    print("CITAÇÕES")
+    citacoes = citacoes_da_sebenta(bruto)
+    for cit, ini, fim, cru in citacoes:
+        linha = linha_de(ini)
+        rot = f"linha {linha}  \"{cit[:70]}{'...' if len(cit) > 70 else ''}\""
+        if "**" in cru or "__" in cru:
+            print(f"FALHA     {rot}\n          negrito dentro de uma citação. A APA 7 só admite ênfase "
+                  "em itálico seguida de [ênfase acrescentada]")
+            falhas += 1
+        elif re.search(r"(?<!\w)[*_]\w", cru) and not ENFASE.search(bruto[ini: fim + 120]):
+            print(f"AVISO     {rot}\n          itálico dentro de uma citação sem [ênfase acrescentada] "
+                  "nem (ênfase no original)")
+            avisos += 1
         segs = [n1(s) for s in segmentos(cit)]
         if not segs:
             continue
         no_banco = next((e for e, t in banco if all(s in t for s in segs)), None)
-        rot = f"linha {linha}  \"{cit[:70]}{'...' if len(cit) > 70 else ''}\""
+        loc = PAREN_LOC.search(bruto[fim: fim + 200]) or PAREN_LOC.search(bruto[max(0, ini - 200): ini])
         if not no_banco:
             achado = None
-            loc = (PAREN_LOC.search(texto[fim: fim + 160])
-                   or PAREN_LOC.search(texto[max(0, ini - 160): ini]))
             pg_seb = paginas_apa(loc.group(1)) if loc else set()
             for fid, cam in fontes_arg.items():
                 fonte = fonte_para(cam)
@@ -1111,8 +1379,8 @@ def modo_sebenta(args, fontes_arg):
                     print(f"AVISO     {rot}\n          sem localizador junto da citação")
                     avisos += 1
                 elif pg_seb and imp and not pg_seb <= imp and orig <= {"lida no PDF", "tabela"}:
-                    print(f"FALHA     {rot}\n          a sebenta diz p. {sorted(pg_seb)} e o texto "
-                          f"está na p. {'-'.join(map(str, sorted(imp)))}")
+                    print(f"FALHA     {rot}\n          a sebenta diz p. {ordenar(pg_seb)} e o texto "
+                          f"está na p. {texto_paginas(imp)}")
                     falhas += 1
                 else:
                     print(f"OK        {rot} [fonte {fid or ''}, pdf {min(pgs) if pgs else '-'}]")
@@ -1125,7 +1393,6 @@ def modo_sebenta(args, fontes_arg):
                 print(f"FALHA     {rot}\n          não existe no banco nem na fonte")
                 falhas += 1
             continue
-        loc = PAREN_LOC.search(texto[fim: fim + 160]) or PAREN_LOC.search(texto[max(0, ini - 160): ini])
         if not loc:
             print(f"AVISO     {rot} [{no_banco['id']}]\n          sem localizador junto da citação")
             avisos += 1
@@ -1133,16 +1400,123 @@ def modo_sebenta(args, fontes_arg):
         pg_seb, pg_banco = paginas_apa(loc.group(1)), paginas_apa(no_banco["apa"])
         if pg_seb and pg_banco and not pg_seb <= pg_banco:
             print(f"FALHA     {rot} [{no_banco['id']}]\n          a sebenta diz p. "
-                  f"{sorted(pg_seb)} e o banco diz {no_banco['apa']}")
+                  f"{ordenar(pg_seb)} e o banco diz {no_banco['apa']}")
             falhas += 1
         else:
             print(f"OK        {rot} [{no_banco['id']}]")
-        if len(cit.split()) >= 40 and texto[ini] == '"':
+        if len(cit.split()) >= 40 and bruto[ini] in "\"«“":
             print("          40 ou mais palavras entre aspas. Em APA 7 vai em bloco, sem aspas")
             avisos += 1
 
+    # estrutura
+    print("\nESTRUTURA")
+    n_estrutura = avisos
+    titulos = [(n, l) for n, l in enumerate(linhas) if re.match(r"^#{1,4}\s+\S", l)]
+    falsos = [n for n, l in enumerate(linhas) if re.fullmatch(r"\s*\*\*[^*]{2,90}\*\*\s*", l)]
+    for n in falsos:
+        print(f"AVISO     linha {n + 1}: parágrafo só a negrito, \"{linhas[n].strip()[:60]}\". "
+              "Usar um título estruturado (#, ##, ###)")
+    avisos += len(falsos)
+    if len(titulos) < 3:
+        print("AVISO     menos de três títulos estruturados. As rubricas e as partes são títulos")
+        avisos += 1
+    for nome in SECCOES_SEBENTA:
+        if not any(nome.lower() in l.lower() for _, l in titulos):
+            print(f"AVISO     falta a secção \"{nome}\"")
+            avisos += 1
+    partes = [(n, l) for n, l in titulos if re.match(r"^#{2,3}\s+\d+\.", l)]
+    for k, (n, l) in enumerate(partes):
+        seguinte = next((m for m, _ in titulos if m > n), len(linhas))
+        a, b = len("\n".join(linhas[:n])), len("\n".join(linhas[:seguinte]))
+        if not any(a <= c[1] < b for c in citacoes):
+            print(f"AVISO     linha {n + 1}: a parte \"{l.strip('# ')[:50]}\" não tem citação direta")
+            avisos += 1
+    sem_marcas = re.sub(r"\s+", " ", bruto)
+    em_negrito = sum(len(m) for m in re.findall(r"\*\*([^*]+)\*\*", sem_marcas))
+    if sem_marcas and em_negrito / len(sem_marcas) > 0.10:
+        print(f"AVISO     {em_negrito / len(sem_marcas):.0%} do texto a negrito. O negrito deixa de "
+              "destacar acima de um décimo")
+        avisos += 1
+    for n, l in enumerate(linhas):
+        sem_cit = re.sub(r'"[^"]*"|«[^»]*»|“[^”]*”', " ", l)
+        if re.search(r"(?<![\w\[])\[\d{1,3}\](?!\()", sem_cit):
+            print(f"AVISO     linha {n + 1}: chamada de nota entre parênteses retos. Usar algarismo "
+                  "sobrescrito (¹, ², ³), porque os parênteses retos são das interpolações")
+            avisos += 1
+        if NOTA_LINHA.match(l) and not (re.search(r"\([^()]*(?:\d{4}|s\.d\.)[^()]*\)", l)
+                                         or re.search(r"não (?:é )?definido", l, re.I)):
+            print(f"AVISO     linha {n + 1}: nota sem referência. Indicar a fonte do sentido, ou "
+                  "dizer que a fonte não define o termo e registá-lo nas lacunas")
+            avisos += 1
+
+    if avisos == n_estrutura:
+        print("OK        títulos, secções, notas e citações por parte")
+
+    # prosa
+    refs = next((n for n, l in titulos if "referências" in l.lower()), None)
+    fim_refs = next((n for n, _ in titulos if refs is not None and n > refs), len(linhas))
+    excluir = [(refs, fim_refs)] if refs is not None else []
+    vis = [l if not re.match(r"^>", l) or re.match(r"^>\s*\**Atenção", l) else "" for l in linhas]
+    frases = prosa_para_arranjo(vis, excluir)
+
+    print("\nVOZ E NEUTRALIDADE")
+    n_voz = 0
+    for ln, frase, _ in frases:
+        m = FACTIVOS.search(frase)
+        if m:
+            print(f"AVISO     linha {ln}: \"{m.group(0)}\" dá por verdadeiro o que introduz ou adere ao "
+                  "autor. Usar só para factos afirmados, e um verbo neutro para interpretações")
+            print(f"          \"{frase[:110]}{'...' if len(frase) > 110 else ''}\"")
+            n_voz += 1
+    for ln, frase, ws, _ in verificar_neutralidade(frases, {}, exigir_autor=False):
+        print(f"AVISO     linha {ln}: vocabulário avaliativo na voz da sebenta, "
+              f"{', '.join(chr(34) + w + chr(34) for w in ws)}. Pôr entre aspas e atribuir, ou "
+              "descrever sem o juízo")
+        n_voz += 1
+    avisos += n_voz
+    if not n_voz:
+        print("OK        sem verbos factivos nem vocabulário avaliativo na voz da sebenta")
+
+    fontes_obj = {fid: fonte_para(cam) for fid, cam in fontes_arg.items()}
+    print("\nARRANJO E TERMINOLOGIA")
+    if not fontes_obj:
+        print("INFO      sem --fonte, o arranjo e os termos ausentes das fontes não são verificados")
+    else:
+        arr = [] if args.sem_arranjo else verificar_arranjo(frases, fontes_obj)
+        for ln, frase, (motivo, fonte_txt) in arr:
+            print(f"AVISO     linha {ln}: {motivo}")
+            print(f"          sebenta \"{frase[:110]}{'...' if len(frase) > 110 else ''}\"")
+            print(f"          fonte   \"{fonte_txt}\"")
+        avisos += len(arr)
+        if LISTAS:
+            nas_fontes = set()
+            for fonte in fontes_obj.values():
+                nas_fontes |= {n for n, _ in termos_no_texto(" ".join(corpo_das_paginas(fonte)))}
+            # o termo da nota é o que vem antes dos dois pontos (nota ou linha do glossário)
+            cabecas = [re.sub(r"\*\*", "", l.strip()).split(":", 1)[0]
+                       for l in linhas if NOTA_LINHA.match(l) or re.match(r"\s*- \*\*[^*]+:\*\*", l)]
+            com_nota = {g for _, g in termos_no_texto("\n".join(cabecas))}
+            # o termo que dá nome ao tema (título de nível 1) explica-se na sebenta inteira
+            com_nota |= {g for _, g in termos_no_texto(" ".join(l for _, l in titulos if l.startswith("# ")))}
+            vistos = {}
+            for ln, frase, _ in frases:
+                for nome, g in termos_no_texto(frase):
+                    vistos.setdefault(nome, (ln, g))
+            for nome, (ln, g) in sorted(vistos.items()):
+                if nome not in nas_fontes:
+                    print(f"AVISO     \"{nome}\" (linha {ln}) não aparece nas fontes. Confirmar que não é "
+                          "anacronismo nem tradução silenciosa de um termo da fonte")
+                    avisos += 1
+                elif g not in com_nota:
+                    print(f"AVISO     \"{nome}\" (linha {ln}) é termo de alerta e não tem nota nem "
+                          "entrada no glossário")
+                    avisos += 1
+        if not arr:
+            print("OK        nenhuma frase da sebenta copia a fonte ou lhe repete o molde")
+
     print(f"\n{len(citacoes)} citações na sebenta. Falhas {falhas}, avisos {avisos}.")
-    print("Sebenta apta." if not falhas else "Sebenta NÃO apta. Corrigir as falhas antes de entregar.")
+    print("Sebenta apta. Rever ainda os avisos." if not falhas else
+          "Sebenta NÃO apta. Corrigir as falhas antes de entregar.")
     return 1 if falhas else 0
 
 
@@ -1159,7 +1533,7 @@ def modo_localizar(trecho, fontes_arg):
             for p in sorted(set(pgs)):
                 i, o = fonte.impressa(p)
                 if i:
-                    imp.append(f"p. {'-'.join(map(str, sorted(i)))} ({o})")
+                    imp.append(f"p. {texto_paginas(i)} ({o})")
             local = ", ".join(map(str, sorted(set(pgs)))) if fonte.tem_paginas else "(sem paginação)"
             print(f"{nome}: encontrado em pdf {local}{ress}" + (f", {'; '.join(imp)}" if imp else ""))
         else:
