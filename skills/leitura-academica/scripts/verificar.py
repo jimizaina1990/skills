@@ -1268,6 +1268,17 @@ def modo_dossie(args, fontes_arg):
     print()
     if "concluído" in est.lower() and not apto:
         print("ERRO      o dossiê declara-se concluído mas não está apto")
+    if "concluído" in est.lower() and apto:
+        reg = next((l for l in vis if l.strip().startswith("Verificação.")), "")
+        m = re.search(r"(\d+) citações\. Falhas (\d+)", reg)
+        if not m:
+            print("AVISO     o dossiê declara-se concluído sem a linha \"Verificação.\" com o resumo do "
+                  "verificador. Copiar a linha final desta saída para o dossiê")
+            avisos_n += 1
+        elif int(m.group(1)) != len(entradas) or int(m.group(2)) != falhas:
+            print(f"ERRO      a linha \"Verificação.\" do dossiê ({m.group(0)}) não coincide com esta "
+                  f"verificação ({len(entradas)} citações, falhas {falhas}). Voltar a correr e copiar")
+            apto = False
     print(f"{len(entradas)} citações. Falhas {falhas}, ressalvas {ressalvas}, avisos {avisos_n}, "
           f"erros de estrutura {len(erros)}, páginas por ler {por_ler}.")
     print("Dossiê apto para a sebenta. Rever ainda os avisos." if apto else

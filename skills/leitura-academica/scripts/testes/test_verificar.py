@@ -111,5 +111,23 @@ class Dossie(unittest.TestCase):
         self.assertRegex(out, r"OK\s+C01\s+pdf 2\s+\(Autor, 2000, p\. ii\)")
 
 
+class Registo(unittest.TestCase):
+
+    def test_registo_da_verificacao_falso_e_assinalado(self):
+        with tempfile.TemporaryDirectory() as d:
+            fonte = escrever(d, "f.txt", "Texto da página um com uma frase citável aqui.\n\n1\n")
+            base = ("# D\n\nEstado. concluído.\n\n## 3. Leitura por unidade\n\n"
+                    "### U1. Tudo (F1, p. 1, pdf 1)\n\nTexto.\n\n## 12. Pendências\n\n{reg}\n\n"
+                    "## 13. Banco de citações\n\n[C01] | F1 | pdf 1 | (Autor, 2000, p. 1)\n"
+                    "\"uma frase citável aqui\"\n")
+            falso = escrever(d, "a.md", base.format(reg="Verificação. 99 citações. Falhas 0."))
+            rc, out = correr(falso, "--fonte", f"F1={fonte}")
+            self.assertEqual(rc, 1)
+            self.assertIn("não coincide com esta verificação", out)
+            certo = escrever(d, "b.md", base.format(reg="Verificação. 1 citações. Falhas 0."))
+            rc, out = correr(certo, "--fonte", f"F1={fonte}")
+            self.assertEqual(rc, 0, out)
+
+
 if __name__ == "__main__":
     unittest.main()

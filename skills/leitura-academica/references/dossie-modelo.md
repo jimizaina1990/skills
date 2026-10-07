@@ -2,7 +2,8 @@
 MODELO DO DOSSIÊ. Copiar para a pasta de trabalho, preencher e apagar os comentários e os blocos que não se aplicam.
 
 Convenções que o verificador lê e que não se podem alterar.
-- A linha "Estado." no topo. Só se escreve "concluído" quando o verificador diz "Dossiê apto para a sebenta".
+- A linha "Estado." no topo. Só se escreve "concluído" quando o verificador diz "Dossiê apto para a sebenta", e copia-se então a linha final da saída para a secção de pendências, numa linha começada por "Verificação.".
+- Campo "**Interrogação do texto.**" obrigatório em cada unidade que serve objetivos, e quadro de conceitos com as seis colunas, incluindo "Deslize a evitar".
 - Objetivos com título "### O1. ...", na secção 0.
 - Fichas com título "### F1. ...", uma linha "- Âmbito fornecido. pdf a-b (p. x-y)", uma linha "- Data de redação. ..." e uma linha "- Contexto historiográfico. ...".
 - Unidades com título "### U1. Tema (F1, p. 1-12, pdf 9-20)". A fonte e o intervalo PDF são obrigatórios.
@@ -130,7 +131,7 @@ Os factos seguintes são os que o texto afirma, cada um com localizador. [Omitir
 
 ## 10. Teste de compreensão
 
-O quadro seguinte regista as perguntas feitas a partir do texto das fontes e respondidas só com o dossiê, segundo o protocolo, secção 11.
+O quadro seguinte regista as perguntas feitas a partir do texto das fontes e respondidas só com o dossiê, segundo o protocolo, secção 11. Não é um questionário para o estudante nem leva respostas-modelo. Serve para provar que o dossiê responde ao texto, e cada resposta divergente obriga a corrigir a unidade.
 
 | Objetivo | Pergunta | Unidade | Resultado | Correção feita |
 | --- | --- | --- | --- | --- |
@@ -147,6 +148,8 @@ O mapa seguinte é a passagem para a sebenta. Para cada objetivo, mostra onde es
 ## 12. Pendências e retoma
 
 [Unidades por ler, ilegíveis ou não fornecidas, pontos a confirmar, localizador de retoma e último identificador de citação usado.]
+
+Verificação. [linha final da saída do verificador, copiada tal como saiu]
 
 ## 13. Banco de citações
 

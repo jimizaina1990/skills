@@ -46,3 +46,11 @@ As correções seguintes respondem aos pontos da análise em `analise/analise-cr
 - O detetor de arranjo é lexical. Não apanha a paráfrase profunda nem o arranjo por tradução de uma fonte noutra língua, que ficam a cargo das regras e do teste de compreensão.
 - O teste de compreensão é verificado na forma (existe, tem resultado por objetivo), não na qualidade das perguntas.
 - Não há caderno persistente da unidade curricular nem modo de pergunta e resposta sobre o corpus, que exigem uma arquitetura de ficheiros partilhada entre conversas.
+
+## Depois do primeiro teste real (Tema 1, Johnson)
+
+O primeiro dossiê real foi entregue como "apto" sem o estar: faltavam a interrogação do texto nas dezanove unidades, a coluna "Deslize a evitar" e um teste de compreensão segundo o protocolo (saiu um questionário com respostas-modelo). As citações estavam todas certas. Para que a declaração de "apto" deixe de depender da palavra do modelo:
+
+- **leitura-academica.** A linha final da saída do verificador copia-se para o dossiê ("Verificação."), e nunca se declara apto sem ter corrido o verificador na conversa. O modelo do dossiê diz agora explicitamente que o teste de compreensão não é um questionário nem leva respostas-modelo.
+- **verificar.py.** Num dossiê concluído, avisa se falta a linha "Verificação." e dá erro se os números dela não coincidirem com a verificação atual. Teste de regressão novo.
+- **sinteses-historia.** Antes de escrever, corre o verificador sobre o dossiê e não confia no estado escrito no próprio dossiê.

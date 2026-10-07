@@ -43,7 +43,7 @@ Se o estudante não tiver indicado as fontes ou se os ficheiros estiverem ilegí
 
 A sebenta é tão boa quanto a leitura em que assenta. Quando as fontes são mais do que um capítulo ou um artigo curto, quando há várias obras ou uma obra longa, a sebenta faz-se a partir de um dossiê de leitura da skill `leitura-academica`. Se o dossiê não existir, aplicar primeiro essa skill e retomar a sebenta com o dossiê entregue. Só para um capítulo curto ou um artigo se lê diretamente, registando para cada fonte o problema que trata, as ideias principais, os conceitos e as passagens a citar, com a página, e confirmando cada passagem com o verificador (`--localizar`).
 
-O dossiê usa-se como base apenas quando o verificador o declarou apto e o seu estado é "concluído". Se estiver em curso, dizer ao estudante o que falta e trabalhar só sobre o que está coberto, registando o resto nas lacunas.
+O dossiê usa-se como base apenas quando o verificador o declara apto e o seu estado é "concluído". Antes de escrever, correr o verificador sobre o dossiê com as fontes, nesta conversa, e não confiar na declaração escrita no próprio dossiê. Se a saída não terminar com "Dossiê apto para a sebenta", não escrever a sebenta e dizer ao estudante, com a saída, o que falta corrigir. Se estiver em curso, dizer ao estudante o que falta e trabalhar só sobre o que está coberto, registando o resto nas lacunas.
 
 Cada secção do dossiê tem um destino na sebenta, segundo o quadro seguinte.
 
