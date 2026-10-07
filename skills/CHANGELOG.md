@@ -106,3 +106,23 @@ A skill de integridade académica do utilizador (baseada no guia *Avoiding Plagi
 
 As regras do guia, os exemplos e as notas críticas não mudaram.
 
+
+## Texto próprio autêntico como critério de integridade
+
+O texto próprio da sebenta, isto é, tudo o que não está entre aspas, tem de ser autêntico, fruto da leitura e do entendimento, e validado pelas fontes. Não pode ser paráfrase, mesmo atribuída, nem originalidade fabricada.
+
+- **sinteses-historia.**
+  - Novo princípio que substitui o da tese nas palavras do autor.
+  - Novo anexo F, que define:
+    - os quatro testes (independência, origem, fidelidade, acrescento);
+    - os sinais de compreensão;
+    - o processo de escrita em três tempos (nota de compreensão, redação sem a passagem à vista, regresso à fonte);
+    - um exemplo comparado (decalque, paráfrase sem acrescento, texto autêntico);
+    - a verificação.
+  - O plano de síntese passa a ter uma nota de compreensão por tese.
+  - A revisão de integridade é obrigatória, com a skill de integridade ou, sem ela, com os quatro testes do anexo F.
+  - A entrega diz o resultado da revisão e nunca declara a sebenta "livre de plágio".
+  - Descrição encurtada para menos de 1024 caracteres.
+- **leitura-academica.** A leitura própria segue o mesmo critério: secção "Texto próprio" no protocolo e verificação de integridade obrigatória na amostragem final.
+- **rever-integridade-academica 1.3** (fora do repositório). O teste do acrescento entra como regra do utilizador e não do guia: um parágrafo que só repete a citação ao lado assinala-se como "texto sem acrescento", e não como plágio. A revisão é obrigatória nestas skills.
+- **Verificador.** Não mudou. Um protótipo que procurava frases de texto próprio a repetir a citação do mesmo parágrafo não encontrou nada na sebenta real. A falta de acrescento não se mede lexicalmente e fica a cargo da revisão.

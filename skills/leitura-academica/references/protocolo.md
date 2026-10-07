@@ -176,13 +176,22 @@ A procura ordena as passagens da fonte pela proximidade à consulta (lexical, co
 
 **Teste de compreensão.** A prova de leitura mostra que se passou por cada página, mas não que se compreendeu o argumento. Para cada objetivo, formular três perguntas a partir do texto das fontes, de preferência sobre as unidades do meio e sobre as ressalvas, responder-lhes usando só o dossiê e conferir cada resposta na página indicada. A secção "Teste de compreensão" do dossiê regista, numa linha por pergunta, o objetivo, a pergunta, a unidade, o resultado ("conferida" ou "divergente") e, se divergente, a correção feita. Uma resposta divergente obriga a reler a unidade e a corrigir a entrada, e não só a resposta. Se houver ferramenta para lançar um revisor separado, é ele que formula as perguntas e confere as respostas.
 
+**Texto próprio.** A leitura própria não é paráfrase da fonte, mesmo atribuída. É texto autêntico, que resulta da leitura e do entendimento e o mostra, e que se apoia na fonte em cada afirmação. Escreve-se depois de lida a passagem, sem a ter à vista, e compara-se depois com ela. Passa por quatro testes separados, e um problema só se dá por demonstrado com a passagem da fonte ao lado.
+
+- **Independência.** A formulação é própria, ou segue a frase da fonte com sinónimos, cortes ou a mesma sequência? Uma referência não desculpa um decalque.
+- **Origem.** Percebe-se o que é do autor e o que é inferência do leitor?
+- **Fidelidade.** O sentido, o aspeto, a certeza, o âmbito e quem afirma ficaram como na fonte?
+- **Acrescento.** A frase faz algum trabalho que a fonte não faz (estatuto do enunciado, raciocínio, ligação, consequência, alcance, distinção)? Se só repete a citação por outras palavras, sai, e fica a citação.
+
+O acrescento é de compreensão e nunca de conteúdo: não se inventam factos, exemplos ou juízos para parecer original.
+
 **Verificação.** Antes de entregar, conferir o seguinte, além do que o verificador já controla.
 
 - As afirmações centrais da leitura própria correspondem ao texto, com as vozes, a certeza e as ressalvas mantidas?
 - Exemplos, inferências e contexto externo estão identificados como tais?
 - Percebe-se como as razões sustentam as conclusões e em que condições?
 - Cada objetivo tem resposta, ou a indicação clara do que as fontes não cobrem?
-- A amostragem final incluiu unidades do meio?
+- A amostragem final incluiu unidades do meio, e a leitura própria dessas unidades passa os quatro testes do texto próprio?
 - A varredura por objetivo foi feita e as passagens devolvidas sem citação foram lidas?
 
 **Interrupção e retoma.** Registar a fonte, a unidade, o localizador seguinte, os conceitos já definidos, as relações em aberto, as pendências e o último identificador de citação usado. Retomar desse ponto sem repetir o que está concluído.
