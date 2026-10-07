@@ -17,9 +17,24 @@ Quando o estudante fornece os objetivos do programa ou do guia de estudo, os ver
 | Problematizar, discutir | As questões em aberto, as posições dos autores, o porquê de cada uma e o que está em jogo entre elas. | "Discuta ..., confrontando as posições de ... e as razões de cada um." |
 | Avaliar | Os critérios usados pelos autores para formular um juízo e as razões que apresentam. | "Avalie ... segundo os critérios de [autor]." |
 
+## Ler o enunciado
+
+Antes de planear a parte, o objetivo lê-se como o leria o docente que o escreveu. O verbo diz a operação (quadro acima), o objeto diz de que se fala e a delimitação diz em que tempo, espaço e autores. Muitos enunciados usam termos em sentido largo, e a leitura certa é a que as fontes do tema permitem cumprir. "Os judeus" num objetivo sobre o tempo de Moisés designa o povo que as fontes chamam israelitas. "O reino de Israel" pode designar o povo de Israel e não o reino do norte. Uma "recuperação" pode ser religiosa, e não política. Quando o enunciado admite mais de uma leitura:
+
+1. Procurar nas fontes a leitura que elas sustentam, com a procura por tema (`--procurar`) feita com os termos do enunciado e com sinónimos.
+2. Adotar a leitura mais plausível e dizê-la em "O que se espera do estudante", com a razão.
+3. Responder a essa leitura na parte, e dizer, como limite das fontes, o que elas não cobrem.
+4. Se nenhuma leitura for sustentada pelas fontes, perguntar ao estudante antes de escrever.
+
+Um objetivo nunca se dá como errado nem se "corrige" na sebenta, e nenhuma pergunta de autoavaliação pede ao estudante que o corrija. O estudante vai ser avaliado sobre aquele enunciado, e uma sebenta que lhe ensina a contestá-lo prejudica-o.
+
+## Profundidade
+
+A profundidade de um objetivo decide a extensão da sua parte. Mede-se por três coisas: a operação (identificar pede menos do que discutir ou avaliar), o número de posições, conceitos e provas que uma resposta completa tem de tratar, e a quantidade de matéria que as fontes lhe dedicam (o número de unidades do dossiê que o servem). Um objetivo que pede para discutir posições em confronto leva, em regra, um quadro de contraposição. Um objetivo que pede para definir ou distinguir conceitos leva, em regra, um quadro de conceitos.
+
 ## Objetivos combinados ou vagos
 
-Se o objetivo combinar verbos ("identificar e distinguir"), a sebenta cobre as duas operações e a pergunta pede ambas. Se for vago ("abordar", "conhecer"), escolher o eixo a partir do conteúdo das fontes e dizê-lo na contextualização.
+Se o objetivo combinar verbos ("identificar e distinguir"), a sebenta cobre as duas operações e a pergunta pede ambas. Se for vago ("abordar", "conhecer"), escolher o eixo a partir do conteúdo das fontes e dizê-lo em "O que se espera do estudante".
 
 Sem objetivos fornecidos, o eixo define-se pelas próprias fontes (qual é o problema que tratam e qual é a resposta que dão), e os objetivos da contextualização formulam-se a partir dele, com os verbos deste quadro.
 

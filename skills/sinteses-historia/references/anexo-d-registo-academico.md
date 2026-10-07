@@ -35,6 +35,10 @@ A frase que acolhe a citação tem de ser gramatical quando se lê inteira, com 
 2. **Citar só o segmento** que encaixa, desde que o sentido e as ressalvas se mantenham.
 3. **Partir a citação em dois segmentos exatos**, ligados por uma frase da sebenta que conserve a relação da fonte. Por exemplo, Homem escreve que «a vigência da Constituição não dependia da sanção real», o que equivale, nas suas palavras, a dizer que «não se admitia o veto (art. 112.º, I)» (Homem, s.d., p. 58). O "isto é" da fonte, que exprime equivalência, fica como "o que equivale a", e não como "por isso", que exprimiria consequência.
 
+Uma citação longa não se força para dentro da frase. Com 40 ou mais palavras, vai em bloco (anexo A), e a frase que a apresenta termina em dois pontos ou em ponto final, dizendo porque é que a formulação inteira importa. A explicação que se segue ao bloco não o repete por outras palavras, acrescenta o que ele não diz.
+
+Cortar uma citação é legítimo só quando o trecho omitido não muda o sentido. Antes de pôr reticências, ler o trecho que se vai omitir. Se ele disser quem afirma ("como alguns eruditos argumentam"), com que certeza ("talvez", "se supuseram"), com que negação ou com que restrição, não se omite: cita-se por inteiro, ou diz-se na frase da sebenta ("Johnson admite, com alguns eruditos, que...").
+
 Também se conserva o ato de fala. Uma fonte que relata um acordo ("acordou-se em...") não se introduz como se defendesse uma posição ("defendia que importava..."), e uma fonte que cita outra para a criticar não se introduz como se concordasse com ela.
 
 ## Exemplo de contraste
@@ -47,6 +51,10 @@ Versão telegráfica, a evitar.
 
 Versão académica, a seguir.
 
-> **A Constituição de 1822 entra em vigor sem precisar da aprovação do rei**, porque, como escreve Homem, «a vigência da Constituição não dependia da sanção real» (Homem, s.d., p. 58). Não bastava, porém, retirar ao monarca a última palavra, era preciso impedir que o poder voltasse a concentrar-se, e foi para isso que, segundo o deputado Bento Pereira do Carmo, se «acordou em dividir e equilibrar os três poderes, para evitar o despotismo, que resulta da sua acumulação» (Carmo, 1821, como citado em Homem, s.d., p. 45).
+> Quanto à última palavra sobre a lei fundamental, Homem regista que, na Constituição de 1822, «a vigência da Constituição não dependia da sanção real» (Homem, s.d., p. 58). Não bastava, porém, retirar ao monarca a última palavra, era preciso impedir que o poder voltasse a concentrar-se, e foi para isso que, segundo o deputado Bento Pereira do Carmo, se «acordou em dividir e equilibrar os três poderes, para evitar o despotismo, que resulta da sua acumulação» (Carmo, 1821, como citado em Homem, s.d., p. 45).
 
-Comentário. A versão académica diz o mesmo em duas frases em vez de quatro, cada frase mostra a relação entre as ideias, as citações são gramaticais na frase que as acolhe e a fala do deputado ficou como relato de um acordo, e não como defesa de uma posição.
+Comentário. A versão académica diz o mesmo em duas frases em vez de quatro, cada frase mostra a relação entre as ideias, as citações são gramaticais na frase que as acolhe e a fala do deputado ficou como relato de um acordo, e não como defesa de uma posição. Nenhuma frase anuncia por outras palavras o que a citação vai dizer: a voz própria diz o problema ("quanto à última palavra", "era preciso impedir"), e a tese fica nas palavras da fonte.
+
+## A tese anunciada por paráfrase
+
+O vício mais frequente numa sebenta apoiada em citações é abrir a parte com a tese dita por outras palavras e citá-la logo a seguir. Por exemplo, "**Para o autor, Moisés é o eixo da história judaica e, acima de tudo, o legislador.** Johnson escreve que «Moisés é a figura central na história judaica, o eixo em torno do qual tudo roda»". A primeira frase é um arranjo da segunda e nada acrescenta, e o estudante decora a paráfrase em vez das palavras do autor. A forma certa abre com o problema e enuncia a tese pela citação: "Resta saber que lugar tem Moisés no conjunto da história que Johnson conta. A resposta do autor é que «Moisés é a figura central na história judaica, o eixo em torno do qual tudo roda» (Johnson, 1987/1989, p. 38)."

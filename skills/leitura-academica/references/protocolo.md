@@ -166,6 +166,14 @@ Juízo do leitor, rotulado como tal e baseado só no que o texto mostra. Procura
 
 **Compreensão global em linguagem acessível.** Prosa conectada que explique o que o estudante deve compreender, sem colar as sínteses locais.
 
+**Varredura por objetivo.** A leitura sequencial, unidade a unidade, garante que nenhuma página fica por ler, mas não que tudo o que serve um objetivo foi reconhecido como tal, sobretudo no meio de uma obra longa, onde a atenção cai. Por isso, depois de lida a última unidade e antes do mapa dos objetivos, faz-se uma segunda passagem transversal, objetivo a objetivo. Para cada objetivo, correr a procura por tema com duas ou três consultas, uma com os termos do enunciado, outra com os termos e conceitos do autor e, se for útil, outra com sinónimos ou com o nome das personagens e dos lugares em causa.
+
+```
+python3 scripts/verificar.py --procurar "termos do enunciado" --procurar "termos do autor" --fonte F1=obra.txt --banco dossie.md
+```
+
+A procura ordena as passagens da fonte pela proximidade à consulta (lexical, com raízes das palavras, e não semântica) e diz, para cada uma, se a página já tem citação no banco e a que unidade pertence. Cada passagem "SEM citação no banco" lê-se na fonte e decide-se: serve o objetivo, e entra no banco e na unidade, com a correção da leitura se for caso disso, ou não serve, e diz-se porquê. A secção "Varredura por objetivo" do dossiê regista, numa linha por objetivo, as consultas, as páginas devolvidas, as que já estavam tratadas e o que se acrescentou. O verificador avisa quando falta a varredura e quando o terço central do âmbito tem muito menos citações por página do que as pontas, que é o sinal típico de uma leitura apressada do meio.
+
 **Teste de compreensão.** A prova de leitura mostra que se passou por cada página, mas não que se compreendeu o argumento. Para cada objetivo, formular três perguntas a partir do texto das fontes, de preferência sobre as unidades do meio e sobre as ressalvas, responder-lhes usando só o dossiê e conferir cada resposta na página indicada. A secção "Teste de compreensão" do dossiê regista, numa linha por pergunta, o objetivo, a pergunta, a unidade, o resultado ("conferida" ou "divergente") e, se divergente, a correção feita. Uma resposta divergente obriga a reler a unidade e a corrigir a entrada, e não só a resposta. Se houver ferramenta para lançar um revisor separado, é ele que formula as perguntas e confere as respostas.
 
 **Verificação.** Antes de entregar, conferir o seguinte, além do que o verificador já controla.
@@ -175,5 +183,6 @@ Juízo do leitor, rotulado como tal e baseado só no que o texto mostra. Procura
 - Percebe-se como as razões sustentam as conclusões e em que condições?
 - Cada objetivo tem resposta, ou a indicação clara do que as fontes não cobrem?
 - A amostragem final incluiu unidades do meio?
+- A varredura por objetivo foi feita e as passagens devolvidas sem citação foram lidas?
 
 **Interrupção e retoma.** Registar a fonte, a unidade, o localizador seguinte, os conceitos já definidos, as relações em aberto, as pendências e o último identificador de citação usado. Retomar desse ponto sem repetir o que está concluído.

@@ -41,3 +41,5 @@ Para as notas de atenção, procurar no tema concreto exemplos destes tipos. Esc
 ## Como escrever uma nota de atenção
 
 Começar por "**Atenção.**", num bloco de destaque, em texto normal. Dizer a distinção em uma ou duas frases e explicar por que importa para compreender o tema, com a referência entre parênteses. Se o critério de distinção vier de um autor, atribuí-lo. A nota pode levar uma citação curta, entre aspas angulares, quando é a formulação do autor que fixa a distinção.
+
+A nota de atenção trabalha dentro das fontes: previne uma confusão que a própria matéria provoca. Quando o problema é das fontes (um erro factual, uma posição datada apresentada como consenso, uma tradução que inverte o sentido) e elas não o resolvem, não é nota de atenção, é a caixa "**Fora das fontes.**" (anexo A), com referência exterior validada. Uma nota de atenção nunca afirma uma informação exterior e logo a dá como "por confirmar": ou a informação está confirmada e vai na caixa, ou fica só nas lacunas.

@@ -10,11 +10,63 @@ O nome do tema, tal como aparece no programa, se existir. Logo abaixo, numa linh
 
 ### Contextualização
 
-Um parágrafo de duas a quatro frases que enquadra o tema (tempo, espaço e problema que o atravessa) apenas com o que as fontes dizem, com as palavras-chave a negrito. Segue-se a frase "Nesta temática, pretende-se atingir os seguintes objetivos." e os objetivos em tópicos, cada um a começar pelo verbo a negrito. Se o estudante fornecer os objetivos do programa ou do guia, usam-se esses. Se não, formulam-se dois a quatro a partir das fontes, com os verbos do anexo B. Um objetivo que as fontes não cobrem continua na lista, com a indicação "(sem parte própria, ver Lacunas)".
+Um parágrafo de duas a quatro frases que enquadra o tema (tempo, espaço e problema que o atravessa) apenas com o que as fontes dizem, com as palavras-chave a negrito. Segue-se a frase "Nesta temática, pretende-se atingir os seguintes objetivos." e os objetivos em tópicos, cada um a começar pelo verbo a negrito, tal como o docente os formulou. Uma subsecção "O que se espera do estudante" diz como ler as fontes deste tema (que vozes separar, que posições confrontar) e, quando um objetivo admite mais de uma leitura, qual se adotou e porquê (anexo B). Se não houver objetivos fornecidos, formulam-se dois a quatro a partir das fontes, com os verbos do anexo B. Um objetivo que as fontes não cobrem continua na lista, com a indicação "(sem parte própria, ver Lacunas)".
 
 ### Desenvolvimento por partes
 
-Uma parte por objetivo, com um título numerado e curto que diga a ideia. Cada parte abre com uma frase de orientação própria (que diz a operação e a ligação à parte anterior, sem fórmula fixa) e a ideia principal a negrito. Segue-se o parágrafo que explica e acolhe pelo menos uma citação direta confirmada, depois, se houver elementos paralelos, uma frase de ligação com tópicos, e um parágrafo que retoma o raciocínio. Fecha com a nota de atenção, se houver, e com as notas da parte, depois de um traço horizontal.
+Uma parte por objetivo, com um título numerado e curto que diga a ideia. A parte segue o percurso da etapa 4 da skill: o problema em voz própria, a tese nas palavras do autor, a explicação (o que quer dizer, provas, contra quem, pressupostos, limites), o confronto ou os conceitos em quadro quando o objetivo os pede, a ponte para a parte seguinte, a nota de atenção e as notas. A frase de abertura nunca anuncia a tese por outras palavras antes de a citar.
+
+A extensão de cada parte segue a profundidade do objetivo, e não um número de páginas.
+
+### Citação em bloco
+
+Uma citação de 40 ou mais palavras entra em parágrafo próprio, recuado, sem aspas, com a referência depois da pontuação final e sem ponto depois do parêntese. Em Markdown, o recuo faz-se com `>` no princípio de cada linha. A frase anterior apresenta o bloco e diz porque é que a formulação inteira importa.
+
+```markdown
+Johnson resume o papel de Isaías numa passagem que convém ler inteira, porque liga a mudança religiosa a uma mudança de escala:
+
+> [Citação de 40 ou mais palavras, copiada do banco tal como está na fonte, sem aspas, com reticências sem parênteses retos onde houver omissão.] (Johnson, 1987/1989, p. 84)
+
+A explicação retoma depois o que o bloco diz, sem o repetir por outras palavras.
+```
+
+Se o autor e o ano já estiverem na frase que introduz o bloco ("Como escreve Johnson (1987/1989):"), o parêntese final leva só a página, (p. 84).
+
+### Quadro de contraposição
+
+Quando duas ou mais posições se confrontam, um quadro com os critérios nas linhas e as posições nas colunas. A frase anterior diz que posições se comparam e segundo que critérios, e o parágrafo seguinte explica o que o confronto ensina.
+
+```markdown
+O quadro seguinte compara as duas posições segundo os critérios que as fontes efetivamente discutem.
+
+| Critério | Posição A (Autor, ano) | Posição B (Autor, ano) |
+| --- | --- | --- |
+| [critério escolhido pelo objetivo] | [posição em poucas palavras ou citação curta] (Autor, ano, p. x) | [posição] (Autor, ano, p. y) |
+| [segundo critério] | [posição] (Autor, ano, p. x) | não tratado nas fontes |
+
+[Parágrafo que explica o que o confronto mostra e porque é que cada autor pensa assim.]
+```
+
+### Quadro de conceitos
+
+Quando o objetivo é conceptual, um quadro com o conceito, a definição no autor, o exemplo que a fonte dá e o deslize a evitar.
+
+```markdown
+O quadro seguinte reúne as formas de [conceito] que o autor distingue.
+
+| Conceito | Definição no autor | Exemplo na fonte | Deslize a evitar |
+| --- | --- | --- | --- |
+| [forma 1] | «[citação curta da definição]» (Autor, ano, p. x) | [caso que a fonte dá] (p. x) | [confusão provável] |
+| [forma 2] | [definição] (Autor, ano, p. y) | [caso] (p. y) | [confusão provável] |
+```
+
+### Caixa "Fora das fontes"
+
+Só para uma falha flagrante que as fontes não resolvem (princípios da skill). Uma ou duas frases sobre a falha e o que a investigação diz, com a referência, que entra também nas referências finais e nas lacunas.
+
+```markdown
+> **Fora das fontes.** [A falha da fonte, dita sem refutar o autor.] [O que a investigação diz, de preferência em citação curta] (Autor, ano, p. x). [Porque é que o estudante precisa de o saber.]
+```
 
 ### Notas
 
@@ -66,7 +118,7 @@ O exemplo seguinte serve de modelo de forma, de registo e de honestidade perante
 Antes de o ler, convém ter presentes os pontos que o exemplo demonstra.
 
 - **Títulos estruturados.** Todas as rubricas são títulos, e não parágrafos a negrito.
-- **Uma citação confirmada por parte**, integrada numa frase gramatical, com verbo introdutor neutro, e cortada em dois segmentos exatos quando a sintaxe da fonte não cabe na frase da sebenta.
+- **A tese nas palavras do autor.** Cada parte abre com o problema em voz própria e enuncia a tese com a própria citação, integrada numa frase gramatical, com verbo introdutor neutro, e partida em dois segmentos exatos quando a sintaxe da fonte não cabe na frase da sebenta. Nenhuma frase anuncia a tese por outras palavras antes de a citar.
 - **O ato de fala conservado.** A fala do deputado relata o que "se acordou", e a sebenta não a transforma numa defesa pessoal.
 - **Acrescentos reconhecíveis pela escrita**, como o caso hipotético da parte 2 e a inferência da parte 1.
 - **Notas só com fonte.** Cada nota diz o sentido que a fonte dá ao termo e onde.
@@ -93,9 +145,9 @@ Nesta temática, pretende-se atingir os seguintes objetivos.
 
 ## 1. A lei fundamental não depende do rei
 
-Para perceber o que mudou, convém começar pela regra que retira ao monarca o poder de travar a Constituição. **A Constituição de 1822 entra em vigor sem precisar da aprovação do rei.** Homem escreve que «a vigência da Constituição não dependia da sanção real»¹, o que equivale, nas suas palavras, a dizer que «não se admitia o veto (art. 112.º, I)» (Homem, s.d., p. 58).
+Para perceber o que mudou, convém começar por saber quem tinha a **última palavra** sobre a lei fundamental. Homem responde com uma regra do próprio texto constitucional, segundo a qual «a vigência da Constituição não dependia da sanção real»¹, o que equivale, nas suas palavras, a dizer que «não se admitia o veto (art. 112.º, I)» (Homem, s.d., p. 58).
 
-A regra tem um alcance que ultrapassa o procedimento. Se o rei não pode recusar a lei fundamental, a última palavra sobre ela não é sua, e daqui pode inferir-se que o poder supremo deixou de residir no monarca. A passagem citada não diz, porém, onde passou a residir, e essa resposta fica por confirmar na fonte (ver Lacunas). A parte seguinte trata do problema que esta mudança deixava em aberto, o de impedir que o poder voltasse a concentrar-se noutras mãos.
+A regra tem um alcance que ultrapassa o procedimento. Se o rei não pode recusar a lei fundamental, a última palavra sobre ela não é sua, e daqui pode inferir-se que o poder supremo deixou de residir no monarca. A passagem citada não diz, porém, onde passou a residir (ver Lacunas). A parte seguinte trata do problema que esta mudança deixava em aberto, o de impedir que o poder voltasse a concentrar-se noutras mãos.
 
 > **Atenção.** A regra diz respeito à vigência da Constituição. Não permite concluir, por si só, qual era o papel do rei nas leis ordinárias (Homem, s.d., p. 58).
 
@@ -105,7 +157,7 @@ A regra tem um alcance que ultrapassa o procedimento. Se o rei não pode recusar
 
 ## 2. Dividir os poderes para evitar o despotismo
 
-Retirar a última palavra ao rei não bastava, e a intervenção de um deputado em 1821 explica porquê. **O perigo não estava na pessoa do monarca, mas na concentração do poder.** Bento Pereira do Carmo, citado por Homem, relata que se «acordou em dividir e equilibrar os três poderes, para evitar o despotismo, que resulta da sua acumulação»² (Carmo, 1821, como citado em Homem, s.d., p. 45).
+Retirar a última palavra ao rei não bastava, porque o poder podia voltar a concentrar-se noutras mãos, e é a esse problema que responde a intervenção de um deputado em 1821. Bento Pereira do Carmo, citado por Homem, relata que se «acordou em dividir e equilibrar os três poderes, para evitar o despotismo, que resulta da sua acumulação»² (Carmo, 1821, como citado em Homem, s.d., p. 45).
 
 A frase contém um raciocínio completo, que se decompõe em dois elementos.
 

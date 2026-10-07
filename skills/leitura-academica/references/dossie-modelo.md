@@ -145,6 +145,14 @@ O mapa seguinte é a passagem para a sebenta. Para cada objetivo, mostra onde es
 | --- | --- | --- | --- | --- |
 | O1 | U1, U3 | [C01], [C04] | coberto | [ex. o autor nega a primazia económica que o objetivo pressupõe] |
 
+### Varredura por objetivo
+
+A varredura seguinte foi feita depois de lida a última unidade, com a procura por tema do verificador (`--procurar`), para apanhar o que a leitura sequencial deixou passar (protocolo, secção 11).
+
+| Objetivo | Consultas | Páginas devolvidas | Já tratadas | Acrescentado |
+| --- | --- | --- | --- | --- |
+| O1 | "termos do enunciado"; "termos do autor" | pdf 12, 31, 44 | pdf 12 [C03], pdf 44 [C15] | pdf 31, U4, [C41], correção da leitura da U4 |
+
 ## 12. Pendências e retoma
 
 [Unidades por ler, ilegíveis ou não fornecidas, pontos a confirmar, localizador de retoma e último identificador de citação usado.]

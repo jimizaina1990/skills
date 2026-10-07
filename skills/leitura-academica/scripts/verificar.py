@@ -11,6 +11,9 @@ Modos
     verificar.py --sebenta SEBENTA.md --fonte F1=obra.pdf        (sem dossiê)
   Procurar uma passagem
     verificar.py --localizar "trecho" --fonte obra.pdf
+  Procurar por tema (varredura por objetivo e regresso à fonte)
+    verificar.py --procurar "termos do objetivo" [--procurar "outra consulta"]
+                 --fonte F1=obra.pdf [--banco dossie.md] [--top 8]
 
 O que verifica no dossiê
 
@@ -34,16 +37,34 @@ O que verifica no dossiê
   8. Objetivos e articulação. Cada objetivo tem linha no mapa dos objetivos, com
      citações ou com a indicação de que as fontes não o cobrem. Com duas ou mais
      fontes, existe articulação entre obras com citações de mais de uma.
-  9. Estado. O dossiê não se declara concluído com falhas ou páginas por ler.
+  9. Varredura e meio. Existe a varredura por objetivo, e o terço central do
+     âmbito não tem muito menos citações por página do que as pontas.
+ 10. APA 7. Obras traduzidas ou reeditadas citadas com os dois anos.
+ 11. Estado. O dossiê não se declara concluído com falhas ou páginas por ler.
 
 O que verifica na sebenta
 
-  Citações em aspas retas, angulares e curvas e em bloco, contra o banco e as
-  fontes, com a página. Negrito dentro de citações e itálico sem [ênfase
-  acrescentada]. Títulos estruturados, secções obrigatórias, uma citação por
-  parte, chamadas de nota e notas com referência, excesso de negrito. Verbos
+  Citações curtas (aspas retas, angulares e curvas) e em bloco, contra o banco e
+  as fontes, com a página. Forma APA 7: negrito dentro de citações, itálico sem
+  [ênfase acrescentada], reticências entre parênteses retos ou no princípio e no
+  fim, [sic] em redondo, blocos com menos de 40 palavras, com aspas ou com ponto
+  depois do parêntese, e obras traduzidas citadas sem os dois anos (falha).
+  Omissões que retiram atribuição, modalizador, negação ou restrição (lê o trecho
+  omitido na fonte). Teses a negrito que dizem por outras palavras as citações da
+  parte, frases que corrigem um objetivo, afirmações por confirmar fora das
+  lacunas e nomes próprios ausentes das fontes. Títulos estruturados, secções
+  obrigatórias, partes sem citação, notas com referência, excesso de negrito,
+  conteúdo embebido que não passou para o ficheiro e esquema vazio. Verbos
   factivos e de adesão, vocabulário avaliativo, arranjo e termos de alerta sem
-  nota ou ausentes das fontes (estes dois últimos só com --fonte).
+  nota ou ausentes das fontes. Os parênteses retos escapados pela exportação de
+  documentos (barra invertida antes de [ e ]) são aceites.
+
+O que faz a procura por tema (--procurar)
+
+  Ordena as passagens das fontes pela proximidade a uma consulta (BM25 sobre as
+  raízes das palavras, lexical e não semântica) e, com --banco, diz se a página já
+  tem citação no dossiê e a que unidade pertence. Serve a varredura por objetivo
+  do dossiê e o regresso à fonte durante a sebenta.
 
 O que não verifica
 
@@ -956,6 +977,7 @@ def modo_dossie(args, fontes_arg):
     # 1 e 2. citações e páginas
     print("CITAÇÕES E PÁGINAS")
     estados, prova = {}, defaultdict(set)
+    por_pagina = defaultdict(Counter)
     sem_impressa = set()
     for e in entradas:
         fonte = fonte_de(e["fonte"])
@@ -992,6 +1014,7 @@ def modo_dossie(args, fontes_arg):
             estados[e["id"]] = "confirmada no texto extraído"
         if fonte.tem_paginas and pgs:
             prova[e["fonte"]] |= set(pgs)
+            por_pagina[e["fonte"]][min(pgs)] += 1
             if decl and not set(pgs) <= decl:
                 aviso = True
                 extras.append(f"página PDF declarada {sorted(decl)}, o texto está em "
@@ -1107,6 +1130,18 @@ def modo_dossie(args, fontes_arg):
                 falhas += 1
         print(f"INFO      {fid}: âmbito {fmt(a, min(b, fonte.n))}, {len(ambito & cobertas)} de "
               f"{len(ambito)} páginas com unidade, {len(prova[fid] & ambito)} com citação")
+        # o meio lido à pressa: o terço central com muito menos citações por página do que as pontas
+        b2 = min(b, fonte.n)
+        if b2 - a + 1 >= 30:
+            t = (b2 - a + 1) // 3
+            meio = sum(por_pagina[fid][p] for p in range(a + t, b2 - t + 1)) / max(1, b2 - 2 * t - a + 1)
+            pontas = (sum(por_pagina[fid][p] for p in range(a, a + t)) +
+                      sum(por_pagina[fid][p] for p in range(b2 - t + 1, b2 + 1))) / max(1, 2 * t)
+            if pontas and meio < 0.5 * pontas:
+                print(f"AVISO     {fid}: o terço central ({fmt(a + t, b2 - t)}) tem {meio:.1f} citações "
+                      f"por página e as pontas {pontas:.1f}. Sinal de leitura apressada do meio. Reler "
+                      "o terço central e fazer a varredura por objetivo")
+                avisos_n += 1
 
     # 5. arranjo
     print("\nARRANJO")
@@ -1183,6 +1218,21 @@ def modo_dossie(args, fontes_arg):
         for o in sorted(servidos - set(objetivos)):
             print(f"AVISO     unidades remetem para {o}, que não está definido")
             avisos_n += 1
+        cab_v = [n for n, l in enumerate(vis) if l.startswith("#") and "Varredura por objetivo" in l]
+        tem_varr = bool(cab_v)
+        if not tem_varr:
+            print("AVISO     falta a \"Varredura por objetivo\" (protocolo, secção 11). Numa obra "
+                  "longa é ela que apanha o que a leitura sequencial deixou passar no meio")
+            avisos_n += 1
+        else:
+            ini_v = cab_v[0]
+            fim_v = next((n for n in range(ini_v + 1, len(vis)) if vis[n].startswith(("## ", "### "))),
+                         len(vis))
+            linhas_v = [l.strip() for l in vis[ini_v:fim_v] if l.strip().startswith("|")]
+            for o in objetivos:
+                if not any(re.match(rf"^\|\s*{o}\b", l) for l in linhas_v):
+                    print(f"AVISO     {o} sem linha na varredura por objetivo")
+                    avisos_n += 1
     fichas = sorted({FICHA.match(l).group(1).upper() for l in vis if FICHA.match(l)})
     if len(fichas) >= 2:
         art = seccao(secs, "Articulação")
@@ -1259,6 +1309,19 @@ def modo_dossie(args, fontes_arg):
                   "regista a Era de César. Registar a data da fonte, o sistema e a data convertida")
             avisos_n += 1
 
+    print("\nAPA 7")
+    texto_dossie = "\n".join(vis)
+    erradas = sem_ano_duplo(texto_dossie, obras_com_ano_duplo(texto_dossie))
+    if erradas:
+        ap, lido, orig = erradas[0][1:]
+        lns = sorted({x[0] for x in erradas})
+        print(f"FALHA     {len(erradas)} citação(ões) de obra traduzida ou reeditada só com o ano da "
+              f"edição lida, ({ap}, {lido}, ...). Em APA 7 levam os dois anos, ({ap}, {orig}/{lido}, "
+              f"p. X). Linhas {', '.join(map(str, lns[:12]))}{' ...' if len(lns) > 12 else ''}")
+        falhas += 1
+    else:
+        print("OK        obras traduzidas ou reeditadas citadas com os dois anos")
+
     for msg in erros:
         print(f"ERRO      {msg}")
 
@@ -1296,6 +1359,248 @@ def modo_dossie(args, fontes_arg):
     return 0 if apto else 1
 
 
+# ---------------------------------------------------------------- APA 7 e omissões
+
+# Obra traduzida ou reeditada: a referência termina em "(Obra original publicada em 1987)" e a
+# citação no texto leva os dois anos, (Johnson, 1987/1989, p. 15). APA, secções 9.39 a 9.41.
+ORIGINAL = re.compile(r"\((?:Obra original publicada em|Original work published)\s+(\d{3,4})\)", re.I)
+
+
+def obras_com_ano_duplo(texto):
+    """{apelido: (ano da edição lida, ano original)} das referências de obras traduzidas."""
+    out = {}
+    for l in texto.split("\n"):
+        m = ORIGINAL.search(l)
+        if not m:
+            continue
+        r = re.search(r"([A-ZÀ-Ý][\w'’\-]+(?: [A-ZÀ-Ý][\w'’\-]+)?), (?:[A-ZÀ-Ý]\.(?: |-)?)+"
+                      r"[^()]*?\((\d{4})[a-z]?\)", l)
+        if r and r.group(2) != m.group(1):
+            out[r.group(1)] = (r.group(2), m.group(1))
+    return out
+
+
+def sem_ano_duplo(texto, obras):
+    """[(linha, apelido, ano lido, ano original)] das citações que só dão o ano da edição lida."""
+    out = []
+    for ap, (lido, orig) in obras.items():
+        rx = re.compile(rf"\b{re.escape(ap)}(?:\s+et al\.)?\s*(?:,\s*|\(\s*){lido}\b")
+        for m in rx.finditer(texto):
+            linha = texto.count("\n", 0, m.start()) + 1
+            if not ORIGINAL.search(texto.split("\n")[linha - 1]):
+                out.append((linha, ap, lido, orig))
+    return out
+
+
+# o que uma omissão não pode levar: quem afirma, com que certeza, e a negação
+OMISSAO_SENSIVEL = [
+    ("atribuição", re.compile(
+        r"\bcomo (?:\w+ ){0,2}(?:eruditos|autores|historiadores|estudiosos|criticos|"
+        r"especialistas|teologos)\b|\bsegundo (?:\w+ ){0,2}(?:eruditos|autores|historiadores|"
+        r"estudiosos|a tradicao)\b|\bde acordo com\b|\b(?:argumentam|defendem|sustentam|alegam|"
+        r"julgam|pretendem|supoem|supuseram)\b")),
+    ("modalizador", re.compile(
+        r"\b(?:talvez|provavelmente|possivelmente|aparentemente|presumivelmente|quica|"
+        r"parece|parecem|parecia|pareciam|se supuseram|se supos)\b")),
+    ("negação", re.compile(r"\b(?:nao|nem|nunca|jamais)\b")),
+    ("restrição", re.compile(r"\b(?:embora|contudo|todavia|apenas|somente|exceto|salvo se)\b")),
+]
+
+
+def omissoes(citacao, fonte):
+    """Texto da fonte que cada omissão (reticências ou interpolação) deixou de fora."""
+    segs = segmentos(citacao)
+    if len(segs) < 2:
+        return []
+    idx, pos, out = fonte.i1, [], []
+    ultimo = 0
+    for seg in segs:
+        chave = n1(seg)
+        i = idx.texto.find(chave, ultimo)
+        if i < 0:
+            return []
+        pos.append((i, i + len(chave)))
+        ultimo = i + len(chave)
+    for (_, fim), (ini, _) in zip(pos, pos[1:]):
+        omitido = idx.texto[fim:ini].strip()
+        if 0 < len(omitido) <= 1500:
+            out.append(omitido)
+    return out
+
+
+def omissao_sensivel(citacao, fonte):
+    """[(tipo, texto omitido)] quando a omissão retira atribuição, modalizador, negação ou restrição."""
+    achados = []
+    for omitido in omissoes(citacao, fonte):
+        plano = sem_acentos(omitido.lower())
+        for tipo, rx in OMISSAO_SENSIVEL:
+            if rx.search(plano):
+                achados.append((tipo, omitido))
+                break
+    return achados
+
+
+def forma_da_citacao(cru):
+    """Avisos de forma APA 7 numa citação: reticências e [sic]."""
+    out = []
+    if re.search(r"\[\s*(?:\.\s?\.\s?\.|…)\s*\]", cru):
+        out.append("omissão entre parênteses retos, [...]. Em APA 7 marca-se com reticências sem "
+                   "parênteses ( … ou . . . ), e com quatro pontos quando a omissão passa de uma "
+                   "frase para outra")
+    if re.match(r"\s*(?:\[\s*)?(?:\.\s?\.\s?\.|…)", cru) or re.search(r"(?:\.\s?\.\s?\.|…)(?:\s*\])?\s*$", cru):
+        out.append("reticências no princípio ou no fim da citação. Em APA 7 só entram se estiverem "
+                   "no original")
+    if re.search(r"\[sic\]", cru) and not re.search(r"\[\*sic\*\]|\*\[sic\]\*|\[_sic_\]", cru):
+        out.append("[sic] em redondo. Em APA 7 escreve-se em itálico, [*sic*]")
+    return out
+
+
+PALAVRAS_MAIUSC = set(sem_acentos("""
+a o os as um uma e de do da dos das em no na por para com se que não nem mas pois porque
+quando como onde este esta estes estas esse essa isso isto aquele aquela ao aos à às pelo pela
+há é foi era são segundo depois antes também já ainda assim ora desde até entre sobre sem nas
+nos num numa cada todo toda todos todas outro outra uma ele ela eles elas seu sua quem qual
+atenção nota notas parte partes quadro fase fases tema objetivo objetivos lacunas referências
+""").split())
+
+
+NOME = re.compile(r"(?<![\w\-])[A-ZÀ-Ý][^\W\d_]*(?:[\-'’][^\W\d_]+)*"
+                  r"(?: (?:(?:de|do|da|dos|das) )?[A-ZÀ-Ý][^\W\d_]*(?:[\-'’][^\W\d_]+)*)*")
+ROMANO = re.compile(r"^[IVXLCDM]+$")
+
+
+def nomes_ausentes(frases, fontes, permitidos=""):
+    """Nomes próprios da prosa que não aparecem em nenhuma fonte. Um nome de uma palavra tolera
+    diferenças de grafia (Jacob e Jacó); um nome composto tem de aparecer tal como está."""
+    corridos = [re.sub(r"[\s\-]+", "", sem_acentos(f.i1.texto.lower())) for f in fontes.values()]
+    palavras_fonte = set()
+    for f in fontes.values():
+        palavras_fonte |= {w.replace("-", "") for w in
+                           re.findall(r"[^\W\d_]{3,}(?:-[^\W\d_]+)*", sem_acentos(f.i1.texto.lower()))}
+    perm = re.sub(r"[\s\-]+", "", sem_acentos(permitidos.lower()))
+    vistos, out = set(), []
+
+    def presente(chave, composto):
+        if any(chave in t for t in corridos) or chave in perm:
+            return True
+        if composto or len(chave) < 4:
+            return False
+        return bool(difflib.get_close_matches(chave, [w for w in palavras_fonte
+                                                       if w[:2] == chave[:2]], n=1, cutoff=0.8))
+
+    for ln, frase, _ in frases:
+        frase = re.sub(rf"[{SOBRESCRITOS}]", "", frase)
+        for m in NOME.finditer(frase):
+            antes = frase[:m.start()].rstrip()
+            if not antes or antes[-1] in ".!?:-–•(":
+                continue  # primeira palavra da frase ou de um tópico
+            nome = " ".join(w for w in m.group(0).split() if not ROMANO.match(w))
+            if not nome or ROMANO.match(nome.split()[0]):
+                continue
+            if sem_acentos(nome.split()[0].lower()) in PALAVRAS_MAIUSC and " " not in nome:
+                continue
+            chave = re.sub(r"[\-]+", "", sem_acentos(nome.lower()))
+            corrido = chave.replace(" ", "")
+            if corrido in vistos:
+                continue
+            vistos.add(corrido)
+            if not presente(corrido, " " in chave):
+                out.append((ln, nome))
+    return out
+
+
+# ---------------------------------------------------------------- modo procurar
+
+def passagens(fonte, alvo=90):
+    """[(pdf, texto)] com passagens de cerca de noventa palavras, frase a frase, por página."""
+    out = []
+    for p, txt in enumerate(corpo_das_paginas(fonte), 1):
+        atual = []
+        for f in FRASE.split(txt):
+            atual.append(f.strip())
+            if sum(len(x.split()) for x in atual) >= alvo:
+                out.append((p, " ".join(atual)))
+                atual = atual[-1:]
+        if atual and sum(len(x.split()) for x in atual) >= 15:
+            out.append((p, " ".join(atual)))
+    return out
+
+
+def raizes_de(texto):
+    return [raiz(t) for t in tokens(texto) if t not in PARAGEM and len(t) >= 3 and not t.isdigit()]
+
+
+def bm25(consulta, pass_, k1=1.5, b=0.75):
+    import math
+    docs = [Counter(raizes_de(t)) for _, t in pass_]
+    n = len(docs)
+    if not n:
+        return []
+    media = sum(sum(d.values()) for d in docs) / n
+    df = Counter()
+    for d in docs:
+        df.update(d.keys())
+    q = set(raizes_de(consulta))
+    notas = []
+    for k, d in enumerate(docs):
+        tam, s = sum(d.values()), 0.0
+        for r in q:
+            if r in d:
+                idf = math.log(1 + (n - df[r] + 0.5) / (df[r] + 0.5))
+                s += idf * d[r] * (k1 + 1) / (d[r] + k1 * (1 - b + b * tam / media))
+        if s > 0:
+            notas.append((s, k))
+    return sorted(notas, reverse=True)
+
+
+def modo_procurar(consultas, fontes_arg, args):
+    """Passagens das fontes mais próximas de cada consulta, com a indicação do que o dossiê já
+    cita e de que unidade cobre a página. Serve a varredura por objetivo e o regresso à fonte."""
+    citadas, unidades = defaultdict(lambda: defaultdict(list)), []
+    if args.banco:
+        linhas = Path(args.banco).read_text(encoding="utf-8").split("\n")
+        entradas, _ = ler_banco(linhas)
+        for e in entradas:
+            iv = intervalo(e["pdf"])
+            if iv:
+                for p in range(iv[0], iv[1] + 1):
+                    citadas[e["fonte"]][p].append(e["id"])
+        unidades = ler_unidades(visiveis(linhas))
+    for consulta in consultas:
+        print(f"CONSULTA  \"{consulta}\"")
+        for fid, cam in fontes_arg.items():
+            fonte = fonte_para(cam)
+            fid = (fid or "F1").upper()
+            pass_ = passagens(fonte)
+            por_pagina = Counter()
+            mostradas = 0
+            for s, k in bm25(consulta, pass_):
+                p, txt = pass_[k]
+                if por_pagina[p] >= 2:
+                    continue
+                por_pagina[p] += 1
+                imp, _ = fonte.impressa(p)
+                pag = f", p. {texto_paginas(imp)}" if imp else ""
+                cit = citadas[fid].get(p, [])
+                uni = next((u["id"] for u in unidades if u["fonte"] == fid and u["pdf"]
+                            and u["pdf"][0] <= p <= u["pdf"][1]), None)
+                estado = ""
+                if args.banco:
+                    partes = [f"citada no banco: {', '.join(cit)}" if cit else
+                              "SEM citação no banco nesta página"]
+                    partes += [uni] if uni else ["fora de qualquer unidade"]
+                    estado = "  [" + "; ".join(partes) + "]"
+                print(f"  {fid} pdf {p}{pag}  ({s:.1f}){estado}")
+                print(f"      {txt[:300]}{'...' if len(txt) > 300 else ''}")
+                mostradas += 1
+                if mostradas >= args.top:
+                    break
+            if not mostradas:
+                print(f"  {fid}: nenhuma passagem com estes termos")
+        print()
+    return 0
+
+
 # ---------------------------------------------------------------- modo sebenta
 
 # citações em aspas retas (4 ou mais palavras, porque as retas também marcam termos),
@@ -1315,28 +1620,44 @@ def blocos_de_codigo(texto):
     return re.sub(r"```.*?```", lambda m: "\n" * m.group(0).count("\n"), texto, flags=re.S)
 
 
+CAIXA = re.compile(r"\**(?:Atenção|Fora das fontes)\b")
+
+
 def citacoes_da_sebenta(bruto):
-    """[(citação sem marcas, início, fim, texto em bruto)] no texto e nos blocos de citação."""
+    """[(citação sem marcas, início, fim, texto em bruto, forma)] no texto e nos blocos de
+    citação. A forma é "frase" ou "bloco"; num bloco, o último elemento traz o que vem depois do
+    parêntese da referência."""
     out = []
+    blocos = [(m.start(), m.end()) for m in re.finditer(r"(?:^>.*\n?)+", bruto, flags=re.M)]
+    for m in re.finditer(r"(?:^>.*\n?)+", bruto, flags=re.M):
+        bloco = re.sub(r"^>\s?", "", m.group(0), flags=re.M).strip()
+        if CAIXA.match(bloco):
+            continue
+        locs = list(PAREN_LOC.finditer(bloco))
+        if locs and locs[-1].end() >= len(bloco) - 3 and len(bloco.split()) >= 4:
+            corpo = bloco[:locs[-1].start()].strip()
+            depois = bloco[locs[-1].end():].strip()
+            limpo = re.sub(r"\*\*|__", "", corpo)
+            limpo = re.sub(rf"[{SOBRESCRITOS}]+", "", limpo)
+            out.append((limpo, m.start(), m.end(), corpo, ("bloco", depois)))
     for rx, minimo in CIT_SEB:
         for m in rx.finditer(bruto):
+            dentro_de_bloco = any(a <= m.start() < b for a, b in blocos if
+                                  any(c[1] == a for c in out))
+            if dentro_de_bloco:
+                continue  # aspas internas de uma citação em bloco
             limpo = re.sub(r"\*\*|__|(?<!\w)[*_]|[*_](?!\w)", "", m.group(1))
             limpo = re.sub(rf"[{SOBRESCRITOS}]+", "", limpo)
             if len(limpo.split()) >= minimo:
-                out.append((limpo, m.start(), m.end(), m.group(1)))
-    for m in re.finditer(r"(?:^>.*\n?)+", bruto, flags=re.M):
-        bloco = re.sub(r"^>\s?", "", m.group(0), flags=re.M).strip()
-        if re.match(r"\**Atenção", bloco):
-            continue
-        locs = list(PAREN_LOC.finditer(bloco))
-        if locs and locs[-1].end() >= len(bloco) - 3 and len(bloco.split()) >= 40:
-            corpo = bloco[:locs[-1].start()].strip()
-            out.append((re.sub(r"\*\*|__", "", corpo), m.start(), m.end(), corpo))
+                out.append((limpo, m.start(), m.end(), m.group(1), ("frase", "")))
     return sorted(out, key=lambda c: c[1])
 
 
 def modo_sebenta(args, fontes_arg):
-    bruto = blocos_de_codigo(Path(args.sebenta).read_text(encoding="utf-8"))
+    original = Path(args.sebenta).read_text(encoding="utf-8")
+    # a exportação de documentos para Markdown escapa os parênteses retos (\[sic\], \[...\])
+    original = re.sub(r"\\([\[\]])", r"\1", original).replace("&#91;", "[").replace("&#93;", "]")
+    bruto = blocos_de_codigo(original)
     linhas = bruto.split("\n")
     entradas = []
     if args.banco:
@@ -1351,17 +1672,45 @@ def modo_sebenta(args, fontes_arg):
 
     print("CITAÇÕES")
     citacoes = citacoes_da_sebenta(bruto)
-    for cit, ini, fim, cru in citacoes:
+    fontes_cit = {fid: fonte_para(cam) for fid, cam in fontes_arg.items()}
+    for cit, ini, fim, cru, (forma, depois) in citacoes:
         linha = linha_de(ini)
         rot = f"linha {linha}  \"{cit[:70]}{'...' if len(cit) > 70 else ''}\""
+        sem_sic = re.sub(r"\[\*sic\*\]|\*\[sic\]\*|\[_sic_\]", "[sic]", cru)
         if "**" in cru or "__" in cru:
             print(f"FALHA     {rot}\n          negrito dentro de uma citação. A APA 7 só admite ênfase "
                   "em itálico seguida de [ênfase acrescentada]")
             falhas += 1
-        elif re.search(r"(?<!\w)[*_]\w", cru) and not ENFASE.search(bruto[ini: fim + 120]):
+        elif re.search(r"(?<!\w)[*_]\w", sem_sic) and not ENFASE.search(bruto[ini: fim + 120]):
             print(f"AVISO     {rot}\n          itálico dentro de uma citação sem [ênfase acrescentada] "
                   "nem (ênfase no original)")
             avisos += 1
+        for msg in forma_da_citacao(cru):
+            print(f"AVISO     {rot}\n          {msg}")
+            avisos += 1
+        if forma == "bloco":
+            if len(cit.split()) < 40:
+                print(f"AVISO     {rot}\n          citação em bloco com menos de 40 palavras. Em APA 7 "
+                      "vai na frase, entre aspas")
+                avisos += 1
+            if depois:
+                print(f"AVISO     {rot}\n          \"{depois}\" depois do parêntese da referência. Num "
+                      "bloco, a referência vem depois da pontuação final e não leva ponto")
+                avisos += 1
+            elif not re.search(r"[.!?…»”\"]\s*$", cit):
+                print(f"AVISO     {rot}\n          num bloco, a referência vem depois da pontuação "
+                      "final da citação")
+                avisos += 1
+            if re.match(r"\s*[«“\"]", cru) and re.search(r"[»”\"]\s*$", cru):
+                print(f"AVISO     {rot}\n          citação em bloco entre aspas. Em APA 7 o bloco não "
+                      "leva aspas")
+                avisos += 1
+        for fonte in fontes_cit.values():
+            for tipo, omitido in omissao_sensivel(cit, fonte):
+                print(f"AVISO     {rot}\n          a omissão retira texto com {tipo}: \"{omitido[:120]}"
+                      f"{'...' if len(omitido) > 120 else ''}\". Uma omissão não pode mudar quem "
+                      "afirma, com que certeza ou com que ressalva. Citar por inteiro ou dizê-lo na frase")
+                avisos += 1
         segs = [n1(s) for s in segmentos(cit)]
         if not segs:
             continue
@@ -1419,6 +1768,23 @@ def modo_sebenta(args, fontes_arg):
             print("          40 ou mais palavras entre aspas. Em APA 7 vai em bloco, sem aspas")
             avisos += 1
 
+    print("\nAPA 7")
+    obras = obras_com_ano_duplo(bruto)
+    if args.banco:
+        for ap, anos in obras_com_ano_duplo(Path(args.banco).read_text(encoding="utf-8")).items():
+            obras.setdefault(ap, anos)
+    erradas = sem_ano_duplo(bruto, obras)
+    if erradas:
+        ap, lido, orig = erradas[0][1:]
+        lns = sorted({x[0] for x in erradas})
+        print(f"FALHA     {len(erradas)} citação(ões) de obra traduzida ou reeditada só com o ano da "
+              f"edição lida, ({ap}, {lido}, ...). Em APA 7 levam os dois anos, ({ap}, {orig}/{lido}, "
+              f"p. X). Linhas {', '.join(map(str, lns[:12]))}{' ...' if len(lns) > 12 else ''}")
+        falhas += 1
+    else:
+        print("OK        obras traduzidas ou reeditadas citadas com os dois anos" if obras else
+              "OK        sem obras traduzidas ou reeditadas nas referências")
+
     # estrutura
     print("\nESTRUTURA")
     n_estrutura = avisos
@@ -1460,6 +1826,20 @@ def modo_sebenta(args, fontes_arg):
                   "dizer que a fonte não define o termo e registá-lo nas lacunas")
             avisos += 1
 
+    for n, l in enumerate(linhas):
+        if re.search(r"embedded content|conteúdo (?:incorporado|embebido)", l, re.I):
+            print(f"AVISO     linha {n + 1}: conteúdo embebido que não passou para o texto "
+                  f"(\"{l.strip()[:60]}\"). O esquema ou o quadro tem de estar no ficheiro")
+            avisos += 1
+    esq = next((n for n, l in titulos if "esquema" in l.lower()), None)
+    if esq is not None:
+        fim_esq = next((m for m, _ in titulos if m > esq), len(linhas))
+        trecho = "\n".join(original.split("\n")[esq + 1:fim_esq])
+        if not re.search(r"```|^\s*\|.*\|\s*$|^\s*[-*]\s|-->|→|!\[", trecho, re.M):
+            print(f"AVISO     linha {esq + 1}: a secção do esquema não tem esquema (Mermaid, quadro, "
+                  "lista com setas ou imagem)")
+            avisos += 1
+
     if avisos == n_estrutura:
         print("OK        títulos, secções, notas e citações por parte")
 
@@ -1487,6 +1867,69 @@ def modo_sebenta(args, fontes_arg):
     avisos += n_voz
     if not n_voz:
         print("OK        sem verbos factivos nem vocabulário avaliativo na voz da sebenta")
+
+    print("\nFIDELIDADE")
+    n_fid = 0
+    lac = next((n for n, l in titulos if "lacunas" in l.lower()), None)
+    fim_lac = next((m for m, _ in titulos if lac is not None and m > lac), len(linhas))
+    fora = excluir + ([(lac, fim_lac)] if lac is not None else [])
+    for n, l in enumerate(linhas):
+        if any(a <= n < b for a, b in fora):
+            continue
+        plano = sem_acentos(re.sub(r'"[^"]*"|«[^»]*»|“[^”]*”', " ", l).lower())
+        if re.search(r"objetivo[^.]{0,120}\b(?:deve ser corrigid|esta errad|mal formulad|corrigi-lo|"
+                     r"ser corrigid|corrigir o enunciado)|corrig\w* (?:o|este|esse) (?:objetivo|enunciado)",
+                     plano):
+            print(f"AVISO     linha {n + 1}: a sebenta corrige o objetivo. Um objetivo do docente não se "
+                  "corrige, interpreta-se no sentido mais plausível que as fontes sustentam, e diz-se o "
+                  "que as fontes não cobrem")
+            n_fid += 1
+        if re.search(r"\b(?:por confirmar|deve(?:m)? ser confirmad\w*|deve(?:m)? confirmar-se|"
+                     r"carece(?:m)? de confirmacao|falta confirmar|ainda nao confirmad\w*)", plano):
+            print(f"AVISO     linha {n + 1}: afirmação dada como por confirmar fora das lacunas. Ou se "
+                  "confirma com fonte e referência, ou sai do desenvolvimento e fica só nas lacunas, no "
+                  "condicional")
+            n_fid += 1
+    for k, (n, l) in enumerate(partes):
+        seguinte = next((m for m, _ in titulos if m > n), len(linhas))
+        a, b = len("\n".join(linhas[:n])), len("\n".join(linhas[:seguinte]))
+        for m in re.finditer(r"\*\*([^*\n]+)\*\*", bruto[a:b]):
+            tese = m.group(1)
+            if len(tese.split()) < 8:
+                continue
+            ini = a + m.start()
+            perto = [c for c in citacoes if a <= c[1] < b]
+            r_tese = {raiz(t) for t in conteudo(tokens(tese))}
+            r_cit, melhor = set(), (0, None)
+            for c in perto:
+                rc = {raiz(t) for t in conteudo(tokens(c[0]))}
+                r_cit |= rc
+                melhor = max(melhor, (len(rc & r_tese), c[0]), key=lambda x: x[0])
+            comuns = r_tese & r_cit
+            if len(r_tese) >= 5 and len(comuns) >= 4 and len(comuns) / len(r_tese) >= 0.45:
+                print(f"AVISO     linha {linha_de(ini)}: a tese a negrito diz por outras palavras a "
+                      "citação que vem a seguir, o que é arranjo. Enunciar a tese com a própria citação, "
+                      "ou dizer em voz própria o que a citação não diz (o problema, o que está em jogo)")
+                print(f"          tese    \"{tese[:110]}{'...' if len(tese) > 110 else ''}\"")
+                print(f"          citação mais próxima \"{melhor[1][:110]}\"")
+                n_fid += 1
+    if fontes_arg:
+        vis_nomes = list(vis)
+        for a, b in fora:
+            for n in range(a, b):
+                vis_nomes[n] = ""
+        refs_txt = "\n".join(linhas[refs:fim_refs]) if refs is not None else ""
+        ausentes = nomes_ausentes(prosa_para_arranjo(vis_nomes, []), fontes_cit, refs_txt)
+        if ausentes:
+            print(f"AVISO     nomes próprios que não aparecem nas fontes: "
+                  f"{', '.join(f'{nome} (l. {ln})' for ln, nome in ausentes[:30])}"
+                  f"{' ...' if len(ausentes) > 30 else ''}. Conferir se são só a grafia portuguesa de "
+                  "um nome da fonte. Se forem conhecimento exterior, vão na caixa \"Fora das fontes\", "
+                  "com referência")
+            n_fid += 1
+    avisos += n_fid
+    if not n_fid:
+        print("OK        objetivos, confirmações, teses e nomes conformes às fontes")
 
     fontes_obj = {fid: fonte_para(cam) for fid, cam in fontes_arg.items()}
     print("\nARRANJO E TERMINOLOGIA")
@@ -1564,9 +2007,16 @@ def main():
     ap.add_argument("--sebenta", help="verificar as citações de uma sebenta contra o banco")
     ap.add_argument("--banco", help="dossiê com o banco de citações (modo sebenta)")
     ap.add_argument("--localizar", help="procurar um trecho nas fontes")
+    ap.add_argument("--procurar", action="append", default=[],
+                    help="passagens mais próximas de uma consulta (pode repetir-se)")
+    ap.add_argument("--top", type=int, default=8, help="passagens por consulta e fonte (8)")
     args = ap.parse_args()
     fontes = mapa_fontes(args.fonte)
 
+    if args.procurar:
+        if not fontes:
+            ap.error("indicar pelo menos uma --fonte")
+        return modo_procurar(args.procurar, fontes, args)
     if args.localizar:
         if not fontes:
             ap.error("indicar pelo menos uma --fonte")

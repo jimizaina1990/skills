@@ -1,6 +1,6 @@
 ---
 name: leitura-academica
-description: Leitura integral, fiel e verificável das fontes de estudo de uma unidade curricular de História, Cultura ou Religião (obras, capítulos de obras coletivas, artigos, resenhas, sebentas, manuais, entradas de dicionário, fontes primárias, textos religiosos, imagens, textos teóricos, quadros e mapas), orientada pelos objetivos da unidade e com prova de leitura em cada troço do texto. Produz o dossiê de leitura (objetivos decompostos, fichas com contexto historiográfico, unidades, citações diretas confirmadas e localizadas, conceitos, cronologia com datas convertidas, articulação entre obras, teste de compreensão e mapa dos objetivos) a partir do qual a skill sinteses-historia faz depois a sebenta. Usar quando o utilizador pedir para ler, analisar, estudar, fichar ou comparar documentos carregados, ou para preparar a leitura de um tema antes da sebenta. Não redige a sebenta.
+description: Leitura integral, fiel e verificável das fontes de estudo de uma unidade curricular de História, Cultura ou Religião (obras, capítulos de obras coletivas, artigos, resenhas, sebentas, manuais, entradas de dicionário, fontes primárias, textos religiosos, imagens, textos teóricos, quadros e mapas), orientada pelos objetivos da unidade e com prova de leitura em cada troço do texto. Produz o dossiê de leitura (objetivos decompostos, fichas com contexto historiográfico, unidades, citações diretas confirmadas e localizadas, conceitos, cronologia com datas convertidas, articulação entre obras, teste de compreensão, varredura por objetivo contra a perda do meio e mapa dos objetivos) a partir do qual a skill sinteses-historia faz depois a sebenta. Usar quando o utilizador pedir para ler, analisar, estudar, fichar ou comparar documentos carregados, ou para preparar a leitura de um tema antes da sebenta. Não redige a sebenta.
 ---
 
 # Leitura académica
@@ -24,6 +24,8 @@ Perante um texto longo, um modelo tende a ler o princípio com atenção, a pass
 - **Registo imediato.** A análise e as citações de cada unidade entram no dossiê logo que a unidade é lida, antes de passar à seguinte.
 - **O meio vale o mesmo que as pontas.** As unidades centrais recebem a mesma atenção que a introdução e a conclusão, porque é nelas que o argumento se constrói. Uma conclusão do autor só se regista como tal depois de lido o desenvolvimento que a sustenta.
 - **Visão de conjunto no fim.** A visão global, a articulação entre obras e o mapa dos objetivos só se escrevem depois de lida a última unidade.
+- **Segunda passagem por objetivo.** Lida a última unidade, faz-se a varredura por objetivo com a procura por tema do verificador (`--procurar`), que devolve as passagens da obra inteira mais próximas de cada objetivo e diz quais ainda não têm citação no dossiê. É o que apanha o que a leitura sequencial deixou passar no meio. As passagens sem citação lêem-se na fonte e decide-se se entram (protocolo, secção 11).
+- **Medir o meio.** O verificador compara a densidade de citações do terço central com a das pontas e avisa quando o meio ficou mais pobre. O aviso resolve-se relendo o meio, e não acrescentando citações ao acaso.
 
 ## Fluxo
 
@@ -37,7 +39,7 @@ Perante um texto longo, um modelo tende a ler o princípio com atenção, a pass
 
 **5. Ler o conjunto.** Consolidar os conceitos (sentido no autor, termo de época ou conceito do historiador, âmbito), os factos e a cronologia, e os limites do documento. Com duas ou mais obras, escrever a articulação entre obras, objetivo a objetivo, segundo o protocolo, secção 9, depois de cada obra ter sido lida por si.
 
-**6. Mapa dos objetivos.** Para cada objetivo, registar as unidades e as citações que o servem, o grau de cobertura (coberto, parcial, não coberto pelas fontes), as tensões entre o objetivo e o que as fontes dizem, e o que falta. O mapa é a passagem para a sebenta, e é a partir dele que a síntese constrói os núcleos.
+**6. Varredura e mapa dos objetivos.** Fazer primeiro a varredura por objetivo (protocolo, secção 11) e registá-la no dossiê. Depois, para cada objetivo, registar as unidades e as citações que o servem, o grau de cobertura (coberto, parcial, não coberto pelas fontes), as tensões entre o objetivo e o que as fontes dizem, e o que falta. O mapa é a passagem para a sebenta, e é a partir dele que a síntese constrói os núcleos.
 
 **7. Testar a compreensão e verificar.** Para cada objetivo, formular três perguntas de compreensão a partir do texto das fontes (e não do dossiê), responder-lhes usando só o dossiê e conferir cada resposta na página. Registar o resultado na secção "Teste de compreensão", e reler a unidade sempre que a resposta divergir do texto. Se houver ferramenta para lançar um revisor separado, é ele que formula as perguntas e confere as respostas, sem ver o raciocínio que produziu o dossiê, e numa obra inteira ou em várias obras isso é obrigatório. Depois, correr o verificador (comandos abaixo). O dossiê só se declara concluído quando o verificador termina com "Dossiê apto para a sebenta", isto é, sem falhas, sem erros e sem páginas por ler. A linha final da saída copia-se para o dossiê, na secção de pendências, numa linha começada por "Verificação.", e o verificador confere-a nas corridas seguintes. Nunca se declara o dossiê apto sem ter corrido o verificador nesta conversa, e no chat mostra-se a linha final tal como saiu. Os avisos resolvem-se um a um, e um aviso de arranjo resolve-se citando ou reescrevendo a partir do sentido. Por fim, conferir por amostragem cinco afirmações da leitura própria contra a página indicada, escolhidas em unidades diferentes e incluindo unidades do meio. Em cada uma, confirmar também a neutralidade, isto é, que um juízo do autor não passou a facto nem ficou na voz do leitor, e que nenhuma ressalva se perdeu.
 
@@ -45,15 +47,18 @@ Perante um texto longo, um modelo tende a ler o princípio com atenção, a pass
 
 ## Verificador
 
-O verificador está em `scripts/verificar.py`, na pasta desta skill, e tem três modos.
+O verificador está em `scripts/verificar.py`, na pasta desta skill, e tem quatro modos.
 
 ```
 python3 scripts/verificar.py dossie.md --fonte F1=obra.pdf --fonte F2=artigo.txt --marcar
 python3 scripts/verificar.py --localizar "trecho a procurar" --fonte obra.pdf
+python3 scripts/verificar.py --procurar "termos do objetivo" --fonte F1=obra.pdf --banco dossie.md
 python3 scripts/verificar.py --sebenta sebenta.md --banco dossie.md --fonte F1=obra.pdf
 ```
 
-No dossiê, confirma cada citação no texto da fonte (tolerando hifenização, chamadas de nota e passagem de página), a página PDF e a página impressa da referência APA (também em numeração romana, com `--paginas F1=5-12:i`), os localizadores canónicos, de fólio e de coluna, a cobertura de todas as páginas do âmbito, a prova de leitura por unidade e por troço (por omissão, doze páginas seguidas sem citação confirmada dão falha), os arranjos, o vocabulário avaliativo, os termos de alerta lidos de `references/terminologia.md`, as datas da Era de César não convertidas, as fichas sem data de redação, o teste de compreensão, o mapa dos objetivos e a articulação entre obras. As listas de termos, de exceções e de vocabulário avaliativo estão em `references/terminologia.md` e podem ser revistas por um docente sem tocar no código. Para isso, o dossiê segue as convenções de `references/dossie-modelo.md`, sobretudo os títulos das unidades, que indicam a fonte e as páginas PDF. Uma unidade feita só de quadros ou mapas, sem passagem citável, leva a linha "**Sem passagem citável.**" seguida da razão, e o verificador mostra-a como aviso a confirmar. Uma unidade ilegível leva "[ilegível]" no título.
+O modo `--procurar` é a procura por tema da varredura por objetivo e do regresso à fonte durante a sebenta. É lexical (raízes das palavras, ordenação BM25) e não semântica, por isso as consultas fazem-se com os termos do enunciado e com os do autor, e não só com uns ou com outros.
+
+No dossiê, confirma cada citação no texto da fonte (tolerando hifenização, chamadas de nota e passagem de página), a página PDF e a página impressa da referência APA (também em numeração romana, com `--paginas F1=5-12:i`), os localizadores canónicos, de fólio e de coluna, a cobertura de todas as páginas do âmbito, a prova de leitura por unidade e por troço (por omissão, doze páginas seguidas sem citação confirmada dão falha), os arranjos, o vocabulário avaliativo, os termos de alerta lidos de `references/terminologia.md`, as datas da Era de César não convertidas, as fichas sem data de redação, o teste de compreensão, a varredura por objetivo, a densidade de citações no terço central, o mapa dos objetivos, a articulação entre obras e os dois anos das obras traduzidas ou reeditadas, (Bloch, 1949/1997, p. 45). As listas de termos, de exceções e de vocabulário avaliativo estão em `references/terminologia.md` e podem ser revistas por um docente sem tocar no código. Para isso, o dossiê segue as convenções de `references/dossie-modelo.md`, sobretudo os títulos das unidades, que indicam a fonte e as páginas PDF. Uma unidade feita só de quadros ou mapas, sem passagem citável, leva a linha "**Sem passagem citável.**" seguida da razão, e o verificador mostra-a como aviso a confirmar. Uma unidade ilegível leva "[ilegível]" no título.
 
 ## Formato
 

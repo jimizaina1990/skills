@@ -129,5 +129,127 @@ class Registo(unittest.TestCase):
             self.assertEqual(rc, 0, out)
 
 
+FONTE_APA = ("Texto da primeira página. A forma pela qual são apresentados os fatos pode ser "
+             "propaganda realista ex post facto, como alguns eruditos argumentam, mas os próprios "
+             "fatos eram bastante claros. Os filisteus avançaram para o interior.\n\n1\n\f"
+             "Texto da segunda página. Isaías marca o ponto em que a religião começou a "
+             "espiritualizar-se e a passar para o plano universalista. O Servo Sofredor dirige para "
+             "uma conclusão triunfal a missão da nação.\n\n2\n\f"
+             "Texto da terceira página sobre outro assunto, sem relação com o resto.\n\n3\n")
+
+SEBENTA_APA = """# Tema
+
+## 1. Parte
+
+**Para o autor, Isaías marca a viragem em que a religião se espiritualiza e passa ao plano universalista.** O autor escreve que «Isaías marca o ponto em que a religião começou a espiritualizar-se e a passar para o plano universalista» (Autor, 1980/2000, p. 2).
+
+O autor admite que «pode ser propaganda realista ex post facto [...] mas os próprios fatos eram bastante claros» (Autor, 1980/2000, p. 1).
+
+Na costa, os Povos do Mar combateram as tribos durante muito tempo, segundo esta leitura.
+
+Este objetivo deve ser corrigido porque a fonte não trata da recuperação do reino.
+
+A datação proposta deve ser confirmada antes de ser usada numa avaliação pelo estudante.
+
+> Isaías marca o ponto em que a religião começou a espiritualizar-se (Autor, 2000, p. 2).
+
+O autor diz que «Isaías marca o ponto em que a religião começou a espiritualizar-se \\[sic\\]» (Autor, 1980/2000, p. 2).
+
+## Esquema-síntese
+
+&#91;embedded content: esquema]
+
+## Referências
+
+Autor, A. (2000). *Livro* (B. Tradutor, Trad.). Editora. (Obra original publicada em 1980)
+"""
+
+
+class Apa7EFidelidade(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.dir = tempfile.TemporaryDirectory()
+        cls.fonte = escrever(cls.dir.name, "f.txt", FONTE_APA)
+        cls.seb = escrever(cls.dir.name, "s.md", SEBENTA_APA)
+        cls.rc, cls.out = correr("--sebenta", cls.seb, "--fonte", f"F1={cls.fonte}")
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.dir.cleanup()
+
+    def test_obra_traduzida_sem_os_dois_anos_falha(self):
+        self.assertEqual(self.rc, 1)
+        self.assertIn("só com o ano da edição lida, (Autor, 2000", self.out)
+        self.assertIn("(Autor, 1980/2000, p. X)", self.out)
+
+    def test_omissao_que_retira_a_atribuicao(self):
+        self.assertIn("a omissão retira texto com atribuição", self.out)
+        self.assertIn("como alguns eruditos argumentam", self.out)
+
+    def test_reticencias_entre_parenteses_e_sic_em_redondo(self):
+        self.assertIn("omissão entre parênteses retos", self.out)
+        self.assertIn("[sic] em redondo", self.out)
+
+    def test_bloco_curto(self):
+        self.assertIn("citação em bloco com menos de 40 palavras", self.out)
+
+    def test_tese_a_negrito_que_parafraseia_a_citacao(self):
+        self.assertIn("a tese a negrito diz por outras palavras a citação", self.out)
+
+    def test_objetivo_corrigido_e_por_confirmar(self):
+        self.assertIn("a sebenta corrige o objetivo", self.out)
+        self.assertIn("afirmação dada como por confirmar fora das lacunas", self.out)
+
+    def test_nomes_ausentes_das_fontes(self):
+        self.assertRegex(self.out, r"nomes próprios que não aparecem nas fontes: .*Povos do Mar")
+
+    def test_conteudo_embebido_e_esquema_vazio(self):
+        self.assertIn("conteúdo embebido que não passou para o texto", self.out)
+        self.assertIn("a secção do esquema não tem esquema", self.out)
+
+    def test_sic_em_italico_aceite(self):
+        with tempfile.TemporaryDirectory() as d:
+            seb = escrever(d, "s.md", "# T\n\n## 1. Parte\n\nO autor escreve que «Isaías marca o "
+                                      "ponto em que a religião [*sic*] começou a espiritualizar-se» "
+                                      "(Autor, 2000, p. 2).\n")
+            _, out = correr("--sebenta", seb, "--fonte", f"F1={self.fonte}")
+        self.assertNotIn("[sic] em redondo", out)
+        self.assertNotIn("itálico dentro de uma citação", out)
+
+    def test_procurar_devolve_a_pagina_e_o_que_falta_no_banco(self):
+        with tempfile.TemporaryDirectory() as d:
+            dossie = escrever(d, "d.md", "## 13. Banco de citações\n\n[C01] | F1 | pdf 1 | "
+                                         "(Autor, 1980/2000, p. 1)\n\"os próprios fatos eram bastante "
+                                         "claros\"\n")
+            rc, out = correr("--procurar", "Servo Sofredor missão da nação", "--fonte",
+                             f"F1={self.fonte}", "--banco", dossie, "--top", "2")
+        self.assertEqual(rc, 0, out)
+        primeira = out.split("\n")[1]
+        self.assertIn("pdf 2", primeira)
+        self.assertIn("SEM citação no banco", primeira)
+
+
+class DossieVarreduraEAno(unittest.TestCase):
+
+    def test_varredura_em_falta_e_ano_duplo_no_dossie(self):
+        with tempfile.TemporaryDirectory() as d:
+            fonte = escrever(d, "f.txt", FONTE_APA)
+            dossie = escrever(d, "d.md", "# D\n\nEstado. em curso.\n\n## 0. Objetivos\n\n"
+                                         "### O1. Explicar\n\n## 1. Fichas\n\n### F1. Livro\n\n"
+                                         "- Referência. Autor, A. (2000). *Livro* (B. T., Trad.). "
+                                         "Editora. (Obra original publicada em 1980)\n\n"
+                                         "## 3. Leitura por unidade\n\n"
+                                         "### U1. Tudo (F1, p. 1-3, pdf 1-3)\n\nTexto.\n\n"
+                                         "## 11. Mapa dos objetivos\n\n| O1 | U1 | [C01] | coberto | - |\n\n"
+                                         "## 13. Banco de citações\n\n[C01] | F1 | pdf 1 | "
+                                         "(Autor, 2000, p. 1)\n\"os próprios fatos eram bastante "
+                                         "claros\"\n")
+            rc, out = correr(dossie, "--fonte", f"F1={fonte}")
+        self.assertEqual(rc, 1)
+        self.assertIn("falta a \"Varredura por objetivo\"", out)
+        self.assertIn("só com o ano da edição lida, (Autor, 2000", out)
+
+
 if __name__ == "__main__":
     unittest.main()

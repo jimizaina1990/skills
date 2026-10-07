@@ -54,3 +54,45 @@ O primeiro dossiê real foi entregue como "apto" sem o estar: faltavam a interro
 - **leitura-academica.** A linha final da saída do verificador copia-se para o dossiê ("Verificação."), e nunca se declara apto sem ter corrido o verificador na conversa. O modelo do dossiê diz agora explicitamente que o teste de compreensão não é um questionário nem leva respostas-modelo.
 - **verificar.py.** Num dossiê concluído, avisa se falta a linha "Verificação." e dá erro se os números dela não coincidirem com a verificação atual. Teste de regressão novo.
 - **sinteses-historia.** Antes de escrever, corre o verificador sobre o dossiê e não confia no estado escrito no próprio dossiê.
+
+## Depois da revisão da primeira sebenta real (Tema 1, Johnson)
+
+A sebenta passou no verificador com 0 falhas, mas tinha erros graves que ele não via. O objetivo 14 era "corrigido", com base numa leitura estreita e na omissão de passagens da fonte. As teses a negrito diziam por outras palavras a citação seguinte (arranjo). As 145 citações de uma obra traduzida davam só o ano da tradução. Afirmavam-se dados exteriores e, na mesma frase, davam-se como "por confirmar". Uma omissão retirava a atribuição ("como alguns eruditos argumentam"). Havia relatos bíblicos na voz da sebenta, nomes exteriores às fontes, e o esquema não passou na exportação. Mudanças:
+
+- **sinteses-historia, fluxo.** Cinco etapas: compreender os objetivos; dossiê verificado; leitura do dossiê objetivo a objetivo, com regresso à fonte e plano de síntese; redação; revisão separada. Entrega em Markdown; o documento final só depois de validada, num passo à parte que pode correr noutra conversa e com outro modelo.
+- **sinteses-historia, princípios.** Especialista que explica e argumenta. Citar com a extensão que o sentido exige, incluindo citações em bloco, sem mínimo nem máximo por parte. A tese enuncia-se com a própria citação. Os objetivos interpretam-se, não se corrigem. Afirmar ou pôr nas lacunas, nunca as duas coisas. Conhecimento exterior só perante falha flagrante, numa caixa "Fora das fontes" com referência.
+- **sinteses-historia, quadros e extensão.** Quadros de contraposição e de conceitos. Extensão pela profundidade do objetivo, sem quota de páginas, e aviso obrigatório de cortes.
+- **sinteses-historia, anexos.** Anexo A com modelos de bloco, quadros e caixa, e exemplo corrigido (tese pela citação). Anexo B com "Ler o enunciado" e "Profundidade". Anexo C distingue nota de atenção e caixa "Fora das fontes". Anexo D com citações longas, omissões e o vício da tese anunciada por paráfrase.
+- **APA 7 confirmada nas páginas oficiais da APA** (a 7.ª edição continua em vigor):
+  - reticências sem parênteses retos e quatro pontos entre frases;
+  - [*sic*] em itálico;
+  - alterações que não se indicam;
+  - blocos;
+  - obras traduzidas com os dois anos;
+  - fontes secundárias com parcimónia;
+  - tradução própria como paráfrase;
+  - textos religiosos tratados como livros.
+
+  As fontes estão listadas no fim de `citacoes-apa7.md`.
+- **leitura-academica, perda do meio.** Varredura por objetivo depois da última unidade, com a nova procura por tema, registada no dossiê. O verificador compara a densidade de citações do terço central com a das pontas.
+- **verificar.py.**
+  - Novo modo `--procurar`: BM25 lexical sobre raízes; com `--banco`, diz o que já está citado e em que unidade.
+  - Na sebenta: falha para obras traduzidas sem os dois anos.
+  - Na sebenta, avisos para:
+    - omissões que retiram atribuição, modalizador, negação ou restrição;
+    - reticências entre parênteses retos;
+    - [sic] em redondo;
+    - blocos curtos, com aspas ou com ponto depois do parêntese;
+    - tese a negrito parafraseada das citações da parte;
+    - objetivo corrigido;
+    - "por confirmar" fora das lacunas;
+    - nomes próprios ausentes das fontes;
+    - conteúdo embebido e esquema vazio.
+  - Aceita os `\[ \]` da exportação de documentos.
+  - No dossiê: ano duplo, varredura por objetivo e densidade do meio.
+  - Onze testes de regressão novos (22 no total).
+- **Resultado no material real.**
+  - Sebenta do Tema 1: de "0 falhas, 1 aviso" para 1 falha (as citações sem o ano original) e 21 avisos, entre os quais o objetivo corrigido, quatro teses parafraseadas, a omissão da atribuição, as afirmações por confirmar e "Povos do Mar".
+  - Dossiê: 1 falha (o ano duplo nas 231 citações) e o aviso da varredura em falta.
+
+Limites que ficam: a deteção da tese parafraseada e dos nomes exteriores é lexical; a primeira não apanha paráfrases com sinónimos e a segunda assinala também grafias portuguesas de nomes da fonte. A procura por tema não é semântica. A revisão separada contra as fontes continua a ser indispensável.
