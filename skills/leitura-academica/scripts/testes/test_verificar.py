@@ -230,6 +230,21 @@ class Apa7EFidelidade(unittest.TestCase):
         self.assertIn("SEM citação no banco", primeira)
 
 
+class BlocoLocalizador(unittest.TestCase):
+
+    def test_bloco_usa_o_seu_proprio_paragrafo_de_referencia(self):
+        texto = ("Isaías marca o ponto em que a religião começou a espiritualizar-se e a passar "
+                 "para o plano universalista. ")
+        bloco = (texto * 3).strip()
+        with tempfile.TemporaryDirectory() as d:
+            fonte = escrever(d, "f.txt", "Página um.\n\n1\n\f" + bloco + "\n\n2\n")
+            seb = escrever(d, "s.md", "# T\n\n## 1. Parte\n\nO autor escreve:\n\n> " + bloco +
+                           " (Autor, 2000, p. 2)\n\nNoutro ponto, a matéria segue (Autor, 2000, p. 1).\n")
+            _, out = correr("--sebenta", seb, "--fonte", f"F1={fonte}")
+        self.assertNotIn("a sebenta diz p. [1]", out)
+        self.assertRegex(out, r"OK\s+linha 7")
+
+
 class DossieVarreduraEAno(unittest.TestCase):
 
     def test_varredura_em_falta_e_ano_duplo_no_dossie(self):

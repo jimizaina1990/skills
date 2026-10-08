@@ -1715,7 +1715,12 @@ def modo_sebenta(args, fontes_arg):
         if not segs:
             continue
         no_banco = next((e for e, t in banco if all(s in t for s in segs)), None)
-        loc = PAREN_LOC.search(bruto[fim: fim + 200]) or PAREN_LOC.search(bruto[max(0, ini - 200): ini])
+        if forma == "bloco":
+            # num bloco, a referência é o parêntese final do próprio bloco
+            locs_bloco = list(PAREN_LOC.finditer(bruto[ini:fim]))
+            loc = locs_bloco[-1] if locs_bloco else None
+        else:
+            loc = PAREN_LOC.search(bruto[fim: fim + 200]) or PAREN_LOC.search(bruto[max(0, ini - 200): ini])
         if not no_banco:
             achado = None
             pg_seb = paginas_apa(loc.group(1)) if loc else set()
